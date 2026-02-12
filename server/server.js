@@ -59,27 +59,33 @@ io.on("connection", (socket) => {
   socket.on("next_player", () => {
     const winner = auctionState.currentLeader;
     const price = auctionState.currentBid;
-    const player = auctionState.currentPlayer;
+
+    const justSoldPlayer = auctionState.currentPlayer;
 
     if (winner !== "No one yet" && teams[winner]) {
       // DEDUCT MONEY
       teams[winner].budget -= price;
       // ADD PLAYER TO SQUAD
-      teams[winner].squad.push(player);
-
+      teams[winner].squad.push(justSoldPlayer);
       io.emit("update_teams", teams); // Update everyone's wallets
     }
+    io.emit("auction_sold", {
+      winner: winner !== "No one yet" ? `${winner} (₹${price}Lakhs)` : "UNSOLD",
+      player: justSoldPlayer,
+    });
 
-    playerIndex = (playerIndex + 1) % PLAYERS.length; // Cycle loop
-    const nextPlayer = PLAYERS[playerIndex];
-    //resetting for new player
-    auctionState = {
-      currentBid: nextPlayer.basePrice,
-      currentLeader: "No one yet",
-      currentPlayer: nextPlayer,
-      lastSoldTo: winner !== "No one yet" ? `${winner} (₹${price}L)` : "Unsold",
-    };
-    io.emit("update_auction", auctionState);
+    setTimeout(() => {
+      playerIndex = (playerIndex + 1) % PLAYERS.length; // Cycle loop
+      const nextPlayer = PLAYERS[playerIndex];
+      //resetting for new player
+      auctionState = {
+        currentBid: nextPlayer.basePrice,
+        currentLeader: "No one yet",
+        currentPlayer: nextPlayer,
+        lastSoldTo: null,
+      };
+      io.emit("update_auction", auctionState);
+    },5000);
   });
 });
 

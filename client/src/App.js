@@ -4,20 +4,30 @@ import { socket } from "./socket";
 import AdminPanel from "./components/AdminPanel";
 import Login from "./components/Login";
 import PlayerCard from "./components/PlayerCard";
+import SoldOverlay from "./components/SoldOverlay";
 
 function App() {
   const [auctionData, setAuctionData] = useState(null);
   const [teamsData, setTeamsData] = useState({});
   const [myTeamName, setMyTeamName] = useState("");
   const [isTeamSet, setIsTeamSet] = useState(false);
+
+  const [soldInfo, setSoldInfo] = useState(null);
+
   useEffect(() => {
     // LISTEN: The server now sends an object with bid AND leader
-    socket.on("update_auction", (data) => setAuctionData(data));
+    socket.on("update_auction", (data) => {
+      setAuctionData(data);
+      setSoldInfo(null);
+    });
     socket.on("update_teams", (data) => setTeamsData(data));
+
+    socket.on("auction_sold", (data) => setSoldInfo(data));
     // cleanup listeners when prevents bugs when component reloads
     return () => {
       socket.off("update_auction");
       socket.off("update_teams");
+      socket.off("auction_sold");
     };
   }, []);
 
@@ -39,7 +49,6 @@ function App() {
   };
 
   if (!auctionData) return <div>Loading please wait...</div>;
-  console.log(auctionData);
 
   // const { currentPlayer, currentBid, currentLeader } = auctionData;
 
@@ -49,7 +58,15 @@ function App() {
 
   return (
     <div style={{ textAlign: "center", fontFamily: "Arial", padding: "20px" }}>
-      <h1>🏏 IPL Mock Auction</h1>
+      {soldInfo && (
+        <SoldOverlay
+          auctionData={{
+            lastSoldTo: soldInfo.winner,
+            currentPlayer: soldInfo.player,
+          }}
+        />
+      )}
+      <h1>IPL Auction</h1>
       {/* team name section */}
 
       {!isTeamSet ? (
@@ -71,7 +88,7 @@ function App() {
           }}
         >
           <h3>Team: {myTeamName}</h3>
-          <h3>Purse: {myStats.budget/100.0} Crores</h3>
+          <h3>Purse: {myStats.budget / 100.0} Crores</h3>
           <h3>Players: {myStats.squad.length}</h3>
         </div>
       )}
