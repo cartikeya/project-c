@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { socket } from "../socket";
 
-function Login({ myTeamName, setMyTeamName, handleSetTeam }) {
+function Login({ setMyTeamName, handleSetTeam, takenTeamNames }) {
   const names = [
     "CSK",
     "MI",
@@ -27,25 +27,60 @@ function Login({ myTeamName, setMyTeamName, handleSetTeam }) {
   };
 
   return (
-    <div>
+    <div style={{ textAlign: "center" }}>
       <h2>Select your TEAM name: </h2>
-      {names.map((name) => (
-        <button
-          key={name}
-          onClick={() => setSelected(name)}
-          style={{
-            margin: "8px",
-            padding: "10px 20px",
-            borderRadius: "8px",
-            border: "1px solid #ccc",
-            backgroundColor: selected === name ? "#4f46e5" : "white",
-            color: selected === name ? "white" : "black",
-            cursor: "pointer",
-          }}
-        >
-          {name}
-        </button>
-      ))}
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "center",
+          gap: "10px",
+          maxWidth: "600px",
+          margin: "0 auto",
+        }}
+      >
+        {names.map((name) => {
+          const isTaken = takenTeamNames.includes(name);
+
+          return (
+            <button
+              key={name}
+              disabled={isTaken}
+              onClick={() => setSelected(name)}
+              style={{
+                padding: "10px 20px",
+                borderRadius: "8px",
+                // 2. STYLING LOGIC:
+                border: isTaken
+                  ? "1px solid #ccc" // Taken: Grey border
+                  : selected === name
+                    ? "2px solid #4f46e5" // Selected: Blue border
+                    : "1px solid #ccc", // Normal: Grey border
+
+                backgroundColor: isTaken
+                  ? "#e0e0e0" // Taken: Grey background
+                  : selected === name
+                    ? "#4f46e5" // Selected: Blue background
+                    : "white", // Normal: White
+
+                color: isTaken
+                  ? "#999" // Taken: Grey text
+                  : selected === name
+                    ? "white" // Selected: White text
+                    : "black", // Normal: Black text
+
+                cursor: isTaken ? "not-allowed" : "pointer",
+                fontWeight: "bold",
+                minWidth: "80px",
+                position: "relative", // For the "X" overlay if you want
+              }}
+            >
+              {name}
+            </button>
+          );
+        })}
+      </div>
+
       <br />
       <button
         disabled={!selected}

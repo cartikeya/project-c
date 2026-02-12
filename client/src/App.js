@@ -15,6 +15,8 @@ function App() {
   const [soldInfo, setSoldInfo] = useState(null);
   const [isAdmin, setIsAdmin] = useState(null);
 
+  const takenTeamNames = Object.keys(teamsData);
+
   useEffect(() => {
     // LISTEN: The server now sends an object with bid AND leader
     socket.on("update_auction", (data) => {
@@ -74,9 +76,9 @@ function App() {
 
       {!isTeamSet ? (
         <Login
-          myTeamName={myTeamName}
           setMyTeamName={setMyTeamName}
           handleSetTeam={handleSetTeam}
+          takenTeamNames={takenTeamNames}
         />
       ) : (
         <div
