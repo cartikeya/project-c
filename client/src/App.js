@@ -13,6 +13,7 @@ function App() {
   const [isTeamSet, setIsTeamSet] = useState(false);
 
   const [soldInfo, setSoldInfo] = useState(null);
+  const [isAdmin, setIsAdmin] = useState(null);
 
   useEffect(() => {
     // LISTEN: The server now sends an object with bid AND leader
@@ -23,11 +24,13 @@ function App() {
     socket.on("update_teams", (data) => setTeamsData(data));
 
     socket.on("auction_sold", (data) => setSoldInfo(data));
+    socket.on("set_admin", (isAdminStatus) => setIsAdmin(isAdminStatus));
     // cleanup listeners when prevents bugs when component reloads
     return () => {
       socket.off("update_auction");
       socket.off("update_teams");
       socket.off("auction_sold");
+      socket.off("set_admin");
     };
   }, []);
 
@@ -122,7 +125,18 @@ function App() {
         isWinning={isWinning}
       />
 
-      <AdminPanel nextPlayer={nextPlayer} />
+      {isAdmin && (
+        <div
+          style={{
+            border: "2px dashed red",
+            padding: "10px",
+            marginTop: "20px",
+          }}
+        >
+          <h4 style={{ margin: "5px", color: "red" }}>Admin Controls:</h4>
+          <AdminPanel nextPlayer={nextPlayer} />
+        </div>
+      )}
 
       {isTeamSet && myStats.squad.length > 0 && (
         <div>

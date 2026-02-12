@@ -27,8 +27,18 @@ let auctionState = {
   lastSoldTo: null, // Optional: to show "Sold to MI for 500" message
 };
 
+let adminSocketID = null; //tracking admin id
+
 io.on("connection", (socket) => {
   console.log(`User Connected: ${socket.id}`);
+  // assign admin
+  if (!adminSocketID) {
+    adminSocketID = socket.id;
+    socket.emit("set_admin", true);
+  } else {
+    socket.emit("set_admin", false);
+  }
+
   // 1. Send the current bid to the NEW user immediately upon connection
   socket.emit("update_auction", auctionState);
   socket.emit("update_teams", teams);
@@ -85,7 +95,17 @@ io.on("connection", (socket) => {
         lastSoldTo: null,
       };
       io.emit("update_auction", auctionState);
-    },5000);
+    }, 5000);
+  });
+
+  // if admin leaves select next admin
+  
+  socket.on("disconnect", () => {
+    if (socket.id == adminSocketID) {
+      adminSocketID = null;
+      // In a real app, you'd pick the next connected socket here.
+      // For now, the next person to refresh/connect will become admin.
+    }
   });
 });
 
