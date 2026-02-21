@@ -5,7 +5,7 @@ import AdminPanel from "./components/AdminPanel";
 import Login from "./components/Login";
 import PlayerCard from "./components/PlayerCard";
 import SoldOverlay from "./components/SoldOverlay";
-
+import SquadOverview from "./components/SquadOverview";
 function App() {
   const [auctionData, setAuctionData] = useState(null);
   const [teamsData, setTeamsData] = useState({});
@@ -140,7 +140,7 @@ function App() {
         </div>
       )}
 
-      {isTeamSet && myStats.squad.length > 0 && (
+      {/* {isTeamSet && myStats.squad.length > 0 && (
         <div>
           <h3>My squad:</h3>
           <ul>
@@ -151,7 +151,8 @@ function App() {
             ))}
           </ul>
         </div>
-      )}
+      )} */}
+      <SquadOverview teamsData={teamsData}/>
     </div>
   );
 }
