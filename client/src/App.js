@@ -54,6 +54,15 @@ function App() {
   };
 
   if (!auctionData) return <div>Loading please wait...</div>;
+  // if (!auctionData || !auctionData.currentPlayer) {
+  //   return (
+  //     <div
+  //       style={{ textAlign: "center", marginTop: "50px", fontSize: "1.5rem" }}
+  //     >
+  //       ⏳ Loading Mega Auction Database...
+  //     </div>
+  //   );
+  // }
 
   // const { currentPlayer, currentBid, currentLeader } = auctionData;
 

@@ -1,10 +1,11 @@
 // server.js
+require("dotenv").config();
 const express = require("express");
 const http = require("http");
 const { Server } = require("socket.io");
 const cors = require("cors");
-const { PLAYERS } = require("./data");
-
+const Player = require("./models/Player");
+const { mongo, default: mongoose } = require("mongoose");
 const app = express();
 app.use(cors());
 const server = http.createServer(app);
@@ -15,16 +16,15 @@ const io = new Server(server, {
     methods: ["GET", "POST"],
   },
 });
+let PLAYERS = [];
 let playerIndex = 0;
 let teams = {};
-
 const INITIAL_BUDHGET = 10000; //100 cr in lakhs
 
-// STATE: In a real app, this goes in a Database (MongoDB/SQL)
 let auctionState = {
-  currentBid: PLAYERS[0].basePrice,
+  currentBid: 0,
   currentLeader: "No one yet",
-  currentPlayer: PLAYERS[0],
+  currentPlayer: null,
   lastSoldTo: null, // Optional: to show "Sold to MI for 500" message
 };
 
@@ -33,6 +33,7 @@ let countdownInterval = null;
 let isTimerRunning = false;
 let hasAuctionStarted = false;
 let isTransitioning = false;
+
 function startTimer() {
   clearInterval(countdownInterval);
   timer = 10;
@@ -58,9 +59,7 @@ function processSale() {
   const price = auctionState.currentBid;
   const justSoldPlayer = auctionState.currentPlayer;
   if (winner !== "No one yet" && teams[winner]) {
-    // DEDUCT MONEY
     teams[winner].budget -= price;
-    // ADD PLAYER TO SQUAD
     teams[winner].squad.push(justSoldPlayer);
     io.emit("update_teams", teams); // Update everyone's wallets
   }
@@ -74,7 +73,7 @@ function processSale() {
     const nextPlayer = PLAYERS[playerIndex];
     //resetting for new player
     auctionState = {
-      currentBid: nextPlayer.basePrice,
+      currentBid: nextPlayer.basePrice || 50,
       currentLeader: "No one yet",
       currentPlayer: nextPlayer,
       lastSoldTo: null,
@@ -154,6 +153,21 @@ io.on("connection", (socket) => {
   });
 });
 
-server.listen(3001, () => {
-  console.log("SERVER RUNNING ON PORT 3001");
-});
+async function initializeGame() {
+  try {
+    await mongoose.connect(process.env.MONGO_URI);
+    console.log("CONNECTED TO MONGODB ATLAS!");
+    PLAYERS = await Player.find({});
+
+    console.log(`Loaded all ${PLAYERS.length} for the mega auction`);
+    auctionState.currentPlayer = PLAYERS[0];
+    auctionState.currentBid = PLAYERS[0].basePrice || 20;
+    server.listen(3001, () => {
+      console.log("SERVER RUNNING ON PORT 3001");
+    });
+  } catch (err) {
+    console.log("failed to start server", err);
+  }
+}
+
+initializeGame();

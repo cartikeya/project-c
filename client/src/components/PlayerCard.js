@@ -9,6 +9,9 @@ function PlayerCard({
   isWinning,
   timer,
 }) {
+  const playerImage = currentPlayer.img
+    ? currentPlayer.img
+    : `https://ui-avatars.com/api/?name=${currentPlayer.name.replace(" ", "+")}&size=250&background=random&color=fff&font-size=0.4`;
   return (
     <div
       style={{
@@ -46,7 +49,7 @@ function PlayerCard({
       </div>
       {/* ------------------------------------------------ */}
       <img
-        src={currentPlayer.img}
+        src={playerImage}
         alt={currentPlayer.name}
         style={{
           width: "100%",
@@ -56,7 +59,9 @@ function PlayerCard({
         }}
       />
       <h2 style={{ margin: "10px 0 5px 0" }}>{currentPlayer.name}</h2>
-      <p style={{ color: "#555", margin: "0" }}>{currentPlayer.role}</p>
+      <p style={{ color: "#555", margin: "0" }}>
+        {currentPlayer.role} | {currentPlayer.nationality || "Unknown"}
+      </p>
 
       <div
         style={{
