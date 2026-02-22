@@ -7,6 +7,7 @@ function PlayerCard({
   placeBid,
   isTeamSet,
   isWinning,
+  timer,
 }) {
   return (
     <div
@@ -18,8 +19,32 @@ function PlayerCard({
         margin: "0 auto",
         backgroundColor: "#f9f9f9",
         boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
+        position: "relative",
       }}
     >
+      <div
+        style={{
+          position: "absolute",
+          top: "-15px",
+          right: "-15px",
+          backgroundColor: timer <= 3 ? "#dc3545" : "#343a40",
+          color: "white",
+          width: "60px",
+          height: "60px",
+          borderRadius: "50%",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          fontSize: "1.5rem",
+          fontWeight: "bold",
+          boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
+          border: "3px solid white",
+          transition: "background-color 0.3s ease",
+        }}
+      >
+        {timer}s
+      </div>
+      {/* ------------------------------------------------ */}
       <img
         src={currentPlayer.img}
         alt={currentPlayer.name}

@@ -11,11 +11,9 @@ function App() {
   const [teamsData, setTeamsData] = useState({});
   const [myTeamName, setMyTeamName] = useState("");
   const [isTeamSet, setIsTeamSet] = useState(false);
-
   const [soldInfo, setSoldInfo] = useState(null);
   const [isAdmin, setIsAdmin] = useState(null);
-
-  const takenTeamNames = Object.keys(teamsData);
+  const [timer, setTimer] = useState(10);
 
   useEffect(() => {
     // LISTEN: The server now sends an object with bid AND leader
@@ -24,15 +22,17 @@ function App() {
       setSoldInfo(null);
     });
     socket.on("update_teams", (data) => setTeamsData(data));
-
     socket.on("auction_sold", (data) => setSoldInfo(data));
     socket.on("set_admin", (isAdminStatus) => setIsAdmin(isAdminStatus));
+
+    socket.on("timer_update", (time) => setTimer(time));
     // cleanup listeners when prevents bugs when component reloads
     return () => {
       socket.off("update_auction");
       socket.off("update_teams");
       socket.off("auction_sold");
       socket.off("set_admin");
+      socket.off("timer_update");
     };
   }, []);
 
@@ -58,7 +58,7 @@ function App() {
   // const { currentPlayer, currentBid, currentLeader } = auctionData;
 
   const isWinning = auctionData.currentLeader === myTeamName;
-
+  const takenTeamNames = Object.keys(teamsData);
   const myStats = teamsData[myTeamName] || { budget: 10000, squad: [] };
 
   return (
@@ -125,6 +125,7 @@ function App() {
         placeBid={placeBid}
         isTeamSet={isTeamSet}
         isWinning={isWinning}
+        timer={timer}
       />
 
       {isAdmin && (
@@ -140,19 +141,7 @@ function App() {
         </div>
       )}
 
-      {/* {isTeamSet && myStats.squad.length > 0 && (
-        <div>
-          <h3>My squad:</h3>
-          <ul>
-            {myStats.squad.map((p, idx) => (
-              <li key={idx}>
-                {p.name} ({p.role})
-              </li>
-            ))}
-          </ul>
-        </div>
-      )} */}
-      <SquadOverview teamsData={teamsData}/>
+      <SquadOverview teamsData={teamsData} />
     </div>
   );
 }
