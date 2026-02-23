@@ -16,61 +16,55 @@ const io = new Server(server, {
     methods: ["GET", "POST"],
   },
 });
-let PLAYERS = [];
+let GLOBAL_PLAYERS = [];
 let playerIndex = 0;
 let teams = {};
-const INITIAL_BUDHGET = 10000; //100 cr in lakhs
 
-let auctionState = {
-  currentBid: 0,
-  currentLeader: "No one yet",
-  currentPlayer: null,
-  lastSoldTo: null, // Optional: to show "Sold to MI for 500" message
-};
+const activeGames = {};
+function generateRoomCode() {
+  return Math.random().toString(36).substring(2, 6).toUpperCase();
+}
 
-let timer = 10;
-let countdownInterval = null;
-let isTimerRunning = false;
-let hasAuctionStarted = false;
-let isTransitioning = false;
+function startTimer(roomId) {
+  const game = activeGames[roomId];
+  if (!game) return;
+  clearInterval(game.countdownInterval);
+  game.timer = 10;
+  game.isTimerRunning = true;
+  io.to(roomId).emit("timer_update", game.timer);
 
-function startTimer() {
-  clearInterval(countdownInterval);
-  timer = 10;
-  isTimerRunning = true;
-  io.emit("timer_update", timer);
-
-  countdownInterval = setInterval(() => {
-    if (timer > 0) {
-      timer--;
-      io.emit("timer_update", timer);
+  game.countdownInterval = setInterval(() => {
+    if (game.timer > 0) {
+      game.timer--;
+      io.to(roomId).emit("timer_update", game.timer);
     }
-    if (timer === 0) {
-      clearInterval(countdownInterval);
-      isTimerRunning = false;
-      processSale();
+    if (game.timer === 0) {
+      clearInterval(game.countdownInterval);
+      game.isTimerRunning = false;
+      processSale(roomId);
     }
   }, 1000);
 }
-
-function processSale() {
-  isTransitioning = true;
-  const winner = auctionState.currentLeader;
-  const price = auctionState.currentBid;
-  const justSoldPlayer = auctionState.currentPlayer;
-  if (winner !== "No one yet" && teams[winner]) {
-    teams[winner].budget -= price;
-    teams[winner].squad.push(justSoldPlayer);
-    io.emit("update_teams", teams); // Update everyone's wallets
+function processSale(roomId) {
+  const game = activeGames[roomId];
+  if (!game) return;
+  game.isTransitioning = true;
+  const winner = game.auctionState.currentLeader;
+  const price = game.auctionState.currentBid;
+  const justSoldPlayer = game.auctionState.currentPlayer;
+  if (winner !== "No one yet" && game.teams[winner]) {
+    game.teams[winner].budget -= price;
+    game.teams[winner].squad.push(justSoldPlayer);
+    io.to(roomId).emit("update_teams", teams); // Update everyone's wallets
   }
-  io.emit("auction_sold", {
+  io.to(roomId).emit("auction_sold", {
     winner: winner !== "No one yet" ? `${winner} (₹${price}Lakhs)` : "UNSOLD",
     player: justSoldPlayer,
   });
 
   setTimeout(() => {
-    playerIndex = (playerIndex + 1) % PLAYERS.length; // Cycle loop
-    const nextPlayer = PLAYERS[playerIndex];
+    game.playerIndex = (game.playerIndex + 1) % GLOBAL_PLAYERS.length; // Cycle loop
+    const nextPlayer = GLOBAL_PLAYERS[game.playerIndex];
     //resetting for new player
     auctionState = {
       currentBid: nextPlayer.basePrice || 50,
@@ -78,78 +72,116 @@ function processSale() {
       currentPlayer: nextPlayer,
       lastSoldTo: null,
     };
-    io.emit("update_auction", auctionState);
-    isTransitioning = false;
+    io.to(roomId).emit("update_auction", game.auctionState);
+    game.isTransitioning = false;
 
-    if (hasAuctionStarted) {
-      startTimer();
+    if (game.hasAuctionStarted) {
+      startTimer(roomId);
     } else {
-      timer = 10;
-      isTimerRunning = false;
-      io.emit("timer_update", timer);
+      game.timer = 10;
+      game.isTimerRunning = false;
+      io.to(roomId).emit("timer_update", game.timer);
     }
   }, 5000);
 }
+
+let timer = 10;
+let countdownInterval = null;
+let isTimerRunning = false;
+let hasAuctionStarted = false;
+let isTransitioning = false;
 
 let adminSocketID = null; //tracking admin id
 
 io.on("connection", (socket) => {
   console.log(`User Connected: ${socket.id}`);
-  // assign admin
-  if (!adminSocketID) {
-    adminSocketID = socket.id;
-    socket.emit("set_admin", true);
-  } else {
-    socket.emit("set_admin", false);
-  }
 
   // 1. Send the current bid to the NEW user immediately upon connection
-  socket.emit("update_auction", auctionState);
-  socket.emit("update_teams", teams);
-  socket.emit("timer_update", timer);
-  socket.on("join_game", (teamName) => {
-    if (!teams[teamName]) {
-      // create new wallet if team is not present
-      teams[teamName] = { budget: INITIAL_BUDHGET, squad: [] };
+  socket.on("create_room", () => {
+    const roomId = generateRoomCode();
+    socket.join(roomId);
+
+    activeGames[roomId] = {
+      adminSocketID: socket.id,
+      playerIndex: 0,
+      teams: {},
+      timer: 10,
+      countdownInterval: null,
+      isTimerRunning: false,
+      hasAuctionStarted: false,
+      isTransitioning: false,
+      auctionState: {
+        currentBid: GLOBAL_PLAYERS[0].basePrice || 20,
+        currentLeader: "No one yet",
+        currentPlayer: GLOBAL_PLAYERS[0],
+        lastSoldTo: null,
+      },
+    };
+
+    socket.emit("room_created", roomId);
+    socket.emit("set_admin", true);
+
+    socket.emit("update_auction", activeGames[roomId].auctionState);
+    socket.emit("update_teams", activeGames[roomId].teams);
+    socket.emit("timer_update", activeGames[roomId].timer);
+  });
+  socket.on("join_room", (roomId) => {
+    const game = activeGames[roomId];
+    if (game) {
+      socket.join(roomId);
+      socket.emit("room_joined", roomId);
+      socket.emit("set_admin", false);
+      socket.emit("update_auction", game.auctionState);
+      socket.emit("update_teams", game.teams);
+      socket.emit("timer_update", game.timer);
+    } else {
+      socket.emit("error_message", "Room not found!");
     }
-    io.emit("update_teams", teams);
+  });
+
+  socket.on("join_game", (data) => {
+    const { teamName, roomId } = data;
+    const game = activeGames[roomId];
+    if (game && !game.teams[teamName]) {
+      // create new wallet if team is not present
+      game.teams[teamName] = { budget: 10000, squad: [] };
+      io.to(roomId).emit("update_teams", game.teams);
+    }
   });
 
   // 2. Listen for a "place_bid" event from the frontend
   socket.on("place_bid", (data) => {
     // Logic: Increase bid by 1 crore (or whatever amount passed)
-    const { amount, teamName } = data;
-    const teamWallet = teams[teamName];
-
+    const { amount, teamName, roomId } = data;
+    const game = activeGames[roomId];
+    if (!game) return;
+    const teamWallet = game.teams[teamName];
     if (teamWallet && teamWallet.budget >= amount) {
-      if (amount > auctionState.currentBid) {
-        hasAuctionStarted = true;
-        auctionState.currentBid = amount;
-        auctionState.currentLeader = teamName;
-        io.emit("update_auction", auctionState);
-        startTimer();
+      if (amount > game.auctionState.currentBid) {
+        game.hasAuctionStarted = true;
+        game.auctionState.currentBid = amount;
+        game.auctionState.currentLeader = teamName;
+        io.to(roomId).emit("update_auction", game.auctionState);
+        startTimer(roomId);
       }
     }
   });
+  //admin only
+  socket.on("next_player", (roomId) => {
+    const game = activeGames[roomId];
+    if (!game || game.isTransitioning) return;
+    if (socket.id !== game.adminSocketID) return;
 
-  socket.on("next_player", () => {
-    if (isTransitioning) {
-      console.log("Admin clicked next, but we are already transitioning.");
-      return;
-    }
-    hasAuctionStarted = true;
-    clearInterval(countdownInterval);
-    isTimerRunning = false;
-    processSale();
+    game.hasAuctionStarted = true;
+    clearInterval(game.countdownInterval);
+    game.isTimerRunning = false;
+    processSale(roomId);
   });
 
-  // if admin leaves select next admin
+  // Handle disconnects (optional cleanup logic could go here)
   socket.on("disconnect", () => {
-    if (socket.id == adminSocketID) {
-      adminSocketID = null;
-      // In a real app, you'd pick the next connected socket here.
-      // For now, the next person to refresh/connect will become admin.
-    }
+    // You could check if an admin disconnected and assign a new one,
+    // or delete empty rooms to save server memory!
   });
 });
 
@@ -157,11 +189,10 @@ async function initializeGame() {
   try {
     await mongoose.connect(process.env.MONGO_URI);
     console.log("CONNECTED TO MONGODB ATLAS!");
-    PLAYERS = await Player.find({});
+    GLOBAL_PLAYERS = await Player.find({});
 
-    console.log(`Loaded all ${PLAYERS.length} for the mega auction`);
-    auctionState.currentPlayer = PLAYERS[0];
-    auctionState.currentBid = PLAYERS[0].basePrice || 20;
+    console.log(`Loaded all ${GLOBAL_PLAYERS.length} for the mega auction`);
+
     server.listen(3001, () => {
       console.log("SERVER RUNNING ON PORT 3001");
     });
