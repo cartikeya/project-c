@@ -86,8 +86,37 @@ function PlayerCard({
         </p>
       </div>
       {isTeamSet && (
-        <button onClick={placeBid} disabled={isWinning}>
-          {isWinning ? "Bid+50L" : "Bid+50L"}
+        // <button onClick={placeBid} disabled={isWinning}>
+        //   {isWinning ? "Bid+50L" : "Bid+50L"}
+        // </button>
+        <button
+          onClick={placeBid}
+          disabled={isWinning}
+          style={{
+            width: "100%",
+            padding: "16px 20px",
+            fontSize: "1.3rem",
+            fontWeight: "bold",
+            color: "white",
+            // Bright green when you can bid, muted grey when you are winning
+            backgroundColor: isWinning ? "#95a5a6" : "#27ae60",
+            border: "none",
+            borderRadius: "10px",
+            cursor: isWinning ? "not-allowed" : "pointer",
+            // Add a glowing shadow only when it's clickable
+            boxShadow: isWinning ? "none" : "0 6px 12px rgba(39, 174, 96, 0.3)",
+            transition: "all 0.3s ease",
+            textTransform: "uppercase",
+            letterSpacing: "1px",
+            marginTop: "15px",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: "10px",
+          }}
+        >
+          {/* Change the text to make it feel more rewarding! */}
+          {isWinning ? "You hold the bid" : " Bid +50L"}
         </button>
       )}
     </div>
