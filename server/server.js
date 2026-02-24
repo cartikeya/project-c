@@ -12,7 +12,7 @@ const server = http.createServer(app);
 // Allow React (running on localhost:3000) to connect to this server
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: "*",
     methods: ["GET", "POST"],
   },
 });
@@ -93,6 +93,7 @@ io.on("connection", (socket) => {
 
     activeGames[roomId] = {
       adminSocketID: socket.id,
+      gameStarted: false,
       playerIndex: 0,
       teams: {},
       timer: 10,
@@ -111,6 +112,8 @@ io.on("connection", (socket) => {
     socket.emit("room_created", roomId);
     socket.emit("set_admin", true);
 
+    socket.emit("auction_status", false);
+
     socket.emit("update_auction", activeGames[roomId].auctionState);
     socket.emit("update_teams", activeGames[roomId].teams);
     socket.emit("timer_update", activeGames[roomId].timer);
@@ -124,6 +127,7 @@ io.on("connection", (socket) => {
       socket.emit("update_auction", game.auctionState);
       socket.emit("update_teams", game.teams);
       socket.emit("timer_update", game.timer);
+      socket.emit("auction_status", game.gameStarted);
     } else {
       socket.emit("error_message", "Room not found!");
     }
@@ -168,6 +172,18 @@ io.on("connection", (socket) => {
     processSale(roomId);
   });
 
+  // NEW: Admin starts the game
+  socket.on("start_auction", (roomId) => {
+    const game = activeGames[roomId];
+    if (!game) return;
+
+    // Security check: Only Admin can start it
+    if (socket.id !== game.adminSocketID) return;
+
+    game.gameStarted = true;
+    io.to(roomId).emit("auction_status", true); // Tell everyone in the room!
+  });
+
   // Handle disconnects (optional cleanup logic could go here)
   socket.on("disconnect", () => {
     // You could check if an admin disconnected and assign a new one,
@@ -183,9 +199,9 @@ async function initializeGame() {
     GLOBAL_PLAYERS = await Player.find({});
 
     console.log(`Loaded all ${GLOBAL_PLAYERS.length} for the mega auction`);
-
-    server.listen(3001, () => {
-      console.log("SERVER RUNNING ON PORT 3001");
+    const PORT = process.env.PORT || 3001;
+    server.listen(PORT, () => {
+      console.log(`SERVER RUNNING ON PORT ${PORT}`);
     });
   } catch (err) {
     console.log("failed to start server", err);

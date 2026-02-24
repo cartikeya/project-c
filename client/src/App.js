@@ -18,6 +18,7 @@ function App() {
   const [timer, setTimer] = useState(10);
   const [roomId, setRoomId] = useState(null);
   const [inRoom, setInRoom] = useState(null);
+  const [gameStarted, setGameStarted] = useState(false);
 
   useEffect(() => {
     socket.on("room_created", (id) => {
@@ -41,6 +42,7 @@ function App() {
     socket.on("auction_sold", (data) => setSoldInfo(data));
     socket.on("set_admin", (isAdminStatus) => setIsAdmin(isAdminStatus));
     socket.on("timer_update", (time) => setTimer(time));
+    socket.on("auction_status", (status) => setGameStarted(status));
     // cleanup listeners when prevents bugs when component reloads
     return () => {
       socket.off("room_created");
@@ -51,6 +53,7 @@ function App() {
       socket.off("auction_sold");
       socket.off("set_admin");
       socket.off("timer_update");
+      socket.off("auction_status");
     };
   }, []);
 
@@ -71,6 +74,10 @@ function App() {
   };
 
   const nextPlayer = () => socket.emit("next_player", roomId);
+
+  const startGame = () => {
+    socket.emit("start_auction", roomId);
+  };
 
   if (!inRoom) {
     return <Lobby />;
@@ -179,7 +186,54 @@ function App() {
         </div>
       )}
       <br />
-      {isTeamSet && (
+      {isTeamSet && !gameStarted && (
+        // WAITING LOBBY
+        <div
+          style={{
+            marginTop: "40px",
+            padding: "30px",
+            background: "#f8f9fa",
+            borderRadius: "10px",
+            border: "2px dashed #ccc",
+          }}
+        >
+          <h2>⏳ Waiting for players to join...</h2>
+          <p>
+            Current players in room: <strong>{takenTeamNames.length}</strong>
+          </p>
+
+          {isAdmin ? (
+            <button
+              onClick={startGame}
+              style={{
+                padding: "15px 30px",
+                fontSize: "1.2rem",
+                background: "#28a745",
+                color: "white",
+                border: "none",
+                borderRadius: "8px",
+                cursor: "pointer",
+                marginTop: "20px",
+                boxShadow: "0 4px 6px rgba(0,0,0,0.1)",
+              }}
+            >
+              🚀 Start Auction Now
+            </button>
+          ) : (
+            <p
+              style={{ color: "#777", fontStyle: "italic", marginTop: "20px" }}
+            >
+              Waiting for Admin to start the game...
+            </p>
+          )}
+
+          {/* Show who has joined so far */}
+          <div style={{ marginTop: "30px" }}>
+            <SquadOverview teamsData={teamsData} />
+          </div>
+        </div>
+      )}
+      {isTeamSet && gameStarted && (
         <>
           <PlayerCard
             currentPlayer={auctionData.currentPlayer}
