@@ -81,6 +81,39 @@ function Lobby() {
           </button>
         </div>
       </div>
+      <div
+        style={{
+          marginTop: "50px",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        <p style={{ color: "#666", fontSize: "0.95rem", marginBottom: "10px" }}>
+          Built by a B.Tech student. If your squad is enjoying the game,
+          <br />
+          help keep the cloud servers running! ☕
+        </p>
+        <a
+          href="https://www.buymeacoffee.com/YOUR_USERNAME_HERE"
+          target="_blank"
+          rel="noreferrer"
+          style={{ transition: "transform 0.2s ease" }}
+          onMouseOver={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
+          onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")}
+        >
+          <img
+            src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
+            alt="Buy Me A Coffee"
+            style={{
+              height: "50px",
+              width: "180px",
+              borderRadius: "8px",
+              boxShadow: "0 4px 6px rgba(0,0,0,0.1)",
+            }}
+          />
+        </a>
+      </div>
     </div>
   );
 }
