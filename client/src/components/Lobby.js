@@ -95,7 +95,7 @@ function Lobby() {
           help keep the cloud servers running! ☕
         </p>
         <a
-          href="https://www.buymeacoffee.com/YOUR_USERNAME_HERE"
+          href="https://www.buymeacoffee.com/cartikeya"
           target="_blank"
           rel="noreferrer"
           style={{ transition: "transform 0.2s ease" }}
