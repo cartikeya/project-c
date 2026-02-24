@@ -17,8 +17,6 @@ const io = new Server(server, {
   },
 });
 let GLOBAL_PLAYERS = [];
-let playerIndex = 0;
-let teams = {};
 
 const activeGames = {};
 function generateRoomCode() {
@@ -55,7 +53,7 @@ function processSale(roomId) {
   if (winner !== "No one yet" && game.teams[winner]) {
     game.teams[winner].budget -= price;
     game.teams[winner].squad.push(justSoldPlayer);
-    io.to(roomId).emit("update_teams", teams); // Update everyone's wallets
+    io.to(roomId).emit("update_teams", game.teams); // Update everyone's wallets
   }
   io.to(roomId).emit("auction_sold", {
     winner: winner !== "No one yet" ? `${winner} (₹${price}Lakhs)` : "UNSOLD",
@@ -66,7 +64,7 @@ function processSale(roomId) {
     game.playerIndex = (game.playerIndex + 1) % GLOBAL_PLAYERS.length; // Cycle loop
     const nextPlayer = GLOBAL_PLAYERS[game.playerIndex];
     //resetting for new player
-    auctionState = {
+    game.auctionState = {
       currentBid: nextPlayer.basePrice || 50,
       currentLeader: "No one yet",
       currentPlayer: nextPlayer,
@@ -84,14 +82,6 @@ function processSale(roomId) {
     }
   }, 5000);
 }
-
-let timer = 10;
-let countdownInterval = null;
-let isTimerRunning = false;
-let hasAuctionStarted = false;
-let isTransitioning = false;
-
-let adminSocketID = null; //tracking admin id
 
 io.on("connection", (socket) => {
   console.log(`User Connected: ${socket.id}`);
@@ -182,6 +172,7 @@ io.on("connection", (socket) => {
   socket.on("disconnect", () => {
     // You could check if an admin disconnected and assign a new one,
     // or delete empty rooms to save server memory!
+    console.log(`User Disconnected: ${socket.id}`);
   });
 });
 

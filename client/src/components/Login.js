@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { socket } from "../socket";
 
-function Login({ setMyTeamName, handleSetTeam, takenTeamNames }) {
+function Login({ setMyTeamName, handleSetTeam, takenTeamNames, roomId }) {
   const names = [
     "CSK",
     "MI",
@@ -19,10 +19,9 @@ function Login({ setMyTeamName, handleSetTeam, takenTeamNames }) {
   const handleJoinClick = () => {
     if (!selected) return;
 
-    socket.emit("join_game", selected);
+    socket.emit("join_game", { teamName: selected, roomId: roomId });
 
     setMyTeamName(selected);
-
     handleSetTeam();
   };
 
