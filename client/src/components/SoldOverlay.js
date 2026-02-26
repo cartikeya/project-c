@@ -20,19 +20,8 @@ function SoldOverlay({ auctionData }) {
         animation: "fadeIn 0.3s ease-in-out",
       }}
     >
-      <h1
-        style={{
-          fontSize: "5rem",
-          margin: 0,
-          color: "#ffeb3b",
-          textShadow: "0 0 20px red",
-        }}
-      >
-        SOLD!
-      </h1>
-
       <div style={{ marginTop: "20px", textAlign: "center" }}>
-        <img
+        {/* <img
           src={currentPlayer.img}
           alt="Player"
           style={{
@@ -41,7 +30,7 @@ function SoldOverlay({ auctionData }) {
             borderRadius: "50%",
             border: "5px solid white",
           }}
-        />
+        /> */}
         <h2 style={{ fontSize: "3rem", margin: "10px 0" }}>
           {currentPlayer.name}
         </h2>

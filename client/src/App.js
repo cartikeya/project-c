@@ -7,6 +7,7 @@ import PlayerCard from "./components/PlayerCard";
 import SoldOverlay from "./components/SoldOverlay";
 import SquadOverview from "./components/SquadOverview";
 import Lobby from "./components/Lobby";
+import PlayerPool from "./components/PlayerPool";
 
 function App() {
   const [auctionData, setAuctionData] = useState(null);
@@ -19,6 +20,7 @@ function App() {
   const [roomId, setRoomId] = useState(null);
   const [inRoom, setInRoom] = useState(null);
   const [gameStarted, setGameStarted] = useState(false);
+  const [playersList, setPlayersList] = useState([]);
 
   useEffect(() => {
     socket.on("room_created", (id) => {
@@ -43,6 +45,7 @@ function App() {
     socket.on("set_admin", (isAdminStatus) => setIsAdmin(isAdminStatus));
     socket.on("timer_update", (time) => setTimer(time));
     socket.on("auction_status", (status) => setGameStarted(status));
+    socket.on("players_list", (list) => setPlayersList(list));
     // cleanup listeners when prevents bugs when component reloads
     return () => {
       socket.off("room_created");
@@ -54,6 +57,7 @@ function App() {
       socket.off("set_admin");
       socket.off("timer_update");
       socket.off("auction_status");
+      socket.off("players_list");
     };
   }, []);
 
@@ -231,6 +235,10 @@ function App() {
           <div style={{ marginTop: "30px" }}>
             <SquadOverview teamsData={teamsData} />
           </div>
+          {/* Add the Pool here too so they can strategize! */}
+          <div style={{ marginTop: "30px" }}>
+            <PlayerPool playersList={playersList} currentPlayer={null} />
+          </div>
         </div>
       )}
       {isTeamSet && gameStarted && (
@@ -259,6 +267,10 @@ function App() {
           )}
 
           <SquadOverview teamsData={teamsData} />
+          <PlayerPool
+            playersList={playersList}
+            currentPlayer={auctionData.currentPlayer}
+          />
         </>
       )}
     </div>

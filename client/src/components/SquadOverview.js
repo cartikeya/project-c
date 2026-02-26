@@ -1,102 +1,144 @@
+// client/src/components/SquadOverview.js
 import React from "react";
 
-function SquadOverview({ teamsData }) {
-  const teamNames = Object.keys(teamsData);
-  if (teamNames.length === 0) {
-    return (
-      <div style={{ color: "#777", marginTop: "20px" }}>No teams joined</div>
-    );
+// --- NEW: Helper function to convert Lakhs to Crores visually ---
+const formatPrice = (amount) => {
+  if (amount === undefined || amount === null) return "???";
+  if (amount >= 100) {
+    return `₹ ${amount / 100} Cr`; // e.g., 150 becomes 1.5 Cr
   }
+  return `₹ ${amount} L`;
+};
+
+function SquadOverview({ teamsData }) {
+  if (!teamsData || Object.keys(teamsData).length === 0) return null;
+
   return (
     <div
       style={{
-        marginTop: "40px",
-        borderTop: "2px solid #eee",
-        paddingTop: "20px",
+        marginTop: "30px",
+        padding: "20px",
+        background: "#fff",
+        borderRadius: "10px",
+        border: "1px solid #ddd",
+        boxShadow: "0 4px 8px rgba(0,0,0,0.05)",
       }}
     >
-      <h2>Tournament status</h2>
+      <h3
+        style={{
+          borderBottom: "2px solid #eee",
+          paddingBottom: "10px",
+          marginTop: "0",
+        }}
+      >
+        🏆 Team Squads & Spending
+      </h3>
+
       <div
         style={{
           display: "flex",
           flexWrap: "wrap",
-          justifyContent: "center",
           gap: "20px",
+          justifyContent: "center",
+          marginTop: "20px",
         }}
       >
-        {teamNames.map((teamName) => {
-          const team = teamsData[teamName];
-          return (
-            <div
-              key={teamName}
+        {Object.entries(teamsData).map(([teamName, teamInfo]) => (
+          <div
+            key={teamName}
+            style={{
+              border: "1px solid #ccc",
+              padding: "15px",
+              borderRadius: "8px",
+              minWidth: "220px",
+              background: "#f9f9f9",
+              flex: "1 1 200px",
+              maxWidth: "300px",
+            }}
+          >
+            <h4
               style={{
-                border: "1px solid #ddd",
-                borderRadius: "8px",
-                width: "250px",
-                padding: "15px",
-                backgroundColor: "#f8f9fa",
-                boxShadow: "0 2px 4px rgba(0,0,0,0.05)",
-                textAlign: "left",
+                margin: "0 0 10px 0",
+                color: "#333",
+                fontSize: "1.2rem",
+                textAlign: "center",
               }}
             >
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                  marginBlock: "10px",
-                }}
-              >
-                <h3 style={{ margin: 0, color: "#333" }}>{teamName}</h3>
-                <span
-                  style={{
-                    backgroundColor: team.budget < 200 ? "#dc3545" : "#28a745",
-                    color: "white",
-                    padding: "2px 8px ",
-                    borderRadius: "12px",
-                    fontSize: "0.8rem",
-                  }}
-                >
-                  ₹{team.budget / 100}Cr
-                </span>
-              </div>
-              <hr style={{ borderColor: "#ccc" }} />
-              <h4
-                style={{
-                  fontSize: "0.9rem",
-                  color: "#666",
-                  margin: "10px 0 5px 0",
-                }}
-              >
-                Squad: ({team.squad.length})
-              </h4>
+              {teamName}
+            </h4>
 
-              {team.squad.length === 0 ? (
-                <p
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                marginBottom: "10px",
+                fontWeight: "bold",
+                color: "#28a745",
+              }}
+            >
+              <span>Purse:</span>
+              {/* Apply the formatter to the team's remaining budget */}
+              <span>{formatPrice(teamInfo.budget)}</span>
+            </div>
+
+            <hr style={{ borderColor: "#ddd" }} />
+
+            <ul style={{ listStyleType: "none", padding: 0, margin: 0 }}>
+              {teamInfo.squad.length === 0 ? (
+                <li
                   style={{
-                    fontSize: "0.8rem",
-                    color: "#999",
-                    fontFamily: "italic",
+                    color: "#888",
+                    fontStyle: "italic",
+                    fontSize: "0.9rem",
+                    textAlign: "center",
+                    padding: "10px 0",
                   }}
                 >
-                  No players yet
-                </p>
+                  No players bought yet
+                </li>
               ) : (
-                <ul style={{ paddingLeft: "20px", margin: 0 }}>
-                  {team.squad.map((player, idx) => (
-                    <li
-                      key={idx}
-                      style={{ fontsize: "0.85rem", marginBottom: "4px" }}
+                teamInfo.squad.map((player, idx) => (
+                  <li
+                    key={idx}
+                    style={{
+                      fontSize: "0.95rem",
+                      padding: "8px 0",
+                      borderBottom: "1px solid #eee",
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                    }}
+                  >
+                    <span
+                      style={{
+                        fontWeight: "500",
+                        whiteSpace: "nowrap",
+                        overflow: "hidden",
+                        textOverflow: "ellipsis",
+                        maxWidth: "130px",
+                      }}
                     >
-                      <strong>{player.name}</strong>
-                      <span style={{ color: "#555" }}>({player.role})</span>
-                    </li>
-                  ))}
-                </ul>
+                      {player.name}
+                    </span>
+                    <span
+                      style={{
+                        fontWeight: "bold",
+                        color: "#d32f2f",
+                        backgroundColor: "#ffebee",
+                        padding: "2px 6px",
+                        borderRadius: "4px",
+                        fontSize: "0.85rem",
+                      }}
+                    >
+                      {/* Apply the formatter to the player's sold price */}
+                      {formatPrice(player.soldPrice)}
+                    </span>
+                  </li>
+                ))
               )}
-            </div>
-          );
-        })}
+            </ul>
+          </div>
+        ))}
       </div>
     </div>
   );

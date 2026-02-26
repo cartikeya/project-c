@@ -52,7 +52,9 @@ function processSale(roomId) {
   const justSoldPlayer = game.auctionState.currentPlayer;
   if (winner !== "No one yet" && game.teams[winner]) {
     game.teams[winner].budget -= price;
-    game.teams[winner].squad.push(justSoldPlayer);
+
+    const boughtPlayer = { ...justSoldPlayer, soldPrice: price };
+    game.teams[winner].squad.push(boughtPlayer);
     io.to(roomId).emit("update_teams", game.teams); // Update everyone's wallets
   }
   io.to(roomId).emit("auction_sold", {
@@ -117,6 +119,7 @@ io.on("connection", (socket) => {
     socket.emit("update_auction", activeGames[roomId].auctionState);
     socket.emit("update_teams", activeGames[roomId].teams);
     socket.emit("timer_update", activeGames[roomId].timer);
+    socket.emit("players_list", GLOBAL_PLAYERS);
   });
   socket.on("join_room", (roomId) => {
     const game = activeGames[roomId];
@@ -128,6 +131,7 @@ io.on("connection", (socket) => {
       socket.emit("update_teams", game.teams);
       socket.emit("timer_update", game.timer);
       socket.emit("auction_status", game.gameStarted);
+      socket.emit("players_list", GLOBAL_PLAYERS);
     } else {
       socket.emit("error_message", "Room not found!");
     }
@@ -196,7 +200,7 @@ async function initializeGame() {
   try {
     await mongoose.connect(process.env.MONGO_URI);
     console.log("CONNECTED TO MONGODB ATLAS!");
-    GLOBAL_PLAYERS = await Player.find({});
+    GLOBAL_PLAYERS = await Player.find({}).lean();
 
     console.log(`Loaded all ${GLOBAL_PLAYERS.length} for the mega auction`);
     const PORT = process.env.PORT || 3001;
