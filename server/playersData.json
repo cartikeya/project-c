@@ -3,7 +3,7 @@
     "name": "Axar Patel",
     "player style": "Allrounder",
     "nationality": "India",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "100.0",
     "final price (in lacs)": "900.0",
     "franchise": "DC",
     "status": "RETAINED"
@@ -12,7 +12,7 @@
     "name": "Rishabh Pant",
     "player style": "WK-Batter",
     "nationality": "India",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "200.0",
     "final price (in lacs)": "1600.0",
     "franchise": "DC",
     "status": "RETAINED"
@@ -21,7 +21,7 @@
     "name": "Ruturaj Gaikwad",
     "player style": "Batter",
     "nationality": "India",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "50.0",
     "final price (in lacs)": "600.0",
     "franchise": "CSK",
     "status": "RETAINED"
@@ -30,7 +30,7 @@
     "name": "Moeen Ali",
     "player style": "Allrounder",
     "nationality": "England",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "100.0",
     "final price (in lacs)": "800.0",
     "franchise": "CSK",
     "status": "RETAINED"
@@ -39,16 +39,52 @@
     "name": "MS Dhoni",
     "player style": "WK-Batter",
     "nationality": "India",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "200.0",
     "final price (in lacs)": "1200.0",
     "franchise": "CSK",
     "status": "RETAINED"
   },
   {
+    "name": "Sanjay varma chintalapati",
+    "player style": "Allrounder",
+    "nationality": "India",
+    "base price (in lacs)": "50.0",
+    "final price (in lacs)": "100.0",
+    "franchise": "",
+    "status": "UNSOLD"
+  },
+  {
+    "name": "Mukesh DIVI",
+    "player style": "Batter",
+    "nationality": "India",
+    "base price (in lacs)": "20.0",
+    "final price (in lacs)": "100.0",
+    "franchise": "",
+    "status": "UNSOLD"
+  },
+  {
+    "name": "pradeep TUNGA",
+    "player style": "Batter",
+    "nationality": "India",
+    "base price (in lacs)": "20.0",
+    "final price (in lacs)": "100.0",
+    "franchise": "",
+    "status": "UNSOLD"
+  },
+  {
+    "name": "Cartikeya lavu",
+    "player style": "Batter",
+    "nationality": "India",
+    "base price (in lacs)": "20.0",
+    "final price (in lacs)": "100.0",
+    "franchise": "",
+    "status": "UNSOLD"
+  },
+  {
     "name": "Prithvi Shaw",
     "player style": "Batter",
     "nationality": "India",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "50.0",
     "final price (in lacs)": "750.0",
     "franchise": "DC",
     "status": "RETAINED"
@@ -57,7 +93,7 @@
     "name": "Anrich Nortje",
     "player style": "Bowler",
     "nationality": "South Africa",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "50.0",
     "final price (in lacs)": "650.0",
     "franchise": "DC",
     "status": "RETAINED"
@@ -66,7 +102,7 @@
     "name": "Hardik Pandya",
     "player style": "Allrounder",
     "nationality": "India",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "200.0",
     "final price (in lacs)": "1500.0",
     "franchise": "GT",
     "status": "RETAINED"
@@ -75,7 +111,7 @@
     "name": "Rashid Khan",
     "player style": "Bowler",
     "nationality": "Afghanistan",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "150.0",
     "final price (in lacs)": "1500.0",
     "franchise": "GT",
     "status": "RETAINED"
@@ -84,7 +120,7 @@
     "name": "Shubman Gill",
     "player style": "Batter",
     "nationality": "India",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "50.0",
     "final price (in lacs)": "800.0",
     "franchise": "GT",
     "status": "RETAINED"
@@ -93,7 +129,7 @@
     "name": "Andre Russell",
     "player style": "Allrounder",
     "nationality": "West Indies",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "200.0",
     "final price (in lacs)": "1200.0",
     "franchise": "KKR",
     "status": "RETAINED"
@@ -102,7 +138,7 @@
     "name": "Varun Chakaravarthy",
     "player style": "Bowler",
     "nationality": "India",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "200.0",
     "final price (in lacs)": "800.0",
     "franchise": "KKR",
     "status": "RETAINED"
@@ -111,7 +147,7 @@
     "name": "Ravindra Jadeja",
     "player style": "Allrounder",
     "nationality": "India",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "200.0",
     "final price (in lacs)": "1600.0",
     "franchise": "CSK",
     "status": "RETAINED"
@@ -120,7 +156,7 @@
     "name": "Venkatesh Iyer",
     "player style": "Allrounder",
     "nationality": "India",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "50.0",
     "final price (in lacs)": "800.0",
     "franchise": "KKR",
     "status": "RETAINED"
@@ -129,7 +165,7 @@
     "name": "Sunil Narine",
     "player style": "Allrounder",
     "nationality": "West Indies",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "100.0",
     "final price (in lacs)": "600.0",
     "franchise": "KKR",
     "status": "RETAINED"
@@ -138,7 +174,7 @@
     "name": "Marcus Stoinis",
     "player style": "Allrounder",
     "nationality": "Australia",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "100.0",
     "final price (in lacs)": "919.9999999999999",
     "franchise": "LSG",
     "status": "RETAINED"
@@ -147,7 +183,7 @@
     "name": "KL Rahul",
     "player style": "WK-Batter",
     "nationality": "India",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "200.0",
     "final price (in lacs)": "1700.0",
     "franchise": "LSG",
     "status": "RETAINED"
@@ -156,7 +192,7 @@
     "name": "Dwaine Pretorius",
     "player style": "Allrounder",
     "nationality": "South Africa",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "50.0",
     "final price (in lacs)": "50.0",
     "franchise": "CSK",
     "status": "RETAINED"
@@ -165,7 +201,7 @@
     "name": "Rohit Sharma",
     "player style": "Batter",
     "nationality": "India",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "200.0",
     "final price (in lacs)": "1600.0",
     "franchise": "MI",
     "status": "RETAINED"
@@ -174,7 +210,7 @@
     "name": "Akash Deep",
     "player style": "Bowler",
     "nationality": "India",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "20.0",
     "final price (in lacs)": "20.0",
     "franchise": "RCB",
     "status": "RETAINED"
@@ -183,7 +219,7 @@
     "name": "Jasprit Bumrah",
     "player style": "Bowler",
     "nationality": "India",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "200.0",
     "final price (in lacs)": "1200.0",
     "franchise": "MI",
     "status": "RETAINED"
@@ -192,7 +228,7 @@
     "name": "Suryakumar Yadav",
     "player style": "Batter",
     "nationality": "India",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "200.0",
     "final price (in lacs)": "800.0",
     "franchise": "MI",
     "status": "RETAINED"
@@ -201,7 +237,7 @@
     "name": "Arshdeep Singh",
     "player style": "Bowler",
     "nationality": "India",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "200.0",
     "final price (in lacs)": "400.0",
     "franchise": "PBKS",
     "status": "RETAINED"
@@ -210,7 +246,7 @@
     "name": "Sanju Samson",
     "player style": "WK-Batter",
     "nationality": "India",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "100.0",
     "final price (in lacs)": "1400.0",
     "franchise": "RR",
     "status": "RETAINED"
@@ -219,7 +255,7 @@
     "name": "Jos Buttler",
     "player style": "WK-Batter",
     "nationality": "England",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "100.0",
     "final price (in lacs)": "1000.0",
     "franchise": "RR",
     "status": "RETAINED"
@@ -228,7 +264,7 @@
     "name": "Yashasvi Jaiswal",
     "player style": "Batter",
     "nationality": "India",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "50.0",
     "final price (in lacs)": "400.0",
     "franchise": "RR",
     "status": "RETAINED"
@@ -237,7 +273,7 @@
     "name": "Virat Kohli",
     "player style": "Batter",
     "nationality": "India",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "300.0",
     "final price (in lacs)": "1500.0",
     "franchise": "RCB",
     "status": "RETAINED"
@@ -246,7 +282,7 @@
     "name": "Glenn Maxwell",
     "player style": "Allrounder",
     "nationality": "Australia",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "50.0",
     "final price (in lacs)": "1100.0",
     "franchise": "RCB",
     "status": "RETAINED"
@@ -255,7 +291,7 @@
     "name": "Mohammed Siraj",
     "player style": "Bowler",
     "nationality": "India",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "200.0",
     "final price (in lacs)": "700.0",
     "franchise": "RCB",
     "status": "RETAINED"
@@ -264,7 +300,7 @@
     "name": "Ravichandran Ashwin",
     "player style": "Allrounder",
     "nationality": "India",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "50.0",
     "final price (in lacs)": "500.0",
     "franchise": "RR",
     "status": "RETAINED"
@@ -273,7 +309,7 @@
     "name": "Abdul Samad",
     "player style": "Allrounder",
     "nationality": "India",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "50.0",
     "final price (in lacs)": "400.0",
     "franchise": "SRH",
     "status": "RETAINED"
@@ -282,7 +318,7 @@
     "name": "Umran Malik",
     "player style": "Bowler",
     "nationality": "India",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "20.0",
     "final price (in lacs)": "400.0",
     "franchise": "SRH",
     "status": "RETAINED"
@@ -291,7 +327,7 @@
     "name": "Trent Boult",
     "player style": "Bowler",
     "nationality": "New Zealand",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "200.0",
     "final price (in lacs)": "800.0",
     "franchise": "RR",
     "status": "RETAINED"
@@ -300,7 +336,7 @@
     "name": "Quinton de Kock",
     "player style": "WK-Batter",
     "nationality": "South Africa",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "50.0",
     "final price (in lacs)": "675.0",
     "franchise": "LSG",
     "status": "RETAINED"
@@ -309,7 +345,7 @@
     "name": "Shikhar Dhawan",
     "player style": "Batter",
     "nationality": "India",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "200.0",
     "final price (in lacs)": "825.0",
     "franchise": "PBKS",
     "status": "RETAINED"
@@ -318,7 +354,7 @@
     "name": "Faf du Plessis",
     "player style": "Batter",
     "nationality": "South Africa",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "100.0",
     "final price (in lacs)": "700.0",
     "franchise": "RCB",
     "status": "RETAINED"
@@ -327,7 +363,7 @@
     "name": "Shreyas Iyer",
     "player style": "Batter",
     "nationality": "India",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "100.0",
     "final price (in lacs)": "1225.0",
     "franchise": "KKR",
     "status": "RETAINED"
@@ -336,7 +372,7 @@
     "name": "Kagiso Rabada",
     "player style": "Bowler",
     "nationality": "South Africa",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "50.0",
     "final price (in lacs)": "925.0",
     "franchise": "PBKS",
     "status": "RETAINED"
@@ -345,7 +381,7 @@
     "name": "Mohammed Shami",
     "player style": "Bowler",
     "nationality": "India",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "200.0",
     "final price (in lacs)": "625.0",
     "franchise": "GT",
     "status": "RETAINED"
@@ -354,7 +390,7 @@
     "name": "David Warner",
     "player style": "Batter",
     "nationality": "Australia",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "200.0",
     "final price (in lacs)": "625.0",
     "franchise": "DC",
     "status": "RETAINED"
@@ -363,7 +399,7 @@
     "name": "Shimron Hetmyer",
     "player style": "Batter",
     "nationality": "West Indies",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "50.0",
     "final price (in lacs)": "850.0",
     "franchise": "RR",
     "status": "RETAINED"
@@ -372,7 +408,7 @@
     "name": "David Miller",
     "player style": "Batter",
     "nationality": "South Africa",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "50.0",
     "final price (in lacs)": "300.0",
     "franchise": "GT",
     "status": "RETAINED"
@@ -381,7 +417,7 @@
     "name": "Devdutt Padikkal",
     "player style": "Batter",
     "nationality": "India",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "50.0",
     "final price (in lacs)": "775.0",
     "franchise": "RR",
     "status": "RETAINED"
@@ -390,7 +426,7 @@
     "name": "Wanindu Hasaranga",
     "player style": "Allrounder",
     "nationality": "Sri Lanka",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "50.0",
     "final price (in lacs)": "1075.0",
     "franchise": "RCB",
     "status": "RETAINED"
@@ -399,7 +435,7 @@
     "name": "Kuldip Yadav",
     "player style": "Bowler",
     "nationality": "India",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "200.0",
     "final price (in lacs)": "20.0",
     "franchise": "RR",
     "status": "RETAINED"
@@ -417,7 +453,7 @@
     "name": "Arjun Tendulkar",
     "player style": "Allrounder",
     "nationality": "India",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "200.0",
     "final price (in lacs)": "30.0",
     "franchise": "MI",
     "status": "RETAINED"
@@ -426,7 +462,7 @@
     "name": "Kyle Mayers",
     "player style": "Allrounder",
     "nationality": "West Indies",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "50.0",
     "final price (in lacs)": "50.0",
     "franchise": "LSG",
     "status": "RETAINED"
@@ -435,7 +471,7 @@
     "name": "Aiden Markram",
     "player style": "Batter",
     "nationality": "South Africa",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "50.0",
     "final price (in lacs)": "260.0",
     "franchise": "SRH",
     "status": "RETAINED"
@@ -453,7 +489,7 @@
     "name": "Lalit Yadav",
     "player style": "Allrounder",
     "nationality": "India",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "20.0",
     "final price (in lacs)": "65.0",
     "franchise": "DC",
     "status": "RETAINED"
@@ -471,7 +507,7 @@
     "name": "Shivam Dube",
     "player style": "Allrounder",
     "nationality": "India",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "100.0",
     "final price (in lacs)": "400.0",
     "franchise": "CSK",
     "status": "RETAINED"
@@ -480,7 +516,7 @@
     "name": "Karan Sharma",
     "player style": "Allrounder",
     "nationality": "India",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "20.0",
     "final price (in lacs)": "20.0",
     "franchise": "LSG",
     "status": "RETAINED"
@@ -489,7 +525,7 @@
     "name": "Krishnappa Gowtham",
     "player style": "Allrounder",
     "nationality": "India",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "50.0",
     "final price (in lacs)": "90.0",
     "franchise": "LSG",
     "status": "RETAINED"
@@ -498,7 +534,7 @@
     "name": "Marco Jansen",
     "player style": "Allrounder",
     "nationality": "South Africa",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "50.0",
     "final price (in lacs)": "420.0",
     "franchise": "SRH",
     "status": "RETAINED"
@@ -516,7 +552,7 @@
     "name": "Liam Livingstone",
     "player style": "Allrounder",
     "nationality": "England",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "100.0",
     "final price (in lacs)": "1150.0",
     "franchise": "PBKS",
     "status": "RETAINED"
@@ -525,7 +561,7 @@
     "name": "Vijay Shankar",
     "player style": "Allrounder",
     "nationality": "India",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "200.0",
     "final price (in lacs)": "140.0",
     "franchise": "GT",
     "status": "RETAINED"
@@ -543,7 +579,7 @@
     "name": "Khaleel Ahmed",
     "player style": "Bowler",
     "nationality": "India",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "100.0",
     "final price (in lacs)": "525.0",
     "franchise": "DC",
     "status": "RETAINED"
@@ -552,7 +588,7 @@
     "name": "Lungi Ngidi",
     "player style": "Bowler",
     "nationality": "South Africa",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "50.0",
     "final price (in lacs)": "50.0",
     "franchise": "DC",
     "status": "RETAINED"
@@ -561,7 +597,7 @@
     "name": "Navdeep Saini",
     "player style": "Bowler",
     "nationality": "India",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "50.0",
     "final price (in lacs)": "260.0",
     "franchise": "RR",
     "status": "RETAINED"
@@ -570,7 +606,7 @@
     "name": "Chetan Sakariya",
     "player style": "Bowler",
     "nationality": "India",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "20.0",
     "final price (in lacs)": "420.0",
     "franchise": "DC",
     "status": "RETAINED"
@@ -588,7 +624,7 @@
     "name": "Mitchell Marsh",
     "player style": "Allrounder",
     "nationality": "Australia",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "100.0",
     "final price (in lacs)": "650.0",
     "franchise": "DC",
     "status": "RETAINED"
@@ -597,7 +633,7 @@
     "name": "Maheesh Theekshana",
     "player style": "Bowler",
     "nationality": "Sri Lanka",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "50.0",
     "final price (in lacs)": "70.0",
     "franchise": "CSK",
     "status": "RETAINED"
@@ -606,7 +642,7 @@
     "name": "Krunal Pandya",
     "player style": "Allrounder",
     "nationality": "India",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "100.0",
     "final price (in lacs)": "825.0",
     "franchise": "LSG",
     "status": "RETAINED"
@@ -615,7 +651,7 @@
     "name": "Harshal Patel",
     "player style": "Bowler",
     "nationality": "India",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "50.0",
     "final price (in lacs)": "1075.0",
     "franchise": "RCB",
     "status": "RETAINED"
@@ -624,7 +660,7 @@
     "name": "Rinku Singh",
     "player style": "Batter",
     "nationality": "India",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "200.0",
     "final price (in lacs)": "55.0",
     "franchise": "KKR",
     "status": "RETAINED"
@@ -633,7 +669,7 @@
     "name": "Nitish Rana",
     "player style": "Allrounder",
     "nationality": "India",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "50.0",
     "final price (in lacs)": "800.0",
     "franchise": "KKR",
     "status": "RETAINED"
@@ -660,7 +696,7 @@
     "name": "Washington Sundar",
     "player style": "Allrounder",
     "nationality": "India",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "50.0",
     "final price (in lacs)": "875.0",
     "franchise": "SRH",
     "status": "RETAINED"
@@ -669,7 +705,7 @@
     "name": "Jonny Bairstow",
     "player style": "WK-Batter",
     "nationality": "England",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "50.0",
     "final price (in lacs)": "675.0",
     "franchise": "PBKS",
     "status": "RETAINED"
@@ -687,7 +723,7 @@
     "name": "Dinesh Karthik",
     "player style": "WK-Batter",
     "nationality": "India",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "200.0",
     "final price (in lacs)": "550.0",
     "franchise": "RCB",
     "status": "RETAINED"
@@ -705,7 +741,7 @@
     "name": "Ishan Kishan",
     "player style": "WK-Batter",
     "nationality": "India",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "200.0",
     "final price (in lacs)": "1525.0",
     "franchise": "MI",
     "status": "RETAINED"
@@ -723,7 +759,7 @@
     "name": "Ambati Rayudu",
     "player style": "WK-Batter",
     "nationality": "India",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "50.0",
     "final price (in lacs)": "675.0",
     "franchise": "CSK",
     "status": "RETAINED"
@@ -738,10 +774,38 @@
     "status": "RETAINED"
   },
   {
+    "name": "Joe Root",
+    "player style": "Batter",
+    "nationality": "England",
+    "base price (in lacs)": "100.0",
+    "final price (in lacs)": "100.0",
+    "franchise": "RR",
+    "status": "SOLD"
+  },
+
+  {
+    "name": "Shakib Al Hasan",
+    "player style": "Allrounder",
+    "nationality": "Bangladesh",
+    "base price (in lacs)": "150.0",
+    "final price (in lacs)": "150.0",
+    "franchise": "KKR",
+    "status": "SOLD"
+  },
+  {
+    "name": "Harshit Rana",
+    "player style": "Bowler",
+    "nationality": "India",
+    "base price (in lacs)": "",
+    "final price (in lacs)": "20.0",
+    "franchise": "KKR",
+    "status": "RETAINED"
+  },
+  {
     "name": "Wriddhiman Saha",
     "player style": "WK-Batter",
     "nationality": "India",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "50.0",
     "final price (in lacs)": "190.0",
     "franchise": "GT",
     "status": "RETAINED"
@@ -750,7 +814,7 @@
     "name": "Matthew Wade",
     "player style": "WK-Batter",
     "nationality": "Australia",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "50.0",
     "final price (in lacs)": "240.0",
     "franchise": "GT",
     "status": "RETAINED"
@@ -768,7 +832,7 @@
     "name": "Deepak Chahar",
     "player style": "Bowler",
     "nationality": "India",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "100.0",
     "final price (in lacs)": "1400.0",
     "franchise": "CSK",
     "status": "RETAINED"
@@ -786,7 +850,7 @@
     "name": "Tilak Varma",
     "player style": "Batter",
     "nationality": "India",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "100.0",
     "final price (in lacs)": "170.0",
     "franchise": "MI",
     "status": "RETAINED"
@@ -804,7 +868,7 @@
     "name": "Yash Dayal",
     "player style": "Bowler",
     "nationality": "India",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "50.0",
     "final price (in lacs)": "320.0",
     "franchise": "GT",
     "status": "RETAINED"
@@ -813,7 +877,7 @@
     "name": "Josh Hazlewood",
     "player style": "Bowler",
     "nationality": "Australia",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "200.0",
     "final price (in lacs)": "775.0",
     "franchise": "RCB",
     "status": "RETAINED"
@@ -822,7 +886,7 @@
     "name": "Noor Ahmad",
     "player style": "Bowler",
     "nationality": "Afghanistan",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "20.0",
     "final price (in lacs)": "30.0",
     "franchise": "GT",
     "status": "RETAINED"
@@ -831,7 +895,7 @@
     "name": "Prasidh Krishna",
     "player style": "Bowler",
     "nationality": "India",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "100.0",
     "final price (in lacs)": "1000.0",
     "franchise": "RR",
     "status": "RETAINED"
@@ -840,7 +904,7 @@
     "name": "Bhuvneshwar Kumar",
     "player style": "Bowler",
     "nationality": "India",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "300.0",
     "final price (in lacs)": "420.0",
     "franchise": "SRH",
     "status": "RETAINED"
@@ -867,7 +931,7 @@
     "name": "T Natarajan",
     "player style": "Bowler",
     "nationality": "India",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "20.0",
     "final price (in lacs)": "400.0",
     "franchise": "SRH",
     "status": "RETAINED"
@@ -912,7 +976,7 @@
     "name": "Finn Allen",
     "player style": "WK-Batter",
     "nationality": "New Zealand",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "50.0",
     "final price (in lacs)": "80.0",
     "franchise": "RCB",
     "status": "RETAINED"
@@ -930,7 +994,7 @@
     "name": "Devon Conway",
     "player style": "Batter",
     "nationality": "New Zealand",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "50.0",
     "final price (in lacs)": "100.0",
     "franchise": "CSK",
     "status": "RETAINED"
@@ -948,7 +1012,7 @@
     "name": "Rovman Powell",
     "player style": "Batter",
     "nationality": "West Indies",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "100.0",
     "final price (in lacs)": "280.0",
     "franchise": "DC",
     "status": "RETAINED"
@@ -957,7 +1021,7 @@
     "name": "Alzarri Joseph",
     "player style": "Bowler",
     "nationality": "West Indies",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "20.0",
     "final price (in lacs)": "240.0",
     "franchise": "GT",
     "status": "RETAINED"
@@ -966,7 +1030,7 @@
     "name": "Jofra Archer",
     "player style": "Bowler",
     "nationality": "England",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "100.0",
     "final price (in lacs)": "800.0",
     "franchise": "MI",
     "status": "RETAINED"
@@ -975,7 +1039,7 @@
     "name": "Tim Southee",
     "player style": "Bowler",
     "nationality": "New Zealand",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "100.0",
     "final price (in lacs)": "150.0",
     "franchise": "KKR",
     "status": "RETAINED"
@@ -1002,7 +1066,7 @@
     "name": "Mitchell Santner",
     "player style": "Allrounder",
     "nationality": "New Zealand",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "50.0",
     "final price (in lacs)": "190.0",
     "franchise": "CSK",
     "status": "RETAINED"
@@ -1011,7 +1075,7 @@
     "name": "Glenn Phillips",
     "player style": "WK-Batter",
     "nationality": "New Zealand",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "50.0",
     "final price (in lacs)": "150.0",
     "franchise": "SRH",
     "status": "RETAINED"
@@ -1029,7 +1093,7 @@
     "name": "Avesh Khan",
     "player style": "Bowler",
     "nationality": "India",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "50.0",
     "final price (in lacs)": "1000.0",
     "franchise": "LSG",
     "status": "RETAINED"
@@ -1056,7 +1120,7 @@
     "name": "Mustafizur Rahman",
     "player style": "Bowler",
     "nationality": "Bangladesh",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "50.0",
     "final price (in lacs)": "200.0",
     "franchise": "DC",
     "status": "RETAINED"
@@ -1092,7 +1156,7 @@
     "name": "Jitesh Sharma",
     "player style": "WK-Batter",
     "nationality": "India",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "20.0",
     "final price (in lacs)": "20.0",
     "franchise": "PBKS",
     "status": "RETAINED"
@@ -1101,7 +1165,7 @@
     "name": "Mark Wood",
     "player style": "Bowler",
     "nationality": "England",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "30.0",
     "final price (in lacs)": "750.0",
     "franchise": "LSG",
     "status": "RETAINED"
@@ -1119,7 +1183,7 @@
     "name": "Yuzvendra Chahal",
     "player style": "Bowler",
     "nationality": "India",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "100.0",
     "final price (in lacs)": "650.0",
     "franchise": "RR",
     "status": "RETAINED"
@@ -1128,7 +1192,7 @@
     "name": "Rahul Chahar",
     "player style": "Bowler",
     "nationality": "India",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "50.0",
     "final price (in lacs)": "525.0",
     "franchise": "PBKS",
     "status": "RETAINED"
@@ -1146,7 +1210,7 @@
     "name": "Rahul Tewatia",
     "player style": "Allrounder",
     "nationality": "India",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "20.0",
     "final price (in lacs)": "900.0",
     "franchise": "GT",
     "status": "RETAINED"
@@ -1155,7 +1219,7 @@
     "name": "Abhishek Sharma",
     "player style": "Allrounder",
     "nationality": "India",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "200.0",
     "final price (in lacs)": "650.0",
     "franchise": "SRH",
     "status": "RETAINED"
@@ -1164,7 +1228,7 @@
     "name": "Riyan Parag",
     "player style": "Allrounder",
     "nationality": "India",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "100.0",
     "final price (in lacs)": "380.0",
     "franchise": "RR",
     "status": "RETAINED"
@@ -1227,7 +1291,7 @@
     "name": "Kuldeep Yadav",
     "player style": "Bowler",
     "nationality": "India",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "200.0",
     "final price (in lacs)": "200.0",
     "franchise": "DC",
     "status": "RETAINED"
@@ -1236,7 +1300,7 @@
     "name": "Sarfaraz Khan",
     "player style": "Batter",
     "nationality": "India",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "50.0",
     "final price (in lacs)": "20.0",
     "franchise": "DC",
     "status": "RETAINED"
@@ -1245,7 +1309,7 @@
     "name": "Sai Sudharsan",
     "player style": "Batter",
     "nationality": "India",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "20.0",
     "final price (in lacs)": "20.0",
     "franchise": "GT",
     "status": "RETAINED"
@@ -1272,7 +1336,7 @@
     "name": "Tim David",
     "player style": "Allrounder",
     "nationality": "Singapore",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "50.0",
     "final price (in lacs)": "825.0",
     "franchise": "MI",
     "status": "RETAINED"
@@ -1290,7 +1354,7 @@
     "name": "Dhruv Jurel",
     "player style": "WK-Batter",
     "nationality": "India",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "50.0",
     "final price (in lacs)": "20.0",
     "franchise": "RR",
     "status": "RETAINED"
@@ -1299,7 +1363,7 @@
     "name": "Deepak Hooda",
     "player style": "Allrounder",
     "nationality": "India",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "20.0",
     "final price (in lacs)": "575.0",
     "franchise": "LSG",
     "status": "RETAINED"
@@ -1308,7 +1372,7 @@
     "name": "Dewald Brevis",
     "player style": "Batter",
     "nationality": "South Africa",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "100.0",
     "final price (in lacs)": "300.0",
     "franchise": "MI",
     "status": "RETAINED"
@@ -1380,7 +1444,7 @@
     "name": "Ravi Bishnoi",
     "player style": "Bowler",
     "nationality": "India",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "100.0",
     "final price (in lacs)": "400.0",
     "franchise": "LSG",
     "status": "RETAINED"
@@ -1389,7 +1453,7 @@
     "name": "Tristan Stubbs",
     "player style": "WK-Batter",
     "nationality": "South Africa",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "50.0",
     "final price (in lacs)": "20.0",
     "franchise": "MI",
     "status": "RETAINED"
@@ -1398,7 +1462,7 @@
     "name": "Matheesha Pathirana",
     "player style": "Bowler",
     "nationality": "Sri Lanka",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "50.0",
     "final price (in lacs)": "20.0",
     "franchise": "CSK",
     "status": "RETAINED"
@@ -1407,7 +1471,7 @@
     "name": "Rajat Patidar",
     "player style": "Batter",
     "nationality": "India",
-    "base price (in lacs)": "",
+    "base price (in lacs)": "200.0",
     "final price (in lacs)": "20.0",
     "franchise": "RCB",
     "status": "RETAINED"
@@ -2735,24 +2799,7 @@
     "franchise": "RR",
     "status": "SOLD"
   },
-  {
-    "name": "Joe Root",
-    "player style": "Batter",
-    "nationality": "England",
-    "base price (in lacs)": "100.0",
-    "final price (in lacs)": "100.0",
-    "franchise": "RR",
-    "status": "SOLD"
-  },
-  {
-    "name": "Shakib Al Hasan",
-    "player style": "Allrounder",
-    "nationality": "Bangladesh",
-    "base price (in lacs)": "150.0",
-    "final price (in lacs)": "150.0",
-    "franchise": "KKR",
-    "status": "SOLD"
-  },
+
   {
     "name": "Wayne Parnell",
     "player style": "Allrounder",
@@ -2770,14 +2817,5 @@
     "final price (in lacs)": "",
     "franchise": "",
     "status": "UNSOLD"
-  },
-  {
-    "name": "Harshit Rana",
-    "player style": "Bowler",
-    "nationality": "India",
-    "base price (in lacs)": "",
-    "final price (in lacs)": "20.0",
-    "franchise": "KKR",
-    "status": "RETAINED"
   }
 ]
