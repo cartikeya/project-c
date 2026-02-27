@@ -1,9 +1,7 @@
 # 🏏 IPL Mock Auction - Real-Time Multiplayer App
 
-![IPL Auction Banner](https://via.placeholder.com/1000x400?text=IPL+Mock+Auction+-+Real+Time+Multiplayer) 
-*(Note: Replace the link above with an actual screenshot of your live game!)*
 
-**Live Demo:** [Insert your Vercel Link Here]
+**Live Demo:** [https://project-c-inky.vercel.app/]
 
 ## 🚀 Overview
 The IPL Mock Auction is a full-stack, real-time multiplayer web application. It allows groups of friends to create private, isolated game rooms, select their favorite franchises, and participate in a live mock auction featuring a database of over 300+ real-world players. 
@@ -40,8 +38,8 @@ If you want to run this project locally on your machine, follow these steps:
 
 **1. Clone the repository:**
 \`\`\`bash
-git clone https://github.com/YOUR_GITHUB_USERNAME/ipl-mock-auction.git
-cd ipl-mock-auction
+git clone https://github.com/cartikeya/project-c.git
+cd project-c
 \`\`\`
 
 **2. Setup the Backend:**
@@ -66,6 +64,6 @@ npm start
 *(Make sure to update the socket connection URL in `client/src/socket.js` to `http://localhost:3001` for local testing).*
 
 ## 🤝 Contact
-Built by [Your Name] - 3rd Year B.Tech Student
-* LinkedIn: [Insert your LinkedIn URL]
-* GitHub: [Insert your GitHub URL]
+Built by [cartikeya] - 3rd Year B.Tech Student
+* LinkedIn: [https://www.linkedin.com/in/cartikeya-lavu-59577828a/]
+* GitHub: [https://www.github.com/cartikeya]
