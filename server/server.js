@@ -142,7 +142,7 @@ io.on("connection", (socket) => {
     const game = activeGames[roomId];
     if (game && !game.teams[teamName]) {
       // create new wallet if team is not present
-      game.teams[teamName] = { budget: 10000, squad: [] };
+      game.teams[teamName] = { budget: 12000, squad: [] };
       io.to(roomId).emit("update_teams", game.teams);
     }
   });
