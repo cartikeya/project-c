@@ -45,42 +45,6 @@
     "status": "RETAINED"
   },
   {
-    "name": "Sanjay varma chintalapati",
-    "player style": "Allrounder",
-    "nationality": "India",
-    "base price (in lacs)": "50.0",
-    "final price (in lacs)": "100.0",
-    "franchise": "",
-    "status": "UNSOLD"
-  },
-  {
-    "name": "Mukesh DIVI",
-    "player style": "Batter",
-    "nationality": "India",
-    "base price (in lacs)": "20.0",
-    "final price (in lacs)": "100.0",
-    "franchise": "",
-    "status": "UNSOLD"
-  },
-  {
-    "name": "pradeep TUNGA",
-    "player style": "Batter",
-    "nationality": "India",
-    "base price (in lacs)": "20.0",
-    "final price (in lacs)": "100.0",
-    "franchise": "",
-    "status": "UNSOLD"
-  },
-  {
-    "name": "Cartikeya lavu",
-    "player style": "Batter",
-    "nationality": "India",
-    "base price (in lacs)": "20.0",
-    "final price (in lacs)": "100.0",
-    "franchise": "",
-    "status": "UNSOLD"
-  },
-  {
     "name": "Prithvi Shaw",
     "player style": "Batter",
     "nationality": "India",
@@ -273,7 +237,7 @@
     "name": "Virat Kohli",
     "player style": "Batter",
     "nationality": "India",
-    "base price (in lacs)": "300.0",
+    "base price (in lacs)": "200.0",
     "final price (in lacs)": "1500.0",
     "franchise": "RCB",
     "status": "RETAINED"
@@ -453,7 +417,7 @@
     "name": "Arjun Tendulkar",
     "player style": "Allrounder",
     "nationality": "India",
-    "base price (in lacs)": "200.0",
+    "base price (in lacs)": "20.0",
     "final price (in lacs)": "30.0",
     "franchise": "MI",
     "status": "RETAINED"
@@ -904,7 +868,7 @@
     "name": "Bhuvneshwar Kumar",
     "player style": "Bowler",
     "nationality": "India",
-    "base price (in lacs)": "300.0",
+    "base price (in lacs)": "200.0",
     "final price (in lacs)": "420.0",
     "franchise": "SRH",
     "status": "RETAINED"

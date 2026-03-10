@@ -2,6 +2,22 @@ import React from "react";
 
 function SoldOverlay({ auctionData }) {
   const { lastSoldTo, currentPlayer } = auctionData;
+
+  // Helper function to format the final sold price
+  const formatPrice = (amount) => {
+    // Parse to a number just in case it's passed as a string
+    const num = Number(amount);
+
+    // Fallback: If it's text (like a team name), just return the text
+    if (isNaN(num)) return amount;
+
+    // Convert to Crores if 100 Lakhs or more
+    if (num >= 100) {
+      return `${(num / 100).toFixed(2)} Cr`;
+    }
+    return `${num} L`;
+  };
+
   return (
     <div
       style={{
@@ -34,9 +50,15 @@ function SoldOverlay({ auctionData }) {
         <h2 style={{ fontSize: "3rem", margin: "10px 0" }}>
           {currentPlayer.name}
         </h2>
-        <h3 style={{ fontSize: "2rem", color: "#28a745" }}>{lastSoldTo}</h3>
+
+        {/* The updated formatted output! */}
+        <h3 style={{ fontSize: "2rem", color: "#28a745" }}>
+          {formatPrice(lastSoldTo)}
+        </h3>
+        
       </div>
     </div>
   );
 }
+
 export default SoldOverlay;

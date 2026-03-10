@@ -12,6 +12,13 @@ function PlayerCard({
   const playerImage = currentPlayer.img
     ? currentPlayer.img
     : `https://ui-avatars.com/api/?name=${currentPlayer.name.replace(" ", "+")}&size=250&background=random&color=fff&font-size=0.4`;
+
+  const formatBid = (amountInLakhs) => {
+    if (amountInLakhs >= 100) {
+      return `${(amountInLakhs / 100).toFixed(2)} Cr`;
+    }
+    return `${amountInLakhs} L`;
+  };
   return (
     <div
       style={{
@@ -72,7 +79,7 @@ function PlayerCard({
           border: "1px solid #eee",
         }}
       >
-        <h3 style={{ margin: "0" }}>Current Bid: {currentBid} lakhs</h3>
+        <h3 style={{ margin: "0" }}>Current Bid: {formatBid(currentBid)}</h3>
         <p
           style={{
             color: currentLeader === "No one yet" ? "red" : "green",
@@ -81,8 +88,8 @@ function PlayerCard({
           }}
         >
           {currentLeader === "No one yet"
-            ? "waiting for opening bid"
-            : `Held by:${currentLeader}`}
+            ? "Waiting for opening bid"
+            : `Held by: ${currentLeader}`}
         </p>
       </div>
       {isTeamSet && (
@@ -116,7 +123,10 @@ function PlayerCard({
           }}
         >
           {/* Change the text to make it feel more rewarding! */}
-          {isWinning ? "You hold the bid" : " Bid +50L"}
+
+          {isWinning
+            ? `Winning at ${formatBid(currentBid)}`
+            : `Bid ${formatBid(currentBid)}`}
         </button>
       )}
     </div>

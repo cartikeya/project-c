@@ -82,7 +82,7 @@ function processSale(roomId) {
       game.isTimerRunning = false;
       io.to(roomId).emit("timer_update", game.timer);
     }
-  }, 5000);
+  }, 1000);
 }
 
 io.on("connection", (socket) => {
