@@ -21,6 +21,7 @@ function App() {
   const [inRoom, setInRoom] = useState(null);
   const [gameStarted, setGameStarted] = useState(false);
   const [playersList, setPlayersList] = useState([]);
+  const [isPaused, setIsPaused] = useState(false);
 
   useEffect(() => {
     socket.on("room_created", (id) => {
@@ -61,6 +62,13 @@ function App() {
     };
   }, []);
 
+  const togglePause = () => {
+    const newPauseState = !isPaused;
+    setIsPaused(newPauseState);
+
+    // Tell the backend to freeze the timer!
+    socket.emit("toggle_pause", { roomId, isPaused: newPauseState });
+  };
   const handleSetTeam = () => setIsTeamSet(true);
   const placeBid = () => {
     if (!isTeamSet || !auctionData || !roomId) return;
@@ -262,7 +270,13 @@ function App() {
               }}
             >
               <h4 style={{ margin: "5px", color: "red" }}>Admin Controls:</h4>
-              <AdminPanel nextPlayer={nextPlayer} />
+              <AdminPanel
+                nextPlayer={nextPlayer}
+                socket={socket}
+                roomId={roomId}
+                isPaused={isPaused}
+                togglePause={togglePause}
+              />
             </div>
           )}
 

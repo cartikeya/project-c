@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 function PlayerCard({
   currentPlayer,
@@ -8,7 +8,21 @@ function PlayerCard({
   isTeamSet,
   isWinning,
   timer,
+  isPaused,
 }) {
+  const [onCooldown, setOnCooldown] = useState(false);
+  // 2. Wrap the original placeBid function
+  const handleBidClick = () => {
+    if (onCooldown || isWinning || isPaused) return;
+
+    setOnCooldown(true); // Lock the button
+    placeBid(); // Fire the actual bid to the server
+
+    // Unlock the button after 500 milliseconds (half a second)
+    setTimeout(() => {
+      setOnCooldown(false);
+    }, 500);
+  };
   const playerImage = currentPlayer.img
     ? currentPlayer.img
     : `https://ui-avatars.com/api/?name=${currentPlayer.name.replace(" ", "+")}&size=250&background=random&color=fff&font-size=0.4`;
@@ -19,6 +33,7 @@ function PlayerCard({
     }
     return `${amountInLakhs} L`;
   };
+  const isButtonDisabled = isWinning || onCooldown || isPaused;
   return (
     <div
       style={{
@@ -37,7 +52,11 @@ function PlayerCard({
           position: "absolute",
           top: "-15px",
           right: "-15px",
-          backgroundColor: timer <= 3 ? "#dc3545" : "#343a40",
+          backgroundColor: isPaused
+            ? "#f39c12"
+            : timer <= 3
+              ? "#dc3545"
+              : "#343a40",
           color: "white",
           width: "60px",
           height: "60px",
@@ -52,7 +71,7 @@ function PlayerCard({
           transition: "background-color 0.3s ease",
         }}
       >
-        {timer}s
+        {isPaused ? "|| " : `${timer}s`}
       </div>
       {/* ------------------------------------------------ */}
       <img
@@ -62,6 +81,7 @@ function PlayerCard({
           width: "100%",
           height: "250px",
           objectFit: "cover",
+          filter: isPaused ? "grayscale(80%) blur(2px)" : "none",
           borderRadius: "5px",
         }}
       />
@@ -97,8 +117,8 @@ function PlayerCard({
         //   {isWinning ? "Bid+50L" : "Bid+50L"}
         // </button>
         <button
-          onClick={placeBid}
-          disabled={isWinning}
+          onClick={handleBidClick}
+          disabled={isButtonDisabled}
           style={{
             width: "100%",
             padding: "16px 20px",
@@ -106,12 +126,20 @@ function PlayerCard({
             fontWeight: "bold",
             color: "white",
             // Bright green when you can bid, muted grey when you are winning
-            backgroundColor: isWinning ? "#95a5a6" : "#27ae60",
+            backgroundColor: isPaused
+              ? "#7f8c8d"
+              : isWinning
+                ? "#95a5a6"
+                : onCooldown
+                  ? "#2ecc71"
+                  : "#27ae60",
             border: "none",
             borderRadius: "10px",
-            cursor: isWinning ? "not-allowed" : "pointer",
+            cursor: isButtonDisabled ? "not-allowed" : "pointer",
             // Add a glowing shadow only when it's clickable
-            boxShadow: isWinning ? "none" : "0 6px 12px rgba(39, 174, 96, 0.3)",
+            boxShadow: isButtonDisabled
+              ? "none"
+              : "0 6px 12px rgba(39, 174, 96, 0.3)",
             transition: "all 0.3s ease",
             textTransform: "uppercase",
             letterSpacing: "1px",
@@ -119,14 +147,19 @@ function PlayerCard({
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
+            opacity: onCooldown && !isWinning ? 0.8 : 1,
             gap: "10px",
           }}
         >
           {/* Change the text to make it feel more rewarding! */}
 
-          {isWinning
-            ? `Winning at ${formatBid(currentBid)}`
-            : `Bid ${formatBid(currentBid)}`}
+          {isPaused
+            ? "Game Paused 🛑"
+            : isWinning
+              ? `Winning at ${formatBid(currentBid)}`
+              : onCooldown
+                ? "Bidding..."
+                : `Bid ${formatBid(currentBid)}`}
         </button>
       )}
     </div>
