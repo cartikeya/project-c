@@ -1,10 +1,6 @@
 import io from "socket.io-client";
 export const socket = io.connect("https://project-c-jrzu.onrender.com/");
 
-
-
-
-
 // Comment out the live Render URL for now!
 // export const socket = io.connect("https://ipl-auction-backend.onrender.com");
 
