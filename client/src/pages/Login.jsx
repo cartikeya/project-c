@@ -8,10 +8,26 @@ function Login() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setError("");
+
+    // const endpoint = isLogin ? "/login" : "/register";
+
+    // const payload = isLogin ? { email, password } : { name, email, password };
+
+    // try {
+    //   const response = await fetch(`http://localhost:3001${endpoint}`, {
+    //     method: "POST",
+    //     headers:{
+    //       "Content-Type"
+    //     }
+    //   });
+    // } catch (error) {}
 
     // NOTE: This is a placeholder! We will wire this up to the Express REST API next.
     console.log("Form Submitted:", { isLogin, name, email, password });

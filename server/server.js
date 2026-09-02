@@ -7,7 +7,11 @@ const cors = require("cors");
 const Player = require("./models/Player");
 const { mongo, default: mongoose } = require("mongoose");
 const app = express();
+const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
+const User = require("./models/User");
 app.use(cors());
+app.use(express.json());
 const server = http.createServer(app);
 // Allow React (running on localhost:3000) to connect to this server
 const io = new Server(server, {
@@ -84,6 +88,81 @@ function processSale(roomId) {
     }
   }, 1000);
 }
+
+// ==========================================
+// REST API ROUTES (AUTHENTICATION)
+// ==========================================
+
+// 1. SIGN UP ROUTE
+app.post("/register", async (req, res) => {
+  try {
+    const { name, email, password } = req.body;
+
+    // Check if user already exists
+    const existingUser = await User.findOne({ email });
+    if (existingUser) {
+      return res.status(400).json({ message: "User already exists" });
+    }
+
+    // Hash the password (never store plain text passwords!)
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(password, salt);
+
+    // Create the new user
+    const newUser = new User({
+      name,
+      email,
+      password: hashedPassword,
+    });
+
+    await newUser.save();
+
+    // Generate a JWT token
+    const token = jwt.sign({ id: newUser._id }, process.env.JWT_SECRET, {
+      expiresIn: "1d",
+    });
+
+    res.status(201).json({
+      token,
+      user: { id: newUser._id, name: newUser.name, email: newUser.email },
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Server error during registration" });
+  }
+});
+
+// 2. LOGIN ROUTE
+app.post("/login", async (req, res) => {
+  try {
+    const { email, password } = req.body;
+
+    // Find the user
+    const user = await User.findOne({ email });
+    if (!user) {
+      return res.status(400).json({ message: "Invalid credentials" });
+    }
+
+    // Check if the password matches the hashed password in the database
+    const isMatch = await bcrypt.compare(password, user.password);
+    if (!isMatch) {
+      return res.status(400).json({ message: "Invalid credentials" });
+    }
+
+    // Generate a JWT token
+    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
+      expiresIn: "1d",
+    });
+
+    res.status(200).json({
+      token,
+      user: { id: user._id, name: user.name, email: user.email },
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Server error during login" });
+  }
+});
 
 io.on("connection", (socket) => {
   console.log(`User Connected: ${socket.id}`);
