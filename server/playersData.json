@@ -6,7 +6,14 @@
     "base price (in lacs)": "100.0",
     "final price (in lacs)": "900.0",
     "franchise": "DC",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/4/49/Axar_Patel.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "Dee03",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Axar_Patel.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Axar Patel.jpg"
   },
   {
     "name": "Rishabh Pant",
@@ -15,7 +22,14 @@
     "base price (in lacs)": "200.0",
     "final price (in lacs)": "1600.0",
     "franchise": "DC",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Rishabh_Pant_%2829693622367%29.jpg/960px-Rishabh_Pant_%2829693622367%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageCredit": "Ben Sutherland from Crystal Palace, London, UK",
+    "imageLicense": "CC BY 2.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Rishabh_Pant_(29693622367).jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Rishabh Pant (29693622367).jpg"
   },
   {
     "name": "Ruturaj Gaikwad",
@@ -33,7 +47,14 @@
     "base price (in lacs)": "100.0",
     "final price (in lacs)": "800.0",
     "franchise": "CSK",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Moeen_Ali_Worcestershire_Cricket.jpg/960px-Moeen_Ali_Worcestershire_Cricket.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageCredit": "Pshoesmith",
+    "imageLicense": "CC BY-SA 3.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Moeen_Ali_Worcestershire_Cricket.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Moeen Ali Worcestershire Cricket.jpg"
   },
   {
     "name": "MS Dhoni",
@@ -42,7 +63,14 @@
     "base price (in lacs)": "200.0",
     "final price (in lacs)": "1200.0",
     "franchise": "CSK",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/MS_Dhoni.jpg/960px-MS_Dhoni.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageCredit": "Blnguyen",
+    "imageLicense": "CC BY-SA 3.0",
+    "imageLicenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:MS_Dhoni.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:MS Dhoni.jpg"
   },
   {
     "name": "Prithvi Shaw",
@@ -51,7 +79,14 @@
     "base price (in lacs)": "50.0",
     "final price (in lacs)": "750.0",
     "franchise": "DC",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Prithvi_shaw.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "CRICKETNEXT",
+    "imageLicense": "CC BY 3.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Prithvi_shaw.png",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Prithvi shaw.png"
   },
   {
     "name": "Anrich Nortje",
@@ -69,7 +104,14 @@
     "base price (in lacs)": "200.0",
     "final price (in lacs)": "1500.0",
     "franchise": "GT",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Hardik_Pandya_2020.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "Bollywood Hungama",
+    "imageLicense": "CC BY 3.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Hardik_Pandya_2020.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Hardik Pandya 2020.jpg"
   },
   {
     "name": "Rashid Khan",
@@ -78,7 +120,14 @@
     "base price (in lacs)": "150.0",
     "final price (in lacs)": "1500.0",
     "franchise": "GT",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/Rashid_Khan.jpg/960px-Rashid_Khan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageCredit": "Afghanistan Cricket Board",
+    "imageLicense": "CC BY 3.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Rashid_Khan.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Rashid Khan.jpg"
   },
   {
     "name": "Shubman Gill",
@@ -87,7 +136,14 @@
     "base price (in lacs)": "50.0",
     "final price (in lacs)": "800.0",
     "franchise": "GT",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Shubman_Gill.jpg/960px-Shubman_Gill.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageCredit": "CRICKETNEXT",
+    "imageLicense": "CC BY 3.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Shubman_Gill.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Shubman Gill.jpg"
   },
   {
     "name": "Andre Russell",
@@ -96,7 +152,14 @@
     "base price (in lacs)": "200.0",
     "final price (in lacs)": "1200.0",
     "franchise": "KKR",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Andre_Russell.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "The Madras",
+    "imageLicense": "CC BY-SA 3.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Andre_Russell.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Andre Russell.jpg"
   },
   {
     "name": "Varun Chakaravarthy",
@@ -114,7 +177,14 @@
     "base price (in lacs)": "200.0",
     "final price (in lacs)": "1600.0",
     "franchise": "CSK",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Ravindra_Jadeja_in_2018.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "SR Vlogs",
+    "imageLicense": "CC BY 3.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Ravindra_Jadeja_in_2018.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Ravindra Jadeja in 2018.jpg"
   },
   {
     "name": "Venkatesh Iyer",
@@ -123,7 +193,14 @@
     "base price (in lacs)": "50.0",
     "final price (in lacs)": "800.0",
     "franchise": "KKR",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Venkatesh_Iyer.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "Kolkata Knight Riders",
+    "imageLicense": "CC BY 3.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Venkatesh_Iyer.png",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Venkatesh Iyer.png"
   },
   {
     "name": "Sunil Narine",
@@ -132,7 +209,14 @@
     "base price (in lacs)": "100.0",
     "final price (in lacs)": "600.0",
     "franchise": "KKR",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Sunil_Narine.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "Kolkata Knight Riders - Official",
+    "imageLicense": "CC BY 3.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Sunil_Narine.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Sunil Narine.jpg"
   },
   {
     "name": "Marcus Stoinis",
@@ -150,7 +234,14 @@
     "base price (in lacs)": "200.0",
     "final price (in lacs)": "1700.0",
     "franchise": "LSG",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/8/89/K.L._Rahul.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "BBC News اردو",
+    "imageLicense": "CC BY 3.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:K.L._Rahul.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:K.L. Rahul.jpg"
   },
   {
     "name": "Dwaine Pretorius",
@@ -168,7 +259,14 @@
     "base price (in lacs)": "200.0",
     "final price (in lacs)": "1600.0",
     "franchise": "MI",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/3/31/ROHIT_SHARMA.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "Sibeshmodak",
+    "imageLicense": "CC BY-SA 3.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:ROHIT_SHARMA.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:ROHIT SHARMA.jpg"
   },
   {
     "name": "Akash Deep",
@@ -177,7 +275,14 @@
     "base price (in lacs)": "20.0",
     "final price (in lacs)": "20.0",
     "franchise": "RCB",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Akash_deep.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "Golu sawariya01",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Akash_deep.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Akash deep.jpg"
   },
   {
     "name": "Jasprit Bumrah",
@@ -186,7 +291,14 @@
     "base price (in lacs)": "200.0",
     "final price (in lacs)": "1200.0",
     "franchise": "MI",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/a/ac/Jasprit_Bumrah.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "CRICKETNEXT",
+    "imageLicense": "CC BY 3.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Jasprit_Bumrah.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Jasprit Bumrah.jpg"
   },
   {
     "name": "Suryakumar Yadav",
@@ -195,7 +307,14 @@
     "base price (in lacs)": "200.0",
     "final price (in lacs)": "800.0",
     "franchise": "MI",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Suryakumar_Yadav_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "Kolkata Knight Riders - Official",
+    "imageLicense": "CC BY 3.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Suryakumar_Yadav_(1).jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Suryakumar Yadav (1).jpg"
   },
   {
     "name": "Arshdeep Singh",
@@ -204,7 +323,14 @@
     "base price (in lacs)": "200.0",
     "final price (in lacs)": "400.0",
     "franchise": "PBKS",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Arshdeep_Singh_2022.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "Storm machine",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Arshdeep_Singh_2022.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Arshdeep Singh 2022.jpg"
   },
   {
     "name": "Sanju Samson",
@@ -213,7 +339,14 @@
     "base price (in lacs)": "100.0",
     "final price (in lacs)": "1400.0",
     "franchise": "RR",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Sanju.Samson.jpg/960px-Sanju.Samson.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageCredit": "Anand Anil",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Sanju.Samson.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Sanju.Samson.jpg"
   },
   {
     "name": "Jos Buttler",
@@ -222,7 +355,14 @@
     "base price (in lacs)": "100.0",
     "final price (in lacs)": "1000.0",
     "franchise": "RR",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Jos_buttler.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "Harrias",
+    "imageLicense": "CC BY-SA 3.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Jos_buttler.JPG",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Jos buttler.JPG"
   },
   {
     "name": "Yashasvi Jaiswal",
@@ -231,7 +371,14 @@
     "base price (in lacs)": "50.0",
     "final price (in lacs)": "400.0",
     "franchise": "RR",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Yashasvi_Jaiswal.jpg/960px-Yashasvi_Jaiswal.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageCredit": "Dee03",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Yashasvi_Jaiswal.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Yashasvi Jaiswal.jpg"
   },
   {
     "name": "Virat Kohli",
@@ -240,7 +387,14 @@
     "base price (in lacs)": "200.0",
     "final price (in lacs)": "1500.0",
     "franchise": "RCB",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/0/01/Virat_Kohli_charity.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "Bollywood Hungama",
+    "imageLicense": "CC BY 3.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Virat_Kohli_charity.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Virat Kohli charity.jpg"
   },
   {
     "name": "Glenn Maxwell",
@@ -249,7 +403,14 @@
     "base price (in lacs)": "50.0",
     "final price (in lacs)": "1100.0",
     "franchise": "RCB",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Glenn_Maxwell.jpg/960px-Glenn_Maxwell.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageCredit": "paddynapper",
+    "imageLicense": "CC BY-SA 2.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Glenn_Maxwell.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Glenn Maxwell.jpg"
   },
   {
     "name": "Mohammed Siraj",
@@ -258,7 +419,14 @@
     "base price (in lacs)": "200.0",
     "final price (in lacs)": "700.0",
     "franchise": "RCB",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Mohammed_Siraj.jpg/960px-Mohammed_Siraj.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageCredit": "Anand Anil",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Mohammed_Siraj.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Mohammed Siraj.jpg"
   },
   {
     "name": "Ravichandran Ashwin",
@@ -267,7 +435,14 @@
     "base price (in lacs)": "50.0",
     "final price (in lacs)": "500.0",
     "franchise": "RR",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Ravichandran_Ashwin.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "Bollywood Hungama",
+    "imageLicense": "CC BY 3.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Ravichandran_Ashwin.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Ravichandran Ashwin.jpg"
   },
   {
     "name": "Abdul Samad",
@@ -276,7 +451,14 @@
     "base price (in lacs)": "50.0",
     "final price (in lacs)": "400.0",
     "franchise": "SRH",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Sahal_Abdul_Samad_%28cropped%29.jpg/960px-Sahal_Abdul_Samad_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageCredit": "WhiteFalcon1",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Sahal_Abdul_Samad_(cropped).jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Sahal Abdul Samad (cropped).jpg"
   },
   {
     "name": "Umran Malik",
@@ -285,7 +467,14 @@
     "base price (in lacs)": "20.0",
     "final price (in lacs)": "400.0",
     "franchise": "SRH",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/9/93/Umran_Malik_in_GGM.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "Gorav Sharma",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Umran_Malik_in_GGM.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Umran Malik in GGM.jpg"
   },
   {
     "name": "Trent Boult",
@@ -294,7 +483,14 @@
     "base price (in lacs)": "200.0",
     "final price (in lacs)": "800.0",
     "franchise": "RR",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/2/29/Trent_Boult.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "YellowMonkey/Blnguyen",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Trent_Boult.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Trent Boult.jpg"
   },
   {
     "name": "Quinton de Kock",
@@ -303,7 +499,14 @@
     "base price (in lacs)": "50.0",
     "final price (in lacs)": "675.0",
     "franchise": "LSG",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/QUINTON_DE_KOCK_%2815085160584%29.jpg/960px-QUINTON_DE_KOCK_%2815085160584%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageCredit": "NAPARAZZI",
+    "imageLicense": "CC BY-SA 2.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:QUINTON_DE_KOCK_(15085160584).jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:QUINTON DE KOCK (15085160584).jpg"
   },
   {
     "name": "Shikhar Dhawan",
@@ -312,7 +515,14 @@
     "base price (in lacs)": "200.0",
     "final price (in lacs)": "825.0",
     "franchise": "PBKS",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/SHIKHAR_DHAWAN_%2816005494418%29.jpg/960px-SHIKHAR_DHAWAN_%2816005494418%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageCredit": "NAPARAZZI",
+    "imageLicense": "CC BY-SA 2.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:SHIKHAR_DHAWAN_(16005494418).jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:SHIKHAR DHAWAN (16005494418).jpg"
   },
   {
     "name": "Faf du Plessis",
@@ -330,7 +540,14 @@
     "base price (in lacs)": "100.0",
     "final price (in lacs)": "1225.0",
     "franchise": "KKR",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/9/96/Shreyas_Iyer_2021.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "247 Entertainment",
+    "imageLicense": "CC BY 3.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Shreyas_Iyer_2021.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Shreyas Iyer 2021.jpg"
   },
   {
     "name": "Kagiso Rabada",
@@ -339,7 +556,14 @@
     "base price (in lacs)": "50.0",
     "final price (in lacs)": "925.0",
     "franchise": "PBKS",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/KAGISO_RABADA_%2815085792033%29.jpg/960px-KAGISO_RABADA_%2815085792033%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageCredit": "NAPARAZZI",
+    "imageLicense": "CC BY-SA 2.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:KAGISO_RABADA_(15085792033).jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:KAGISO RABADA (15085792033).jpg"
   },
   {
     "name": "Mohammed Shami",
@@ -348,7 +572,14 @@
     "base price (in lacs)": "200.0",
     "final price (in lacs)": "625.0",
     "franchise": "GT",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/7/71/Mohammed_Shami.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "CRICKETNEXT",
+    "imageLicense": "CC BY 3.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Mohammed_Shami.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Mohammed Shami.jpg"
   },
   {
     "name": "David Warner",
@@ -357,7 +588,14 @@
     "base price (in lacs)": "200.0",
     "final price (in lacs)": "625.0",
     "franchise": "DC",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/David_Warner.jpg/960px-David_Warner.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageCredit": "YellowMonkey/Blnguyen",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:David_Warner.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:David Warner.jpg"
   },
   {
     "name": "Shimron Hetmyer",
@@ -366,7 +604,14 @@
     "base price (in lacs)": "50.0",
     "final price (in lacs)": "850.0",
     "franchise": "RR",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Shimron_Hetmyer.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "CRICKETNEXT",
+    "imageLicense": "CC BY 3.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Shimron_Hetmyer.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Shimron Hetmyer.jpg"
   },
   {
     "name": "David Miller",
@@ -375,7 +620,14 @@
     "base price (in lacs)": "50.0",
     "final price (in lacs)": "300.0",
     "franchise": "GT",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/2/26/DAVID_MILLER_-_2015.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "https://www.flickr.com/photos/evarinaldiphotography/",
+    "imageLicense": "CC BY-SA 2.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:DAVID_MILLER_-_2015.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:DAVID MILLER - 2015.jpg"
   },
   {
     "name": "Devdutt Padikkal",
@@ -429,7 +681,14 @@
     "base price (in lacs)": "50.0",
     "final price (in lacs)": "50.0",
     "franchise": "LSG",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/Kyle_Mayers_batting_at_Perth_Stadium%2C_First_Test_Australia_versus_West_Indies%2C_2_December_2022_01.jpg/960px-Kyle_Mayers_batting_at_Perth_Stadium%2C_First_Test_Australia_versus_West_Indies%2C_2_December_2022_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageCredit": "Calistemon",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Kyle_Mayers_batting_at_Perth_Stadium,_First_Test_Australia_versus_West_Indies,_2_December_2022_01.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Kyle Mayers batting at Perth Stadium, First Test Australia versus West Indies, 2 December 2022 01.jpg"
   },
   {
     "name": "Aiden Markram",
@@ -438,7 +697,14 @@
     "base price (in lacs)": "50.0",
     "final price (in lacs)": "260.0",
     "franchise": "SRH",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Aiden_Markram.jpg/960px-Aiden_Markram.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageCredit": "Marcel Sigg",
+    "imageLicense": "CC0",
+    "imageLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Aiden_Markram.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Aiden Markram.jpg"
   },
   {
     "name": "Baltej Singh",
@@ -474,7 +740,14 @@
     "base price (in lacs)": "100.0",
     "final price (in lacs)": "400.0",
     "franchise": "CSK",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Shivam_Dube.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "Dee03",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Shivam_Dube.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Shivam Dube.jpg"
   },
   {
     "name": "Karan Sharma",
@@ -483,7 +756,14 @@
     "base price (in lacs)": "20.0",
     "final price (in lacs)": "20.0",
     "franchise": "LSG",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Karan_Sharma.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "Karansharmajaipur",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Karan_Sharma.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Karan Sharma.jpg"
   },
   {
     "name": "Krishnappa Gowtham",
@@ -501,7 +781,14 @@
     "base price (in lacs)": "50.0",
     "final price (in lacs)": "420.0",
     "franchise": "SRH",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/4/41/Marco_Jansen_2022.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "Storm machine",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Marco_Jansen_2022.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Marco Jansen 2022.jpg"
   },
   {
     "name": "David Willey",
@@ -510,7 +797,14 @@
     "base price (in lacs)": "",
     "final price (in lacs)": "200.0",
     "franchise": "RCB",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/0/0c/David_WIlley.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "Whatisthefrequencykenneth",
+    "imageLicense": "CC BY 3.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:David_WIlley.JPG",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:David WIlley.JPG"
   },
   {
     "name": "Liam Livingstone",
@@ -528,7 +822,14 @@
     "base price (in lacs)": "200.0",
     "final price (in lacs)": "140.0",
     "franchise": "GT",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Vijay_Shankar.jpg/960px-Vijay_Shankar.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageCredit": "Dee03",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Vijay_Shankar.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Vijay Shankar.jpg"
   },
   {
     "name": "Jayant Yadav",
@@ -546,7 +847,14 @@
     "base price (in lacs)": "100.0",
     "final price (in lacs)": "525.0",
     "franchise": "DC",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/7/77/Justice_Khaleel_Ahmed.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "High Court Of Orissa",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Justice_Khaleel_Ahmed.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Justice Khaleel Ahmed.jpg"
   },
   {
     "name": "Lungi Ngidi",
@@ -555,7 +863,14 @@
     "base price (in lacs)": "50.0",
     "final price (in lacs)": "50.0",
     "franchise": "DC",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Lungi_Ngidi.jpg/960px-Lungi_Ngidi.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageCredit": "Starc99",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Lungi_Ngidi.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Lungi Ngidi.jpg"
   },
   {
     "name": "Navdeep Saini",
@@ -582,7 +897,14 @@
     "base price (in lacs)": "",
     "final price (in lacs)": "50.0",
     "franchise": "RCB",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Karn_Sharma_2015.jpg/960px-Karn_Sharma_2015.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageCredit": "NAPARAZZI",
+    "imageLicense": "CC BY-SA 2.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Karn_Sharma_2015.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Karn Sharma 2015.jpg"
   },
   {
     "name": "Mitchell Marsh",
@@ -591,7 +913,14 @@
     "base price (in lacs)": "100.0",
     "final price (in lacs)": "650.0",
     "franchise": "DC",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/7/73/Mitchell_Marsh.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "www.davidmolloyphotography.com",
+    "imageLicense": "CC BY 2.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Mitchell_Marsh.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Mitchell Marsh.jpg"
   },
   {
     "name": "Maheesh Theekshana",
@@ -609,7 +938,14 @@
     "base price (in lacs)": "100.0",
     "final price (in lacs)": "825.0",
     "franchise": "LSG",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Krunal_Pandya_and_Hardik_Pandya.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "Bollywood Hungama",
+    "imageLicense": "CC BY 3.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Krunal_Pandya_and_Hardik_Pandya.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Krunal Pandya and Hardik Pandya.jpg"
   },
   {
     "name": "Harshal Patel",
@@ -645,7 +981,14 @@
     "base price (in lacs)": "",
     "final price (in lacs)": "20.0",
     "franchise": "LSG",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/MananVohra_Magic_book_of_record.jpg/960px-MananVohra_Magic_book_of_record.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageCredit": "Magic Book of Record",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:MananVohra_Magic_book_of_record.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:MananVohra Magic book of record.jpg"
   },
   {
     "name": "Raj Bawa",
@@ -654,7 +997,14 @@
     "base price (in lacs)": "",
     "final price (in lacs)": "200.0",
     "franchise": "PBKS",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Sukhdev_Raj_Bawa%2C_MSc%2C_PhD.jpg/960px-Sukhdev_Raj_Bawa%2C_MSc%2C_PhD.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageCredit": "Arvind.kanswal",
+    "imageLicense": "CC BY 4.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Sukhdev_Raj_Bawa,_MSc,_PhD.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Sukhdev Raj Bawa, MSc, PhD.jpg"
   },
   {
     "name": "Washington Sundar",
@@ -663,7 +1013,14 @@
     "base price (in lacs)": "50.0",
     "final price (in lacs)": "875.0",
     "franchise": "SRH",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Washington_Sundar.jpg/960px-Washington_Sundar.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageCredit": "Dee03",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Washington_Sundar.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Washington Sundar.jpg"
   },
   {
     "name": "Jonny Bairstow",
@@ -672,7 +1029,14 @@
     "base price (in lacs)": "50.0",
     "final price (in lacs)": "675.0",
     "franchise": "PBKS",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/5/50/Jonny_Bairstow.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "Mcadge",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Jonny_Bairstow.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Jonny Bairstow.jpg"
   },
   {
     "name": "Rajvardhan Hangargekar",
@@ -690,7 +1054,14 @@
     "base price (in lacs)": "200.0",
     "final price (in lacs)": "550.0",
     "franchise": "RCB",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Dinesh_Karthik.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "Blnguyen",
+    "imageLicense": "CC BY-SA 3.0",
+    "imageLicenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Dinesh_Karthik.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Dinesh Karthik.jpg"
   },
   {
     "name": "Mahipal Lomror",
@@ -708,7 +1079,14 @@
     "base price (in lacs)": "200.0",
     "final price (in lacs)": "1525.0",
     "franchise": "MI",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Ishan_Kishan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "Tata Ipl 2022",
+    "imageLicense": "CC BY 3.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Ishan_Kishan.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Ishan Kishan.jpg"
   },
   {
     "name": "Darshan Nalkande",
@@ -726,7 +1104,14 @@
     "base price (in lacs)": "50.0",
     "final price (in lacs)": "675.0",
     "franchise": "CSK",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/5/51/Ambati_Rayudu.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "Dee03",
+    "imageLicense": "CC BY-SA 3.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Ambati_Rayudu.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Ambati Rayudu.jpg"
   },
   {
     "name": "Vicky Ostwal",
@@ -744,9 +1129,15 @@
     "base price (in lacs)": "100.0",
     "final price (in lacs)": "100.0",
     "franchise": "RR",
-    "status": "SOLD"
+    "status": "SOLD",
+    "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/Joe_root.jpg/960px-Joe_root.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageCredit": "Brian Minkoff-London Pixels",
+    "imageLicense": "CC BY-SA 3.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Joe_root.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Joe root.jpg"
   },
-
   {
     "name": "Shakib Al Hasan",
     "player style": "Allrounder",
@@ -754,7 +1145,14 @@
     "base price (in lacs)": "150.0",
     "final price (in lacs)": "150.0",
     "franchise": "KKR",
-    "status": "SOLD"
+    "status": "SOLD",
+    "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Shakib_Al_Hasan_%281%29.jpg/960px-Shakib_Al_Hasan_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageCredit": "Nurunnaby Chowdhury (Hasive)",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Shakib_Al_Hasan_(1).jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Shakib Al Hasan (1).jpg"
   },
   {
     "name": "Harshit Rana",
@@ -772,7 +1170,14 @@
     "base price (in lacs)": "50.0",
     "final price (in lacs)": "190.0",
     "franchise": "GT",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Wriddhiman_saha.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "Bollywood Hungama",
+    "imageLicense": "CC BY 3.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Wriddhiman_saha.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Wriddhiman saha.jpg"
   },
   {
     "name": "Matthew Wade",
@@ -781,7 +1186,14 @@
     "base price (in lacs)": "50.0",
     "final price (in lacs)": "240.0",
     "franchise": "GT",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Matthew_Wade.jpg/960px-Matthew_Wade.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageCredit": "paddynapper",
+    "imageLicense": "CC BY-SA 2.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Matthew_Wade.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Matthew Wade.jpg"
   },
   {
     "name": "Ripal Patel",
@@ -799,7 +1211,14 @@
     "base price (in lacs)": "100.0",
     "final price (in lacs)": "1400.0",
     "franchise": "CSK",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Deepak_Chahar.jpg/960px-Deepak_Chahar.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageCredit": "G. D. GOENKA SCHOOL, AGRA",
+    "imageLicense": "CC BY 3.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Deepak_Chahar.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Deepak Chahar.jpg"
   },
   {
     "name": "Anukul Roy",
@@ -817,7 +1236,14 @@
     "base price (in lacs)": "100.0",
     "final price (in lacs)": "170.0",
     "franchise": "MI",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Tilak_Varma_in_March_2026.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "Buchi Babu Sana",
+    "imageLicense": "CC BY 4.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Tilak_Varma_in_March_2026.png",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Tilak Varma in March 2026.png"
   },
   {
     "name": "KC Cariappa",
@@ -826,7 +1252,14 @@
     "base price (in lacs)": "",
     "final price (in lacs)": "30.0",
     "franchise": "RR",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/4/45/K._C._Cariappa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "Kolkata Knight Riders - Official",
+    "imageLicense": "CC BY 3.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:K._C._Cariappa.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:K. C. Cariappa.jpg"
   },
   {
     "name": "Yash Dayal",
@@ -844,7 +1277,14 @@
     "base price (in lacs)": "200.0",
     "final price (in lacs)": "775.0",
     "franchise": "RCB",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Josh_Hazlewood_2011.jpg/960px-Josh_Hazlewood_2011.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageCredit": "Naparazzi",
+    "imageLicense": "CC BY-SA 2.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Josh_Hazlewood_2011.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Josh Hazlewood 2011.jpg"
   },
   {
     "name": "Noor Ahmad",
@@ -853,7 +1293,14 @@
     "base price (in lacs)": "20.0",
     "final price (in lacs)": "30.0",
     "franchise": "GT",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/7/78/This_is_the_photo_of_Prof._Dr._Noor_Ahmad_Shahtaz.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "Wiki Correct 01",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:This_is_the_photo_of_Prof._Dr._Noor_Ahmad_Shahtaz.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:This is the photo of Prof. Dr. Noor Ahmad Shahtaz.jpg"
   },
   {
     "name": "Prasidh Krishna",
@@ -871,7 +1318,14 @@
     "base price (in lacs)": "200.0",
     "final price (in lacs)": "420.0",
     "franchise": "SRH",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/8/80/Bhuvneshwar_Kumar.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "Dee03",
+    "imageLicense": "CC BY-SA 3.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Bhuvneshwar_Kumar.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Bhuvneshwar Kumar.jpg"
   },
   {
     "name": "Kartik Tyagi",
@@ -898,7 +1352,14 @@
     "base price (in lacs)": "20.0",
     "final price (in lacs)": "400.0",
     "franchise": "SRH",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/T_Natarajan.jpg/960px-T_Natarajan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageCredit": "Dee03",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:T_Natarajan.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:T Natarajan.jpg"
   },
   {
     "name": "Simarjeet Singh",
@@ -916,7 +1377,14 @@
     "base price (in lacs)": "",
     "final price (in lacs)": "20.0",
     "franchise": "LSG",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Director_Mohsin_Khan.jpg/960px-Director_Mohsin_Khan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageCredit": "Hardikgogoi",
+    "imageLicense": "CC0",
+    "imageLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Director_Mohsin_Khan.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Director Mohsin Khan.jpg"
   },
   {
     "name": "Pradeep Sangwan",
@@ -997,7 +1465,14 @@
     "base price (in lacs)": "100.0",
     "final price (in lacs)": "800.0",
     "franchise": "MI",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Jofra_Archer_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "BBC News اردو",
+    "imageLicense": "CC BY 3.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Jofra_Archer_(1).jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Jofra Archer (1).jpg"
   },
   {
     "name": "Tim Southee",
@@ -1006,7 +1481,14 @@
     "base price (in lacs)": "100.0",
     "final price (in lacs)": "150.0",
     "franchise": "KKR",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Tim_Southee.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "YellowMonkey/Blnguyen",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Tim_Southee.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Tim Southee.jpg"
   },
   {
     "name": "Rishi Dhawan",
@@ -1069,7 +1551,14 @@
     "base price (in lacs)": "",
     "final price (in lacs)": "20.0",
     "franchise": "CSK",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Tushar_Deshpande.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "Dee03",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Tushar_Deshpande.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Tushar Deshpande.jpg"
   },
   {
     "name": "Suyash Prabhudessai",
@@ -1078,7 +1567,14 @@
     "base price (in lacs)": "",
     "final price (in lacs)": "30.0",
     "franchise": "RCB",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Suyash_Prabhudessai.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "Saaksha TV",
+    "imageLicense": "CC BY 3.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Suyash_Prabhudessai.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Suyash Prabhudessai.jpg"
   },
   {
     "name": "Mustafizur Rahman",
@@ -1087,7 +1583,14 @@
     "base price (in lacs)": "50.0",
     "final price (in lacs)": "200.0",
     "franchise": "DC",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Mustafizur_Rahman_%284%29_%28cropped%29.jpg/960px-Mustafizur_Rahman_%284%29_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageCredit": "Nurunnaby Chowdhury (Hasive)",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Mustafizur_Rahman_(4)_(cropped).jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Mustafizur Rahman (4) (cropped).jpg"
   },
   {
     "name": "Ramandeep Singh",
@@ -1096,7 +1599,14 @@
     "base price (in lacs)": "",
     "final price (in lacs)": "20.0",
     "franchise": "MI",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/Punjabi_Wikimedian_Ramandeep_Singh.jpg/960px-Punjabi_Wikimedian_Ramandeep_Singh.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageCredit": "ਰਮਨਦੀਪ ਫਤਿਹ",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Punjabi_Wikimedian_Ramandeep_Singh.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Punjabi Wikimedian Ramandeep Singh.jpg"
   },
   {
     "name": "Prabhsimran Singh",
@@ -1132,7 +1642,14 @@
     "base price (in lacs)": "30.0",
     "final price (in lacs)": "750.0",
     "franchise": "LSG",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Mark_Wood_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "Wesa",
+    "imageLicense": "CC BY-SA 3.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Mark_Wood_2.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Mark Wood 2.jpg"
   },
   {
     "name": "Umesh Yadav",
@@ -1141,7 +1658,14 @@
     "base price (in lacs)": "",
     "final price (in lacs)": "200.0",
     "franchise": "KKR",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Umesh_Yadav.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "Dee03",
+    "imageLicense": "CC BY-SA 3.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Umesh_Yadav.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Umesh Yadav.jpg"
   },
   {
     "name": "Yuzvendra Chahal",
@@ -1150,7 +1674,14 @@
     "base price (in lacs)": "100.0",
     "final price (in lacs)": "650.0",
     "franchise": "RR",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/d/da/Yuzvendra_Chahal.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "BBC News اردو",
+    "imageLicense": "CC BY 3.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Yuzvendra_Chahal.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Yuzvendra Chahal.jpg"
   },
   {
     "name": "Rahul Chahar",
@@ -1177,7 +1708,14 @@
     "base price (in lacs)": "20.0",
     "final price (in lacs)": "900.0",
     "franchise": "GT",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/Shivam_Chauhan%2C_Nitesh_Rana_and_Rahul_Tewatia.jpg/960px-Shivam_Chauhan%2C_Nitesh_Rana_and_Rahul_Tewatia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageCredit": "Adi1343",
+    "imageLicense": "CC0",
+    "imageLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Shivam_Chauhan,_Nitesh_Rana_and_Rahul_Tewatia.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Shivam Chauhan, Nitesh Rana and Rahul Tewatia.jpg"
   },
   {
     "name": "Abhishek Sharma",
@@ -1186,7 +1724,14 @@
     "base price (in lacs)": "200.0",
     "final price (in lacs)": "650.0",
     "franchise": "SRH",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Abhishek_Sharma.jpg/960px-Abhishek_Sharma.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageCredit": "أمين علوان",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Abhishek_Sharma.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Abhishek Sharma.jpg"
   },
   {
     "name": "Riyan Parag",
@@ -1213,7 +1758,14 @@
     "base price (in lacs)": "",
     "final price (in lacs)": "900.0",
     "franchise": "PBKS",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Shahrukh_Khan_%282014%29.jpg/960px-Shahrukh_Khan_%282014%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageCredit": "Laura Lee Dooley",
+    "imageLicense": "CC BY 2.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Shahrukh_Khan_(2014).jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Shahrukh Khan (2014).jpg"
   },
   {
     "name": "Fazalhaq Farooqi",
@@ -1222,7 +1774,14 @@
     "base price (in lacs)": "",
     "final price (in lacs)": "50.0",
     "franchise": "SRH",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Fazalhaq_Farooqi.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "Afghanistan Cricket Board Official",
+    "imageLicense": "CC BY 3.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Fazalhaq_Farooqi.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Fazalhaq Farooqi.jpg"
   },
   {
     "name": "Siddarth Kaul",
@@ -1258,7 +1817,14 @@
     "base price (in lacs)": "200.0",
     "final price (in lacs)": "200.0",
     "franchise": "DC",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Kuldeep_Yadav.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "Kolkata Knight Riders - Official",
+    "imageLicense": "CC BY 3.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Kuldeep_Yadav.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Kuldeep Yadav.jpg"
   },
   {
     "name": "Sarfaraz Khan",
@@ -1267,7 +1833,14 @@
     "base price (in lacs)": "50.0",
     "final price (in lacs)": "20.0",
     "franchise": "DC",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Sarfaraz_Khan_Pic2.jpg/960px-Sarfaraz_Khan_Pic2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageCredit": "Michael.amin1",
+    "imageLicense": "CC BY-SA 3.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Sarfaraz_Khan_Pic2.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Sarfaraz Khan Pic2.jpg"
   },
   {
     "name": "Sai Sudharsan",
@@ -1303,7 +1876,14 @@
     "base price (in lacs)": "50.0",
     "final price (in lacs)": "825.0",
     "franchise": "MI",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Tim_david_K%C3%BCnstlerbild.jpg/960px-Tim_david_K%C3%BCnstlerbild.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageCredit": "Timdavd",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Tim_david_K%C3%BCnstlerbild.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Tim david Künstlerbild.jpg"
   },
   {
     "name": "Mukesh Choudhary",
@@ -1384,7 +1964,14 @@
     "base price (in lacs)": "",
     "final price (in lacs)": "20.0",
     "franchise": "MI",
-    "status": "RETAINED"
+    "status": "RETAINED",
+    "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Kumar_Kartikeya%2C_Govt_Museum_Chandigarh.jpg/960px-Kumar_Kartikeya%2C_Govt_Museum_Chandigarh.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageCredit": "Deepank Ranka",
+    "imageLicense": "CC BY 3.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Kumar_Kartikeya,_Govt_Museum_Chandigarh.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Kumar Kartikeya, Govt Museum Chandigarh.jpg"
   },
   {
     "name": "Akash Madhwal",
@@ -1456,7 +2043,14 @@
     "base price (in lacs)": "200.0",
     "final price (in lacs)": "1850.0",
     "franchise": "PBKS",
-    "status": "SOLD"
+    "status": "SOLD",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/1/1b/The_Prime_Minister_welcomes_the_World_Cup_winning_cricketers_%2852764650104%29_-_Sam_Curran_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "Number 10",
+    "imageLicense": "CC BY 2.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:The_Prime_Minister_welcomes_the_World_Cup_winning_cricketers_(52764650104)_-_Sam_Curran_(cropped).jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:The Prime Minister welcomes the World Cup winning cricketers (52764650104) - Sam Curran (cropped).jpg"
   },
   {
     "name": "Sikandar Raza",
@@ -1465,7 +2059,14 @@
     "base price (in lacs)": "50.0",
     "final price (in lacs)": "50.0",
     "franchise": "PBKS",
-    "status": "SOLD"
+    "status": "SOLD",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Sikandar_Raza_2022.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "Storm machine",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Sikandar_Raza_2022.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Sikandar Raza 2022.jpg"
   },
   {
     "name": "Cameron Green",
@@ -1474,7 +2075,14 @@
     "base price (in lacs)": "200.0",
     "final price (in lacs)": "1750.0",
     "franchise": "MI",
-    "status": "SOLD"
+    "status": "SOLD",
+    "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/20251224_Cameron_Green_01.jpg/960px-20251224_Cameron_Green_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageCredit": "DustyNail",
+    "imageLicense": "CC0",
+    "imageLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:20251224_Cameron_Green_01.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:20251224 Cameron Green 01.jpg"
   },
   {
     "name": "Ben Stokes",
@@ -1483,7 +2091,14 @@
     "base price (in lacs)": "200.0",
     "final price (in lacs)": "1625.0",
     "franchise": "CSK",
-    "status": "SOLD"
+    "status": "SOLD",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Ben_Stokes.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "BBC News اردو",
+    "imageLicense": "CC BY 3.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Ben_Stokes.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Ben Stokes.jpg"
   },
   {
     "name": "Heinrich Klaasen",
@@ -1528,7 +2143,14 @@
     "base price (in lacs)": "75.0",
     "final price (in lacs)": "190.0",
     "franchise": "RCB",
-    "status": "SOLD"
+    "status": "SOLD",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Reece_Topley.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "Kyle Andrews",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Reece_Topley.png",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Reece Topley.png"
   },
   {
     "name": "Adam Milne",
@@ -1546,7 +2168,14 @@
     "base price (in lacs)": "150.0",
     "final price (in lacs)": "150.0",
     "franchise": "MI",
-    "status": "SOLD"
+    "status": "SOLD",
+    "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/20251224_Jhye_Richardson_01.jpg/960px-20251224_Jhye_Richardson_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageCredit": "DustyNail",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:20251224_Jhye_Richardson_01.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:20251224 Jhye Richardson 01.jpg"
   },
   {
     "name": "Adil Rashid",
@@ -1555,7 +2184,14 @@
     "base price (in lacs)": "200.0",
     "final price (in lacs)": "200.0",
     "franchise": "SRH",
-    "status": "SOLD"
+    "status": "SOLD",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/6/67/Adil_rashid.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "Harrias",
+    "imageLicense": "CC BY-SA 3.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Adil_rashid.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Adil rashid.jpg"
   },
   {
     "name": "Tabraiz Shamsi",
@@ -1573,7 +2209,14 @@
     "base price (in lacs)": "100.0",
     "final price (in lacs)": "",
     "franchise": "",
-    "status": "UNSOLD"
+    "status": "UNSOLD",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Mujeeb_Ur_Rahman_celebrating.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "Afghanistan Cricket Board",
+    "imageLicense": "CC BY 3.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Mujeeb_Ur_Rahman_celebrating.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Mujeeb Ur Rahman celebrating.jpg"
   },
   {
     "name": "Nicholas Pooran",
@@ -1609,7 +2252,14 @@
     "base price (in lacs)": "50.0",
     "final price (in lacs)": "50.0",
     "franchise": "DC",
-    "status": "SOLD"
+    "status": "SOLD",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Ishant_Sharma.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "Blnguyen",
+    "imageLicense": "CC BY-SA 3.0",
+    "imageLicenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Ishant_Sharma.JPG",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Ishant Sharma.JPG"
   },
   {
     "name": "Jason Holder",
@@ -1618,7 +2268,14 @@
     "base price (in lacs)": "200.0",
     "final price (in lacs)": "575.0",
     "franchise": "RR",
-    "status": "SOLD"
+    "status": "SOLD",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/d/de/Jason_Holder.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "CRICKETNEXT",
+    "imageLicense": "CC BY 3.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Jason_Holder.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Jason Holder.jpg"
   },
   {
     "name": "Mayank Agarwal",
@@ -1627,7 +2284,14 @@
     "base price (in lacs)": "100.0",
     "final price (in lacs)": "825.0",
     "franchise": "SRH",
-    "status": "SOLD"
+    "status": "SOLD",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Mayank_agarwal_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "Akshayparmar.gu",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Mayank_agarwal_(cropped).jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Mayank agarwal (cropped).jpg"
   },
   {
     "name": "Ajinkya Rahane",
@@ -1636,7 +2300,14 @@
     "base price (in lacs)": "50.0",
     "final price (in lacs)": "50.0",
     "franchise": "CSK",
-    "status": "SOLD"
+    "status": "SOLD",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Ajinkya_Rahane.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "Bollywood Hungama",
+    "imageLicense": "CC BY 3.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Ajinkya_Rahane.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Ajinkya Rahane.jpg"
   },
   {
     "name": "Kane Williamson",
@@ -1645,7 +2316,14 @@
     "base price (in lacs)": "200.0",
     "final price (in lacs)": "200.0",
     "franchise": "GT",
-    "status": "SOLD"
+    "status": "SOLD",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/9/93/Kane_Williamson.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "CRICKETNEXT",
+    "imageLicense": "CC BY 3.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Kane_Williamson.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Kane Williamson.jpg"
   },
   {
     "name": "LR Chethan",
@@ -1699,7 +2377,14 @@
     "base price (in lacs)": "20.0",
     "final price (in lacs)": "",
     "franchise": "",
-    "status": "UNSOLD"
+    "status": "UNSOLD",
+    "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Himmat_Singh_statue.jpg/960px-Himmat_Singh_statue.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageCredit": "Gazal world",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Himmat_Singh_statue.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Himmat Singh statue.jpg"
   },
   {
     "name": "Vivrant Sharma",
@@ -1780,7 +2465,14 @@
     "base price (in lacs)": "20.0",
     "final price (in lacs)": "",
     "franchise": "",
-    "status": "UNSOLD"
+    "status": "UNSOLD",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Sumit_kumar3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "Wesleyworks05",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Sumit_kumar3.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Sumit kumar3.jpg"
   },
   {
     "name": "Sanvir Singh",
@@ -1789,7 +2481,14 @@
     "base price (in lacs)": "20.0",
     "final price (in lacs)": "20.0",
     "franchise": "SRH",
-    "status": "SOLD"
+    "status": "SOLD",
+    "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Sanvir_Singh.jpg/960px-Sanvir_Singh.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageCredit": "Dee03",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Sanvir_Singh.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Sanvir Singh.jpg"
   },
   {
     "name": "Srikar Bharat",
@@ -1807,7 +2506,14 @@
     "base price (in lacs)": "20.0",
     "final price (in lacs)": "25.0",
     "franchise": "SRH",
-    "status": "SOLD"
+    "status": "SOLD",
+    "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/%E0%A4%89%E0%A4%AA%E0%A5%87%E0%A4%A8%E0%A5%8D%E0%A4%A6%E0%A5%8D%E0%A4%B0_%E0%A4%AF%E0%A4%BE%E0%A4%A6%E0%A4%B5_Upendra_Yadav.jpg/960px-%E0%A4%89%E0%A4%AA%E0%A5%87%E0%A4%A8%E0%A5%8D%E0%A4%A6%E0%A5%8D%E0%A4%B0_%E0%A4%AF%E0%A4%BE%E0%A4%A6%E0%A4%B5_Upendra_Yadav.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageCredit": "Gunjan Raj Giri",
+    "imageLicense": "CC0",
+    "imageLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:%E0%A4%89%E0%A4%AA%E0%A5%87%E0%A4%A8%E0%A5%8D%E0%A4%A6%E0%A5%8D%E0%A4%B0_%E0%A4%AF%E0%A4%BE%E0%A4%A6%E0%A4%B5_Upendra_Yadav.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:उपेन्द्र यादव Upendra Yadav.jpg"
   },
   {
     "name": "Mohammed Azharuddeen",
@@ -1870,7 +2576,14 @@
     "base price (in lacs)": "40.0",
     "final price (in lacs)": "600.0",
     "franchise": "GT",
-    "status": "SOLD"
+    "status": "SOLD",
+    "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Shivam_Mavi_With_Rashid_Zirak.jpg/960px-Shivam_Mavi_With_Rashid_Zirak.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageCredit": "Akshayparmar.gu",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Shivam_Mavi_With_Rashid_Zirak.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Shivam Mavi With Rashid Zirak.jpg"
   },
   {
     "name": "Mukesh Kumar",
@@ -1879,7 +2592,14 @@
     "base price (in lacs)": "20.0",
     "final price (in lacs)": "550.0",
     "franchise": "DC",
-    "status": "SOLD"
+    "status": "SOLD",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/b/b0/MUKESH_KUMAR_SHARMA.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "Er.Mukesh kumar sharma",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:MUKESH_KUMAR_SHARMA.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:MUKESH KUMAR SHARMA.jpg"
   },
   {
     "name": "Chintal Gandhi",
@@ -1897,7 +2617,14 @@
     "base price (in lacs)": "20.0",
     "final price (in lacs)": "",
     "franchise": "",
-    "status": "UNSOLD"
+    "status": "UNSOLD",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Izharulhaq_Naveed_2023.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "Storm machine",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Izharulhaq_Naveed_2023.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Izharulhaq Naveed 2023.jpg"
   },
   {
     "name": "Shreyas Gopal",
@@ -1906,7 +2633,14 @@
     "base price (in lacs)": "20.0",
     "final price (in lacs)": "",
     "franchise": "",
-    "status": "UNSOLD"
+    "status": "UNSOLD",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/1/12/Rajasthan_Royals_player_Shreyas_Gopal_in_a_post-match_presentation_during_2019_Indian_Premier_League.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "CRICKETNEXT",
+    "imageLicense": "CC BY 3.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Rajasthan_Royals_player_Shreyas_Gopal_in_a_post-match_presentation_during_2019_Indian_Premier_League.png",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Rajasthan Royals player Shreyas Gopal in a post-match presentation during 2019 Indian Premier League.png"
   },
   {
     "name": "Sudhesan Midhun",
@@ -1924,7 +2658,14 @@
     "base price (in lacs)": "20.0",
     "final price (in lacs)": "20.0",
     "franchise": "RCB",
-    "status": "SOLD"
+    "status": "SOLD",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Himanshu_sharma.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "Anjanish.83",
+    "imageLicense": "CC BY-SA 3.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Himanshu_sharma.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Himanshu sharma.jpg"
   },
   {
     "name": "Paul Stirling",
@@ -1933,7 +2674,14 @@
     "base price (in lacs)": "50.0",
     "final price (in lacs)": "",
     "franchise": "",
-    "status": "UNSOLD"
+    "status": "UNSOLD",
+    "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Paul_Stirling.jpg/960px-Paul_Stirling.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageCredit": "Harrias",
+    "imageLicense": "CC BY-SA 3.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Paul_Stirling.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Paul Stirling.jpg"
   },
   {
     "name": "Manish Pandey",
@@ -1942,7 +2690,14 @@
     "base price (in lacs)": "100.0",
     "final price (in lacs)": "240.0",
     "franchise": "DC",
-    "status": "SOLD"
+    "status": "SOLD",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Manish_Pandey_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "Kolkata Knight Riders - Official",
+    "imageLicense": "CC BY 3.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Manish_Pandey_(1).jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Manish Pandey (1).jpg"
   },
   {
     "name": "Sherfane Rutherford",
@@ -1969,7 +2724,14 @@
     "base price (in lacs)": "200.0",
     "final price (in lacs)": "",
     "franchise": "",
-    "status": "UNSOLD"
+    "status": "UNSOLD",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Travis_Head_cropped.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "Calistemon",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Travis_Head_cropped.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Travis Head cropped.jpg"
   },
   {
     "name": "Dawid Malan",
@@ -1978,7 +2740,14 @@
     "base price (in lacs)": "150.0",
     "final price (in lacs)": "",
     "franchise": "",
-    "status": "UNSOLD"
+    "status": "UNSOLD",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/f/f2/Dawid_Malan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "Harrias",
+    "imageLicense": "CC BY-SA 3.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Dawid_Malan.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Dawid Malan.jpg"
   },
   {
     "name": "Romario Shepherd",
@@ -1996,7 +2765,14 @@
     "base price (in lacs)": "100.0",
     "final price (in lacs)": "",
     "franchise": "",
-    "status": "UNSOLD"
+    "status": "UNSOLD",
+    "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/DarylMitchellEmmysSept09.jpg/960px-DarylMitchellEmmysSept09.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageCredit": "Greg Hernandez at https://www.flickr.com/photos/greginhollywood/",
+    "imageLicense": "CC BY 2.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:DarylMitchellEmmysSept09.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:DarylMitchellEmmysSept09.jpg"
   },
   {
     "name": "Daniel Sams",
@@ -2005,7 +2781,14 @@
     "base price (in lacs)": "75.0",
     "final price (in lacs)": "75.0",
     "franchise": "LSG",
-    "status": "SOLD"
+    "status": "SOLD",
+    "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Daniel_Sams_Batting.jpg/960px-Daniel_Sams_Batting.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageCredit": "Neb",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Daniel_Sams_Batting.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Daniel Sams Batting.jpg"
   },
   {
     "name": "Mohammad Nabi",
@@ -2014,7 +2797,14 @@
     "base price (in lacs)": "100.0",
     "final price (in lacs)": "",
     "franchise": "",
-    "status": "UNSOLD"
+    "status": "UNSOLD",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Mehdi_Mohammad_Nabi.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "AgentBarsam",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Mehdi_Mohammad_Nabi.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Mehdi Mohammad Nabi.jpg"
   },
   {
     "name": "James Neesham",
@@ -2032,7 +2822,14 @@
     "base price (in lacs)": "50.0",
     "final price (in lacs)": "",
     "franchise": "",
-    "status": "UNSOLD"
+    "status": "UNSOLD",
+    "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Dasun_Shanaka_in_2022.jpg/960px-Dasun_Shanaka_in_2022.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageCredit": "04 ATM 04",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Dasun_Shanaka_in_2022.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Dasun Shanaka in 2022.jpg"
   },
   {
     "name": "Riley Meredith",
@@ -2050,7 +2847,14 @@
     "base price (in lacs)": "50.0",
     "final price (in lacs)": "",
     "franchise": "",
-    "status": "UNSOLD"
+    "status": "UNSOLD",
+    "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Sandeep_Sharma.jpg/960px-Sandeep_Sharma.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageCredit": "Geet Arts",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Sandeep_Sharma.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Sandeep Sharma.jpg"
   },
   {
     "name": "Taskin Ahmed",
@@ -2059,7 +2863,14 @@
     "base price (in lacs)": "50.0",
     "final price (in lacs)": "",
     "franchise": "",
-    "status": "UNSOLD"
+    "status": "UNSOLD",
+    "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Taskin_Ahmed_Riyad.png/960px-Taskin_Ahmed_Riyad.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageCredit": "Ridu mojumder",
+    "imageLicense": "CC0",
+    "imageLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Taskin_Ahmed_Riyad.png",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Taskin Ahmed Riyad.png"
   },
   {
     "name": "Dushmantha Chameera",
@@ -2086,7 +2897,14 @@
     "base price (in lacs)": "100.0",
     "final price (in lacs)": "100.0",
     "franchise": "CSK",
-    "status": "SOLD"
+    "status": "SOLD",
+    "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/2014_Kyle_Jamieson.jpg/960px-2014_Kyle_Jamieson.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageCredit": "Gpauusa",
+    "imageLicense": "CC BY-SA 3.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:2014_Kyle_Jamieson.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:2014 Kyle Jamieson.jpg"
   },
   {
     "name": "Amit Mishra",
@@ -2095,7 +2913,14 @@
     "base price (in lacs)": "50.0",
     "final price (in lacs)": "50.0",
     "franchise": "LSG",
-    "status": "SOLD"
+    "status": "SOLD",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/7/73/Amit_Mishra.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "Harrias",
+    "imageLicense": "CC BY-SA 3.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Amit_Mishra.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Amit Mishra.jpg"
   },
   {
     "name": "Piyush Chawla",
@@ -2104,7 +2929,14 @@
     "base price (in lacs)": "50.0",
     "final price (in lacs)": "50.0",
     "franchise": "MI",
-    "status": "SOLD"
+    "status": "SOLD",
+    "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Piyush_Chawla.jpg/960px-Piyush_Chawla.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageCredit": "Blnguyen",
+    "imageLicense": "CC BY-SA 3.0",
+    "imageLicenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Piyush_Chawla.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Piyush Chawla.jpg"
   },
   {
     "name": "Harpreet Singh Bhatia",
@@ -2113,7 +2945,14 @@
     "base price (in lacs)": "20.0",
     "final price (in lacs)": "40.0",
     "franchise": "PBKS",
-    "status": "SOLD"
+    "status": "SOLD",
+    "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Harpreet_Singh_Bhatia.jpg/960px-Harpreet_Singh_Bhatia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageCredit": "Dee03",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Harpreet_Singh_Bhatia.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Harpreet Singh Bhatia.jpg"
   },
   {
     "name": "Will Smeed",
@@ -2266,7 +3105,14 @@
     "base price (in lacs)": "20.0",
     "final price (in lacs)": "20.0",
     "franchise": "KKR",
-    "status": "SOLD"
+    "status": "SOLD",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Suyash_Sharma.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "Kolkata Knight Riders",
+    "imageLicense": "CC BY 3.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Suyash_Sharma.png",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Suyash Sharma.png"
   },
   {
     "name": "Jamie Overton",
@@ -2275,7 +3121,14 @@
     "base price (in lacs)": "200.0",
     "final price (in lacs)": "",
     "franchise": "",
-    "status": "UNSOLD"
+    "status": "UNSOLD",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Jamie_Overton.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "Harrias",
+    "imageLicense": "CC BY-SA 3.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Jamie_Overton.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Jamie Overton.jpg"
   },
   {
     "name": "Richard Gleeson",
@@ -2284,7 +3137,14 @@
     "base price (in lacs)": "50.0",
     "final price (in lacs)": "",
     "franchise": "",
-    "status": "UNSOLD"
+    "status": "UNSOLD",
+    "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Richard_Gleeson.jpg/960px-Richard_Gleeson.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageCredit": "Charltonkyle",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Richard_Gleeson.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Richard Gleeson.jpg"
   },
   {
     "name": "Joshua Little",
@@ -2302,7 +3162,14 @@
     "base price (in lacs)": "50.0",
     "final price (in lacs)": "50.0",
     "franchise": "GT",
-    "status": "SOLD"
+    "status": "SOLD",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/8/85/Maj._Mohit_Sharma_%281_Para_SF%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "Sabarivinayak",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Maj._Mohit_Sharma_(1_Para_SF).jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Maj. Mohit Sharma (1 Para SF).jpg"
   },
   {
     "name": "Himanshu Bisht",
@@ -2347,7 +3214,14 @@
     "base price (in lacs)": "100.0",
     "final price (in lacs)": "100.0",
     "franchise": "KKR",
-    "status": "SOLD"
+    "status": "SOLD",
+    "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/DAVID_WIESE_%2815681114286%29.jpg/960px-DAVID_WIESE_%2815681114286%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageCredit": "NAPARAZZI",
+    "imageLicense": "CC BY-SA 2.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:DAVID_WIESE_(15681114286).jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:DAVID WIESE (15681114286).jpg"
   },
   {
     "name": "Sanjay Yadav",
@@ -2401,7 +3275,14 @@
     "base price (in lacs)": "75.0",
     "final price (in lacs)": "",
     "franchise": "",
-    "status": "UNSOLD"
+    "status": "UNSOLD",
+    "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Tom_Curran_cricketer.jpg/960px-Tom_Curran_cricketer.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageCredit": "Ytfc23",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Tom_Curran_cricketer.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Tom Curran cricketer.jpg"
   },
   {
     "name": "Varun Aaron",
@@ -2410,7 +3291,14 @@
     "base price (in lacs)": "50.0",
     "final price (in lacs)": "",
     "franchise": "",
-    "status": "UNSOLD"
+    "status": "UNSOLD",
+    "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Varun_Aaron.jpg/960px-Varun_Aaron.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageCredit": "Dee03",
+    "imageLicense": "CC BY-SA 3.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Varun_Aaron.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Varun Aaron.jpg"
   },
   {
     "name": "Priyank Panchal",
@@ -2419,7 +3307,14 @@
     "base price (in lacs)": "20.0",
     "final price (in lacs)": "",
     "franchise": "",
-    "status": "UNSOLD"
+    "status": "UNSOLD",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Priyank_Panchal.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "Dee03",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Priyank_Panchal.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Priyank Panchal.jpg"
   },
   {
     "name": "Sanjay Raghunath",
@@ -2563,7 +3458,14 @@
     "base price (in lacs)": "20.0",
     "final price (in lacs)": "20.0",
     "franchise": "PBKS",
-    "status": "SOLD"
+    "status": "SOLD",
+    "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Shivam_Singh.jpg/960px-Shivam_Singh.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageCredit": "SarsaiNawar",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Shivam_Singh.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Shivam Singh.jpg"
   },
   {
     "name": "Rilee Rossouw",
@@ -2572,7 +3474,14 @@
     "base price (in lacs)": "200.0",
     "final price (in lacs)": "459.99999999999994",
     "franchise": "DC",
-    "status": "SOLD"
+    "status": "SOLD",
+    "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/RILEE_ROSSOUW_%2815519239319%29.jpg/960px-RILEE_ROSSOUW_%2815519239319%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageCredit": "NAPARAZZI",
+    "imageLicense": "CC BY-SA 2.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:RILEE_ROSSOUW_(15519239319).jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:RILEE ROSSOUW (15519239319).jpg"
   },
   {
     "name": "Litton Das",
@@ -2590,7 +3499,14 @@
     "base price (in lacs)": "50.0",
     "final price (in lacs)": "",
     "franchise": "",
-    "status": "UNSOLD"
+    "status": "UNSOLD",
+    "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Matthew_Wade_attempts_to_run_out_Kusal_Mendis.jpg/960px-Matthew_Wade_attempts_to_run_out_Kusal_Mendis.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageCredit": "Neb",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Matthew_Wade_attempts_to_run_out_Kusal_Mendis.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Matthew Wade attempts to run out Kusal Mendis.jpg"
   },
   {
     "name": "Adam Zampa",
@@ -2599,7 +3515,14 @@
     "base price (in lacs)": "150.0",
     "final price (in lacs)": "150.0",
     "franchise": "RR",
-    "status": "SOLD"
+    "status": "SOLD",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Adam_zampa_2018.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "FISUTV on YouTube",
+    "imageLicense": "CC BY 3.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Adam_zampa_2018.png",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Adam zampa 2018.png"
   },
   {
     "name": "Anmolpreet Singh",
@@ -2608,7 +3531,14 @@
     "base price (in lacs)": "20.0",
     "final price (in lacs)": "20.0",
     "franchise": "SRH",
-    "status": "SOLD"
+    "status": "SOLD",
+    "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Anmolpreet_Singh.jpg/960px-Anmolpreet_Singh.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageCredit": "Dee03",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Anmolpreet_Singh.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Anmolpreet Singh.jpg"
   },
   {
     "name": "Dinesh Bana",
@@ -2644,7 +3574,14 @@
     "base price (in lacs)": "50.0",
     "final price (in lacs)": "50.0",
     "franchise": "KKR",
-    "status": "SOLD"
+    "status": "SOLD",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Mandeep_Singh.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "Mandeep",
+    "imageLicense": "CC BY-SA 3.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Mandeep_Singh.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Mandeep Singh.jpg"
   },
   {
     "name": "Rassie van der Dussen",
@@ -2671,7 +3608,14 @@
     "base price (in lacs)": "20.0",
     "final price (in lacs)": "",
     "franchise": "",
-    "status": "UNSOLD"
+    "status": "UNSOLD",
+    "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Suryansh_Shedge.jpg/960px-Suryansh_Shedge.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageCredit": "Unknown author Unknown author",
+    "imageLicense": "CC BY 4.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Suryansh_Shedge.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Suryansh Shedge.jpg"
   },
   {
     "name": "Akash Vashist",
@@ -2689,7 +3633,14 @@
     "base price (in lacs)": "20.0",
     "final price (in lacs)": "",
     "franchise": "",
-    "status": "UNSOLD"
+    "status": "UNSOLD",
+    "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Akash_singh_rajawat_moran_.jpg/960px-Akash_singh_rajawat_moran_.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageCredit": "Akashsinghinc",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Akash_singh_rajawat_moran_.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Akash singh rajawat moran .jpg"
   },
   {
     "name": "Naveen-ul-Haq",
@@ -2707,7 +3658,14 @@
     "base price (in lacs)": "50.0",
     "final price (in lacs)": "",
     "franchise": "",
-    "status": "UNSOLD"
+    "status": "UNSOLD",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/2/29/Dilshan_madushanka_crick.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "Massimo jay",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Dilshan_madushanka_crick.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Dilshan madushanka crick.jpg"
   },
   {
     "name": "Luke Wood",
@@ -2716,7 +3674,14 @@
     "base price (in lacs)": "100.0",
     "final price (in lacs)": "",
     "franchise": "",
-    "status": "UNSOLD"
+    "status": "UNSOLD",
+    "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Luke_Wood.jpg/960px-Luke_Wood.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "imageCredit": "LWood2",
+    "imageLicense": "CC BY-SA 3.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Luke_Wood.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Luke Wood.jpg"
   },
   {
     "name": "Yudhvir Singh Charak",
@@ -2761,9 +3726,15 @@
     "base price (in lacs)": "20.0",
     "final price (in lacs)": "20.0",
     "franchise": "RR",
-    "status": "SOLD"
+    "status": "SOLD",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/0/00/Ayisha_abdul_basith.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "Sheiknaseem",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Ayisha_abdul_basith.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Ayisha abdul basith.jpg"
   },
-
   {
     "name": "Wayne Parnell",
     "player style": "Allrounder",
@@ -2771,7 +3742,14 @@
     "base price (in lacs)": "75.0",
     "final price (in lacs)": "",
     "franchise": "",
-    "status": "UNSOLD"
+    "status": "UNSOLD",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Wayne_Parnell.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "imageCredit": "YellowMonkey/Blnguyen",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Wayne_Parnell.jpg",
+    "imageProvider": "Wikimedia Commons",
+    "imageTitle": "File:Wayne Parnell.jpg"
   },
   {
     "name": "Ekant Sen",

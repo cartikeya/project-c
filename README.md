@@ -79,3 +79,10 @@ The app now requires Google sign-in. The backend verifies Google's ID token, cre
 3. For local development, copy `client/.env.example` to `client/.env.local` and `server/.env.example` to `server/.env`, then fill in the Web Client ID and MongoDB connection. Generate a unique JWT secret of at least 32 random bytes (for example, `openssl rand -base64 48`) for each environment. The Google OAuth client does not need a client secret for this ID-token flow.
 
 Google's setup guide: https://developers.google.com/identity/gsi/web/guides/get-google-api-clientid. `client/vercel.json` and the root `vercel.json` set `Cross-Origin-Opener-Policy: same-origin-allow-popups` for the Google popup flow (Vercel uses the config in the configured project root). The frontend and backend changes must both be deployed; if the new auth API returns 404, deploy the updated server before retrying. Local client changes require a frontend rebuild; server environment changes require a backend restart/redeploy.
+
+## Player portraits
+
+`server/playersData.json` may include `img` plus the image title, source page, creator credit, and license URL. Portraits are added only when Wikimedia Commons exposes an exact-name file with an explicit CC BY/CC BY-SA, CC0, or Public Domain license and attribution metadata; records without a cleared image keep the generated-avatar fallback. The auction card and player pool link each photo credit to its Commons file page. The server syncs image metadata into matching MongoDB player records at startup without deleting or reseeding auction data. `server/scripts/enrich_player_images.py` can repeat this license-filtered lookup; it writes to a separate output path by default and should be reviewed before replacing the roster JSON.
+
+
+Commons cautions that photo licensing metadata does not grant separate personality, publicity, privacy, or trademark rights. Review those restrictions for the intended jurisdiction and before commercial or app-store distribution.

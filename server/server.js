@@ -10,6 +10,7 @@ const mongoose = require("mongoose");
 const Player = require("./models/Player");
 const User = require("./models/User");
 const AuctionRoom = require("./models/AuctionRoom");
+const playerProfileData = require("./playersData.json");
 
 const app = express();
 const server = http.createServer(app);
@@ -285,9 +286,26 @@ function emitRoomState(socket, roomId, game, isAdmin, teamName) {
   socket.emit("session_restored", { roomId, teamName, isAdmin });
 }
 
+function attachCurrentPlayerPortrait(currentPlayer) {
+  if (!currentPlayer) return currentPlayer;
+  const rosterPlayer = GLOBAL_PLAYERS.find((player) => player.name === currentPlayer.name);
+  if (!rosterPlayer?.img) return currentPlayer;
+  return {
+    ...currentPlayer,
+    img: rosterPlayer.img,
+    imageTitle: rosterPlayer.imageTitle,
+    imageCredit: rosterPlayer.imageCredit,
+    imageLicense: rosterPlayer.imageLicense,
+    imageLicenseUrl: rosterPlayer.imageLicenseUrl,
+    imageSource: rosterPlayer.imageSource,
+    imageProvider: rosterPlayer.imageProvider,
+  };
+}
+
 function hydrateGame(record) {
   const now = Date.now();
   let timer = Number(record.timer ?? 10);
+  const auctionState = record.auctionState || {};
   const timerEndsAt = record.timerEndsAt ? new Date(record.timerEndsAt).getTime() : null;
   if (!record.isPaused && record.hasAuctionStarted && timerEndsAt) {
     timer = Math.max(0, Math.ceil((timerEndsAt - now) / 1000));
@@ -304,7 +322,12 @@ function hydrateGame(record) {
     hasAuctionStarted: Boolean(record.hasAuctionStarted),
     isTransitioning: false,
     isPaused: Boolean(record.isPaused),
-    auctionState: record.auctionState,
+    auctionState: {
+      ...auctionState,
+      ...(auctionState.currentPlayer
+        ? { currentPlayer: attachCurrentPlayerPortrait(auctionState.currentPlayer) }
+        : {}),
+    },
   };
 }
 
@@ -562,6 +585,26 @@ async function initializeGame() {
     }
     await mongoose.connect(process.env.MONGO_URI);
     console.log("Connected to MongoDB Atlas.");
+    const portraitRecords = playerProfileData.filter((player) => (
+      player.img && player.imageCredit && player.imageLicense && player.imageLicenseUrl && player.imageSource
+    ));
+    if (portraitRecords.length) {
+      await Player.bulkWrite(portraitRecords.map((player) => ({
+        updateOne: {
+          filter: { name: player.name },
+          update: { $set: {
+            img: player.img,
+            imageTitle: player.imageTitle,
+            imageCredit: player.imageCredit,
+            imageLicense: player.imageLicense,
+            imageLicenseUrl: player.imageLicenseUrl,
+            imageSource: player.imageSource,
+            imageProvider: player.imageProvider,
+          } },
+        },
+      })), { ordered: false });
+      console.log(`Synced portrait metadata for ${portraitRecords.length} roster players.`);
+    }
     GLOBAL_PLAYERS = await Player.find({}).lean();
     console.log(`Loaded ${GLOBAL_PLAYERS.length} auction players.`);
 

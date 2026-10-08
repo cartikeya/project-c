@@ -28,6 +28,13 @@ async function seedDatabase() {
         basePrice: price,
         franchise: p.franchise,
         status: p.status,
+        img: p.img,
+        imageTitle: p.imageTitle,
+        imageCredit: p.imageCredit,
+        imageLicense: p.imageLicense,
+        imageLicenseUrl: p.imageLicenseUrl,
+        imageSource: p.imageSource,
+        imageProvider: p.imageProvider,
         isSold: false,
       };
     });

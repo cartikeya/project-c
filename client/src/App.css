@@ -132,6 +132,9 @@ button:focus-visible, input:focus-visible, a:focus-visible { outline: 3px solid 
 .player-image-caption .eyebrow { margin: 0 0 7px; color: var(--lime); }
 .player-image-caption h2 { margin: 0 0 5px; font-family: 'Space Grotesk', sans-serif; font-size: clamp(28px, 4vw, 42px); letter-spacing: -.045em; line-height: 1.05; }
 .player-image-caption > span { color: rgba(255,255,255,.72); font-size: 12px; }
+.player-image-credit { display: block; max-width: 100%; margin-top: 7px; overflow: hidden; color: rgba(255,255,255,.72); font-size: 8px; line-height: 1.4; text-overflow: ellipsis; white-space: nowrap; text-underline-offset: 2px; }
+.player-image-credit:hover { color: var(--lime); }
+.player-image-credit a { color: inherit; }
 .auction-timer { position: absolute; top: 18px; right: 18px; display: flex; flex-direction: column; justify-content: center; align-items: center; width: 72px; height: 72px; border: 1px solid rgba(255,255,255,.28); border-radius: 50%; color: var(--ink); background: var(--lime); box-shadow: 0 9px 28px rgba(0,0,0,.2); }
 .auction-timer span { font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 700; line-height: 1; }
 .auction-timer small { margin-top: 3px; font-size: 7px; font-weight: 700; letter-spacing: .09em; }
@@ -196,6 +199,9 @@ button:focus-visible, input:focus-visible, a:focus-visible { outline: 3px solid 
 .pool-player-card img { width: 38px; height: 38px; margin-bottom: 13px; border: 2px solid #fff; border-radius: 13px; box-shadow: 0 4px 10px rgba(25,30,53,.12); }
 .pool-player-card > strong { max-width: 100%; overflow: hidden; color: #272c40; font-family: 'Space Grotesk', sans-serif; font-size: 11px; text-overflow: ellipsis; white-space: nowrap; }
 .pool-player-role { margin-top: 4px; color: #796cce; font-size: 9px; font-weight: 700; }
+.pool-player-image-credit { display: block; max-width: 100%; margin-top: 4px; overflow: hidden; color: #777d8d; font-size: 7px; line-height: 1.35; text-overflow: ellipsis; white-space: nowrap; text-underline-offset: 2px; }
+.pool-player-image-credit:hover { color: #5b4cca; }
+.pool-player-image-credit a { color: inherit; }
 .pool-player-price { margin-top: auto; padding-top: 13px; color: #9297a7; font-size: 9px; }
 .on-block-label { position: absolute; top: 13px; right: 9px; color: #718d1d; font-size: 7px; font-weight: 800; letter-spacing: .05em; }
 .empty-pool { display: grid; min-height: 100px; flex: 1; place-items: center; color: #999eae; font-size: 12px; }

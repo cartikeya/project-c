@@ -36,15 +36,31 @@ function PlayerPool({ playersList, currentPlayer }) {
         ) : (
           displayedPlayers.map((player, index) => {
             const isCurrent = currentPlayer && currentPlayer.name === player.name;
+            const fallbackImage = `https://ui-avatars.com/api/?name=${encodeURIComponent(player.name || "Cricket Player")}&size=96&background=20243d&color=fff`;
             return (
               <article className={`pool-player-card${isCurrent ? " is-current" : ""}`} key={`${player.name}-${index}`}>
                 {isCurrent && <span className="on-block-label">ON THE BLOCK</span>}
                 <img
-                  src={`https://ui-avatars.com/api/?name=${player.name.replace(" ", "+")}&size=96&background=random&color=fff`}
+                  src={player.img || fallbackImage}
                   alt=""
+                  loading="lazy"
+                  onError={(event) => {
+                    if (event.currentTarget.src !== fallbackImage) event.currentTarget.src = fallbackImage;
+                  }}
                 />
                 <strong title={player.name}>{player.name}</strong>
                 <span className="pool-player-role">{player.role || "Player"}</span>
+                {player.img && player.imageCredit && player.imageLicense && player.imageSource && player.imageLicenseUrl && (
+                  <div className="pool-player-image-credit">
+                    <a href={player.imageSource} target="_blank" rel="noreferrer" aria-label={`Photo source and credit for ${player.name}: ${player.imageCredit}`}>
+                      Photo: {player.imageCredit}
+                    </a>
+                    <span aria-hidden="true"> · </span>
+                    <a href={player.imageLicenseUrl} target="_blank" rel="noreferrer" aria-label={`Image license for ${player.name}: ${player.imageLicense}`}>
+                      {player.imageLicense}
+                    </a>
+                  </div>
+                )}
                 <span className="pool-player-price">Base ₹{player.basePrice || 20}L</span>
               </article>
             );

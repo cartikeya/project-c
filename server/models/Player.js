@@ -7,6 +7,13 @@ const playerSchema = new mongoose.Schema({
   franchise: { type: String }, // "KKR", "MI", etc.
   status: { type: String }, // "RETAINED" or "AUCTION"
   isSold: { type: Boolean, default: false }, // We add this to track the game state!
+  img: { type: String },
+  imageTitle: { type: String },
+  imageCredit: { type: String },
+  imageLicense: { type: String },
+  imageLicenseUrl: { type: String },
+  imageSource: { type: String },
+  imageProvider: { type: String },
 });
 
 module.exports = mongoose.model("Player", playerSchema);
