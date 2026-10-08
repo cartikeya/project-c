@@ -3,7 +3,15 @@ const mongoose = require("mongoose");
 const auctionRoomSchema = new mongoose.Schema(
   {
     roomId: { type: String, required: true, unique: true, index: true },
+<<<<<<< HEAD
     adminUserId: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
+=======
+    adminUserId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+      default: null,
+    },
+>>>>>>> origin/main
     teams: { type: mongoose.Schema.Types.Mixed, default: {} },
     auctionState: { type: mongoose.Schema.Types.Mixed, required: true },
     playerIndex: { type: Number, default: 0 },

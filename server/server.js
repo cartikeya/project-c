@@ -5,6 +5,10 @@ const http = require("http");
 const { Server } = require("socket.io");
 const cors = require("cors");
 const jwt = require("jsonwebtoken");
+<<<<<<< HEAD
+=======
+const bcrypt = require("bcryptjs");
+>>>>>>> origin/main
 const { OAuth2Client } = require("google-auth-library");
 const mongoose = require("mongoose");
 const Player = require("./models/Player");
@@ -58,7 +62,13 @@ function consumeRoomJoinAttempt(key) {
 }
 
 function isRoomAdmin(socket, game, roomId) {
+<<<<<<< HEAD
   return Boolean(game && socket.rooms.has(roomId) && String(game.adminUserId) === socket.userId);
+=======
+  if (!game || !socket.rooms.has(roomId)) return false;
+  if (game.adminUserId) return Boolean(socket.userId && String(game.adminUserId) === socket.userId);
+  return game.adminSocketID === socket.id;
+>>>>>>> origin/main
 }
 
 function publicUser(user) {
@@ -85,13 +95,71 @@ function readBearerToken(header) {
   return match ? match[1] : null;
 }
 
+<<<<<<< HEAD
 function verifySessionToken(token) {
   if (!process.env.JWT_SECRET) throw new Error("Session signing is not configured.");
   return jwt.verify(token, process.env.JWT_SECRET, { issuer: tokenIssuer });
+=======
+function escapeRegex(value) {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+async function findUserByEmail(email) {
+  const exactMatch = await User.findOne({ email });
+  if (exactMatch) return exactMatch;
+  return User.findOne({ email: new RegExp(`^${escapeRegex(email)}$`, "i") });
+}
+
+function verifySessionToken(token) {
+  if (!process.env.JWT_SECRET) throw new Error("Session signing is not configured.");
+  const payload = jwt.verify(token, process.env.JWT_SECRET);
+  const userId = payload.sub || payload.id;
+  if (!userId || !mongoose.isValidObjectId(userId)) throw new Error("Invalid session subject.");
+  return { ...payload, sub: String(userId) };
+>>>>>>> origin/main
 }
 
 app.get("/health", (_req, res) => res.status(200).json({ ok: true }));
 
+<<<<<<< HEAD
+=======
+// Keep the deployed main-branch email/password API alongside Google sign-in.
+app.post("/register", async (req, res) => {
+  try {
+    const name = String(req.body?.name || "").trim();
+    const email = String(req.body?.email || "").trim().toLowerCase();
+    const password = typeof req.body?.password === "string" ? req.body.password : "";
+    if (!name || !email || password.length < 8) {
+      return res.status(400).json({ message: "Name, email, and a password of at least 8 characters are required." });
+    }
+    const existingUser = await findUserByEmail(email);
+    if (existingUser) return res.status(400).json({ message: "User already exists" });
+    const user = await User.create({ name, email, password: await bcrypt.hash(password, 10) });
+    const token = jwt.sign({ id: String(user._id) }, process.env.JWT_SECRET, { expiresIn: "1d" });
+    return res.status(201).json({ token, user: publicUser(user) });
+  } catch (error) {
+    console.error("Registration failed:", error.message);
+    return res.status(500).json({ message: "Server error during registration" });
+  }
+});
+
+app.post("/login", async (req, res) => {
+  try {
+    const email = String(req.body?.email || "").trim().toLowerCase();
+    const password = typeof req.body?.password === "string" ? req.body.password : "";
+    const user = await findUserByEmail(email);
+    if (!user?.password || !password || !(await bcrypt.compare(password, user.password))) {
+      return res.status(400).json({ message: "Invalid credentials" });
+    }
+    const token = jwt.sign({ id: String(user._id) }, process.env.JWT_SECRET, { expiresIn: "1d" });
+    return res.status(200).json({ token, user: publicUser(user) });
+  } catch (error) {
+    console.error("Login failed:", error.message);
+    return res.status(500).json({ message: "Server error during login" });
+  }
+});
+
+>>>>>>> origin/main
 app.post("/api/auth/google", async (req, res) => {
   try {
     if (!GOOGLE_CLIENT_ID || !process.env.JWT_SECRET) {
@@ -111,6 +179,7 @@ app.post("/api/auth/google", async (req, res) => {
       return res.status(401).json({ message: "Google could not verify this account." });
     }
 
+<<<<<<< HEAD
     const user = await User.findOneAndUpdate(
       { googleId: profile.sub },
       {
@@ -122,6 +191,25 @@ app.post("/api/auth/google", async (req, res) => {
       },
       { new: true, upsert: true, runValidators: true, setDefaultsOnInsert: true },
     );
+=======
+    const email = profile.email.toLowerCase();
+    let user = await User.findOne({ googleId: profile.sub });
+    if (!user) user = await findUserByEmail(email);
+    if (user) {
+      user.googleId = profile.sub;
+      user.email = email;
+      user.name = profile.name || user.name || email.split("@")[0];
+      user.picture = profile.picture || user.picture || "";
+      await user.save();
+    } else {
+      user = await User.create({
+        googleId: profile.sub,
+        email,
+        name: profile.name || email.split("@")[0],
+        picture: profile.picture || "",
+      });
+    }
+>>>>>>> origin/main
 
     return res.status(200).json({ token: issueSessionToken(user), user: publicUser(user) });
   } catch (error) {
@@ -146,7 +234,16 @@ app.get("/api/auth/me", async (req, res) => {
 io.use((socket, next) => {
   try {
     const token = socket.handshake.auth?.token;
+<<<<<<< HEAD
     if (!token) return next(new Error("Google sign-in is required."));
+=======
+    // Preserve the currently deployed anonymous flow; signed-in clients send
+    // a token and receive account-backed room recovery.
+    if (!token) {
+      socket.userId = null;
+      return next();
+    }
+>>>>>>> origin/main
     const payload = verifySessionToken(token);
     socket.userId = String(payload.sub);
     return next();
@@ -163,7 +260,12 @@ function persistInBackground(roomId) {
 
 async function persistGame(roomId) {
   const game = activeGames[roomId];
+<<<<<<< HEAD
   if (!game) return;
+=======
+  // Legacy anonymous rooms retain their prior in-memory behavior.
+  if (!game || !game.adminUserId) return;
+>>>>>>> origin/main
   await AuctionRoom.updateOne(
     { roomId },
     {
@@ -270,6 +372,10 @@ function processSale(roomId) {
 }
 
 function findTeamForUser(game, userId) {
+<<<<<<< HEAD
+=======
+  if (!userId) return null;
+>>>>>>> origin/main
   return Object.entries(game.teams).find(([, team]) => String(team.userId) === String(userId))?.[0] || null;
 }
 
@@ -293,7 +399,12 @@ function hydrateGame(record) {
     timer = Math.max(0, Math.ceil((timerEndsAt - now) / 1000));
   }
   return {
+<<<<<<< HEAD
     adminUserId: String(record.adminUserId),
+=======
+    adminUserId: record.adminUserId ? String(record.adminUserId) : null,
+    adminSocketID: null,
+>>>>>>> origin/main
     gameStarted: Boolean(record.gameStarted),
     playerIndex: Number(record.playerIndex || 0),
     teams: record.teams || {},
@@ -333,10 +444,21 @@ function emitConnectionError(socket, error, message) {
 }
 
 io.on("connection", (socket) => {
+<<<<<<< HEAD
   console.log(`Authenticated user connected: ${socket.userId}`);
 
   socket.on("restore_session", async () => {
     try {
+=======
+  console.log(`Socket connected: ${socket.userId || "legacy anonymous client"}`);
+
+  socket.on("restore_session", async () => {
+    try {
+      if (!socket.userId) {
+        socket.emit("session_not_found");
+        return;
+      }
+>>>>>>> origin/main
       const user = await User.findById(socket.userId);
       if (!user?.activeRoomId) {
         socket.emit("session_not_found");
@@ -371,6 +493,10 @@ io.on("connection", (socket) => {
       const initialPlayer = GLOBAL_PLAYERS[0];
       activeGames[roomId] = {
         adminUserId: socket.userId,
+<<<<<<< HEAD
+=======
+        adminSocketID: socket.id,
+>>>>>>> origin/main
         gameStarted: false,
         playerIndex: 0,
         teams: {},
@@ -390,7 +516,13 @@ io.on("connection", (socket) => {
       };
 
       await persistGame(roomId);
+<<<<<<< HEAD
       await User.findByIdAndUpdate(socket.userId, { $set: { activeRoomId: roomId, activeTeamName: null } });
+=======
+      if (socket.userId) {
+        await User.findByIdAndUpdate(socket.userId, { $set: { activeRoomId: roomId, activeTeamName: null } });
+      }
+>>>>>>> origin/main
       socket.join(roomId);
       socket.emit("room_created", roomId);
       socket.emit("set_admin", true);
@@ -407,7 +539,11 @@ io.on("connection", (socket) => {
 
   socket.on("join_room", async (requestedRoomId) => {
     try {
+<<<<<<< HEAD
       const attemptKey = `${socket.userId}:${socket.handshake.address || "unknown"}`;
+=======
+      const attemptKey = `${socket.userId || socket.id}:${socket.handshake.address || "unknown"}`;
+>>>>>>> origin/main
       if (!consumeRoomJoinAttempt(attemptKey)) {
         socket.emit("error_message", "Too many room-code attempts. Wait one minute, then try again.");
         return;
@@ -422,10 +558,25 @@ io.on("connection", (socket) => {
         socket.emit("error_message", "Room not found!");
         return;
       }
+<<<<<<< HEAD
 
       const isAdmin = String(game.adminUserId) === socket.userId;
       const teamName = findTeamForUser(game, socket.userId);
       await User.findByIdAndUpdate(socket.userId, { $set: { activeRoomId: roomId, activeTeamName: teamName } });
+=======
+      if (game.adminUserId && !socket.userId) {
+        socket.emit("error_message", "Sign in before joining this saved auction room.");
+        return;
+      }
+
+      const isAdmin = game.adminUserId
+        ? String(game.adminUserId) === socket.userId
+        : game.adminSocketID === socket.id;
+      const teamName = findTeamForUser(game, socket.userId);
+      if (socket.userId) {
+        await User.findByIdAndUpdate(socket.userId, { $set: { activeRoomId: roomId, activeTeamName: teamName } });
+      }
+>>>>>>> origin/main
       socket.join(roomId);
       roomJoinAttempts.delete(attemptKey);
       emitRoomState(socket, roomId, game, isAdmin, teamName);
@@ -446,14 +597,28 @@ io.on("connection", (socket) => {
         respond({ ok: false, message: "Join a valid room before choosing a franchise." });
         return;
       }
+<<<<<<< HEAD
+=======
+      if (game.adminUserId && !socket.userId) {
+        respond({ ok: false, message: "Sign in before joining this saved auction room." });
+        return;
+      }
+>>>>>>> origin/main
       if (!TEAM_NAMES.has(teamName)) {
         respond({ ok: false, message: "Choose one of the available franchises." });
         return;
       }
 
+<<<<<<< HEAD
       const currentUserTeam = findTeamForUser(game, socket.userId);
       const existingTeam = game.teams[teamName];
       if (existingTeam && String(existingTeam.userId) !== socket.userId) {
+=======
+      const ownerId = socket.userId || socket.id;
+      const currentUserTeam = findTeamForUser(game, ownerId);
+      const existingTeam = game.teams[teamName];
+      if (existingTeam && String(existingTeam.userId) !== ownerId) {
+>>>>>>> origin/main
         respond({ ok: false, message: "That franchise is already taken in this room." });
         return;
       }
@@ -461,6 +626,7 @@ io.on("connection", (socket) => {
         respond({ ok: false, message: `You already control ${currentUserTeam} in this room.` });
         return;
       }
+<<<<<<< HEAD
       if (!existingTeam) game.teams[teamName] = { userId: socket.userId, budget: 12000, squad: [] };
 
       await User.findByIdAndUpdate(socket.userId, { $set: { activeRoomId: roomId, activeTeamName: teamName } });
@@ -468,6 +634,18 @@ io.on("connection", (socket) => {
       io.to(roomId).emit("update_teams", game.teams);
       respond({ ok: true, teamName, isAdmin: String(game.adminUserId) === socket.userId });
       socket.emit("session_restored", { roomId, teamName, isAdmin: String(game.adminUserId) === socket.userId });
+=======
+      if (!existingTeam) game.teams[teamName] = { userId: ownerId, budget: 12000, squad: [] };
+
+      if (socket.userId) {
+        await User.findByIdAndUpdate(socket.userId, { $set: { activeRoomId: roomId, activeTeamName: teamName } });
+      }
+      await persistGame(roomId);
+      io.to(roomId).emit("update_teams", game.teams);
+      const isAdmin = isRoomAdmin(socket, game, roomId);
+      respond({ ok: true, teamName, isAdmin });
+      if (socket.userId) socket.emit("session_restored", { roomId, teamName, isAdmin });
+>>>>>>> origin/main
     } catch (error) {
       console.error("Could not save franchise selection:", error.message);
       respond({ ok: false, message: "Could not save your franchise selection. Please retry." });
@@ -505,7 +683,12 @@ io.on("connection", (socket) => {
         return;
       }
       const teamWallet = game.teams[teamName];
+<<<<<<< HEAD
       if (!teamWallet || String(teamWallet.userId) !== socket.userId || teamWallet.budget < amount) return;
+=======
+      const ownerId = socket.userId || socket.id;
+      if (!teamWallet || String(teamWallet.userId) !== ownerId || teamWallet.budget < amount) return;
+>>>>>>> origin/main
       if (Number.isFinite(amount) && amount > game.auctionState.currentBid) {
         game.hasAuctionStarted = true;
         game.auctionState.currentBid = amount;

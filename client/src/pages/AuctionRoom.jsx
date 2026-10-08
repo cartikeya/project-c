@@ -1,3 +1,4 @@
+<<<<<<< HEAD:client/src/App.js
 import React, { useCallback, useEffect, useState } from "react";
 import { API_BASE_URL, socket } from "./socket";
 import AdminPanel from "./components/AdminPanel";
@@ -19,6 +20,20 @@ function App() {
   const [authLoading, setAuthLoading] = useState(true);
   const [authError, setAuthError] = useState("");
 
+=======
+// App.js
+import React, { useState, useEffect } from "react";
+import { socket } from "../socket";
+import AdminPanel from "../components/AdminPanel";
+import Login from "../components/Login";
+import PlayerCard from "../components/PlayerCard";
+import SoldOverlay from "../components/SoldOverlay";
+import SquadOverview from "../components/SquadOverview";
+import Lobby from "../components/Lobby";
+import PlayerPool from "../components/PlayerPool";
+
+function AuctionRoom() {
+>>>>>>> origin/main:client/src/pages/AuctionRoom.jsx
   const [auctionData, setAuctionData] = useState(null);
   const [teamsData, setTeamsData] = useState({});
   const [myTeamName, setMyTeamName] = useState("");
@@ -414,4 +429,4 @@ function AccountControl({ user, onSignOut }) {
   );
 }
 
-export default App;
+export default AuctionRoom;
