@@ -70,7 +70,12 @@ function App() {
       body: JSON.stringify({ credential }),
     });
     const payload = await response.json().catch(() => ({}));
-    if (!response.ok) throw new Error(payload.message || "Google sign-in failed.");
+    if (!response.ok) {
+      const fallback = response.status === 404
+        ? "The Google sign-in service is not deployed on the server yet. Deploy the updated backend and try again."
+        : "Google sign-in failed. Please try again.";
+      throw new Error(payload.message || fallback);
+    }
     if (!payload.token || !payload.user) throw new Error("The sign-in response was incomplete.");
 
     window.sessionStorage.setItem(AUTH_TOKEN_KEY, payload.token);
