@@ -1,8 +1,14 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { render, screen } from "@testing-library/react";
+import App from "./App";
 
-test('renders learn react link', () => {
+jest.mock("./socket", () => ({
+  socket: { on: jest.fn(), off: jest.fn(), emit: jest.fn() },
+}));
+
+test("renders the auction room entry actions", () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+
+  expect(screen.getByRole("heading", { name: /start a new room/i })).toBeInTheDocument();
+  expect(screen.getByRole("button", { name: /create room/i })).toBeInTheDocument();
+  expect(screen.getByRole("button", { name: /^join/i })).toBeInTheDocument();
 });

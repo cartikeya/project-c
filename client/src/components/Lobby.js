@@ -3,11 +3,7 @@ import { socket } from "../socket";
 
 function Lobby() {
   const [joinCode, setJoinCode] = useState("");
-
-  const handleCreateRoom = () => {
-    socket.emit("create_room");
-  };
-
+  const handleCreateRoom = () => socket.emit("create_room");
   const handleJoinRoom = () => {
     if (joinCode.trim().length !== 4) {
       alert("enter a valid 4 digit code");
@@ -15,106 +11,63 @@ function Lobby() {
     }
     socket.emit("join_room", joinCode.toUpperCase());
   };
+
   return (
-    <div style={{ textAlign: "center", marginTop: "100px" }}>
-      <h2>Welcome to IPL mock auction</h2>
-      <div
-        style={{
-          border: "1px solid #ddd",
-          padding: "30px",
-          borderRadius: "10px",
-          display: "inline-block",
-          backgroundColor: "#f9f9f9",
-          boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
-        }}
-      >
-        {/* Create Room section  */}
-        <div style={{ marginBottom: "30px" }}>
-          <h3>Host a new game</h3>
-          <button
-            onClick={handleCreateRoom}
-            style={{
-              padding: "12px 24px",
-              fontSize: "1.1rem",
-              cursor: "pointer",
-              background: "#28a745",
-              color: "white",
-              border: "none",
-              borderRadius: "8px",
-            }}
-          >
-            Create room
-          </button>
-        </div>
-        <hr style={{ borderColor: "#ddd", marginBottom: "30px" }} />
-        <div>
-          <h3>Join an existing game</h3>
-          <input
-            type="text"
-            placeholder="enter 4 digit room code"
-            value={joinCode}
-            onChange={(e) => setJoinCode(e.target.value.toUpperCase())}
-            maxLength={4}
-            style={{
-              padding: "10px",
-              fontSize: "1.1rem",
-              width: "180px",
-              textAlign: "center",
-              marginRight: "10px",
-              borderRadius: "5px",
-              border: "1px solid #ccc",
-            }}
-          />
-          <button
-            onClick={handleJoinRoom}
-            style={{
-              padding: "10px 20px",
-              fontSize: "1.1rem",
-              cursor: "pointer",
-              background: "#007bff",
-              color: "white",
-              border: "none",
-              borderRadius: "8px",
-            }}
-          >
-            join
-          </button>
-        </div>
-      </div>
-      <div
-        style={{
-          marginTop: "50px",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-        }}
-      >
-        <p style={{ color: "#666", fontSize: "0.95rem", marginBottom: "10px" }}>
-          Built by a B.Tech student. If your squad is enjoying the game,
-          <br />
-          help keep the cloud servers running! ☕
-        </p>
-        <a
-          href="https://www.buymeacoffee.com/cartikeya"
-          target="_blank"
-          rel="noreferrer"
-          style={{ transition: "transform 0.2s ease" }}
-          onMouseOver={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
-          onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")}
-        >
-          <img
-            src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
-            alt="Buy Me A Coffee"
-            style={{
-              height: "50px",
-              width: "180px",
-              borderRadius: "8px",
-              boxShadow: "0 4px 6px rgba(0,0,0,0.1)",
-            }}
-          />
+    <main className="lobby-shell">
+      <header className="lobby-header">
+        <a className="brand-lockup" href="#top" aria-label="IPL Auction home">
+          <span className="brand-mark" aria-hidden="true"><span /></span>
+          <span className="brand-copy"><span className="brand-kicker">THE LIVE ROOM</span><span className="brand-name">IPL <strong>AUCTION</strong></span></span>
         </a>
-      </div>
-    </div>
+        <span className="lobby-header-note"><span className="live-dot" /> PRIVATE ROOMS · LIVE BIDDING</span>
+      </header>
+
+      <section className="lobby-hero">
+        <div className="lobby-copy">
+          <p className="eyebrow">YOUR SEASON STARTS HERE</p>
+          <h1>Every great<br /><span>squad starts</span><br />with a bid.</h1>
+          <p className="lobby-description">Bring your friends together for a live IPL mock auction. Create a room or jump into one that’s already underway.</p>
+          <div className="lobby-feature-row"><span><i>01</i> Private game rooms</span><span><i>02</i> Real-time bidding</span></div>
+        </div>
+
+        <div className="lobby-card surface-panel">
+          <div className="lobby-card-topline"><span>AUCTION CONTROL</span><span className="lobby-card-mark">✦</span></div>
+          <div className="lobby-action-block">
+            <span className="step-label">01 <i>HOST A GAME</i></span>
+            <h2>Start a new room</h2>
+            <p>Become the host and invite your league in.</p>
+            <button className="button button-primary lobby-create-button" type="button" onClick={handleCreateRoom}>Create room <span aria-hidden="true">↗</span></button>
+          </div>
+          <div className="lobby-separator"><span>OR</span></div>
+          <div className="lobby-action-block join-room-block">
+            <span className="step-label">02 <i>JOIN A GAME</i></span>
+            <h2>Have a room code?</h2>
+            <p>Enter the four-character code from your host.</p>
+            <div className="room-code-form">
+              <label className="visually-hidden" htmlFor="room-code">Four-letter room code</label>
+              <input
+                id="room-code"
+                type="text"
+                inputMode="text"
+                autoComplete="off"
+                placeholder="ROOM CODE"
+                value={joinCode}
+                onChange={(e) => setJoinCode(e.target.value.toUpperCase())}
+                onKeyDown={(e) => { if (e.key === "Enter") handleJoinRoom(); }}
+                maxLength={4}
+              />
+              <button className="button button-secondary" type="button" onClick={handleJoinRoom}>Join <span aria-hidden="true">→</span></button>
+            </div>
+          </div>
+          <div className="lobby-card-footer"><span>MADE FOR THE LOVE OF THE GAME</span><span>↗</span></div>
+        </div>
+      </section>
+
+      <footer className="lobby-footer">
+        <div><span className="footer-emblem">✦</span><p>Built by a B.Tech student. If your squad is enjoying the game, help keep the cloud servers running.</p></div>
+        <a className="coffee-link" href="https://www.buymeacoffee.com/cartikeya" target="_blank" rel="noreferrer">Support the project <span aria-hidden="true">↗</span></a>
+      </footer>
+    </main>
   );
 }
 export default Lobby;

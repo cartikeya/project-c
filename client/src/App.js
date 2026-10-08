@@ -8,6 +8,7 @@ import SoldOverlay from "./components/SoldOverlay";
 import SquadOverview from "./components/SquadOverview";
 import Lobby from "./components/Lobby";
 import PlayerPool from "./components/PlayerPool";
+import "./App.css";
 
 function App() {
   const [auctionData, setAuctionData] = useState(null);
@@ -36,7 +37,6 @@ function App() {
       alert(msg);
     });
 
-    // LISTEN: The server now sends an object with bid AND leader
     socket.on("update_auction", (data) => {
       setAuctionData(data);
       setSoldInfo(null);
@@ -47,7 +47,7 @@ function App() {
     socket.on("timer_update", (time) => setTimer(time));
     socket.on("auction_status", (status) => setGameStarted(status));
     socket.on("players_list", (list) => setPlayersList(list));
-    // cleanup listeners when prevents bugs when component reloads
+
     return () => {
       socket.off("room_created");
       socket.off("room_joined");
@@ -65,8 +65,6 @@ function App() {
   const togglePause = () => {
     const newPauseState = !isPaused;
     setIsPaused(newPauseState);
-
-    // Tell the backend to freeze the timer!
     socket.emit("toggle_pause", { roomId, isPaused: newPauseState });
   };
   const handleSetTeam = () => setIsTeamSet(true);
@@ -86,10 +84,7 @@ function App() {
   };
 
   const nextPlayer = () => socket.emit("next_player", roomId);
-
-  const startGame = () => {
-    socket.emit("start_auction", roomId);
-  };
+  const startGame = () => socket.emit("start_auction", roomId);
 
   if (!inRoom) {
     return <Lobby />;
@@ -97,22 +92,21 @@ function App() {
 
   if (!auctionData || !auctionData.currentPlayer) {
     return (
-      <div
-        style={{ textAlign: "center", marginTop: "50px", fontSize: "1.5rem" }}
-      >
-        ⏳ Loading Mega Auction Database...
-      </div>
+      <main className="loading-screen">
+        <div className="loading-orbit" aria-hidden="true"><span /></div>
+        <p className="eyebrow">IPL MOCK AUCTION</p>
+        <h1>Setting the stage</h1>
+        <p className="muted-copy">Loading the player database…</p>
+      </main>
     );
   }
-
-  // const { currentPlayer, currentBid, currentLeader } = auctionData;
 
   const isWinning = auctionData.currentLeader === myTeamName;
   const takenTeamNames = Object.keys(teamsData);
   const myStats = teamsData[myTeamName] || { budget: 10000, squad: [] };
 
   return (
-    <div style={{ textAlign: "center", fontFamily: "Arial", padding: "20px" }}>
+    <main className="app-shell">
       {soldInfo && (
         <SoldOverlay
           auctionData={{
@@ -121,173 +115,148 @@ function App() {
           }}
         />
       )}
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          marginBottom: "20px",
-        }}
-      >
-        <h1>IPL Auction</h1>
-        <div
-          style={{
-            background: "#ffeb3b",
-            padding: "10px 20px",
-            borderRadius: "8px",
-            fontWeight: "bold",
-            border: "2px solid #ccc",
-          }}
-        >
-          Room Code:
-          <span
-            style={{
-              fontSize: "1.5rem",
-              letterSpacing: "2px",
-              color: "#d32f2f",
-            }}
-          >
-            {roomId}
+
+      <header className="app-header">
+        <a className="brand-lockup" href="#top" aria-label="IPL Auction home">
+          <span className="brand-mark" aria-hidden="true"><span /></span>
+          <span className="brand-copy">
+            <span className="brand-kicker">THE LIVE ROOM</span>
+            <span className="brand-name">IPL <strong>AUCTION</strong></span>
           </span>
+        </a>
+        <div className="room-badge" aria-label={`Room code ${roomId}`}>
+          <span className="room-badge-label"><span className="live-dot" /> ROOM CODE</span>
+          <strong>{roomId}</strong>
         </div>
-      </div>
-      {/* team name section */}
+      </header>
+
+      <section className="page-intro">
+        <div>
+          <p className="eyebrow">{gameStarted ? "AUCTION IN PROGRESS" : "YOUR PRIVATE AUCTION"}</p>
+          <h1>{gameStarted ? "Make your move." : "Build your squad."}</h1>
+          <p className="page-subtitle">
+            {gameStarted
+              ? "Every bid changes the game. Stay sharp and back your strategy."
+              : "Choose your franchise, bring your crew in, and get ready to bid."}
+          </p>
+        </div>
+        {gameStarted && <span className="status-pill"><span className="live-dot" /> LIVE AUCTION</span>}
+      </section>
 
       {!isTeamSet ? (
-        <Login
-          setMyTeamName={setMyTeamName}
-          handleSetTeam={handleSetTeam}
-          takenTeamNames={takenTeamNames}
-          roomId={roomId}
-        />
+        <section className="join-panel surface-panel">
+          <div className="section-heading">
+            <div>
+              <p className="eyebrow">STEP 01 / PICK YOUR SIDE</p>
+              <h2>Choose your franchise</h2>
+            </div>
+            <span className="heading-note">{takenTeamNames.length} teams in the room</span>
+          </div>
+          <Login
+            setMyTeamName={setMyTeamName}
+            handleSetTeam={handleSetTeam}
+            takenTeamNames={takenTeamNames}
+            roomId={roomId}
+          />
+        </section>
       ) : (
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            padding: "10px 20px",
-            background: "#333",
-            color: "white",
-            borderRadius: "8px",
-            marginBottom: "20px",
-          }}
-        >
-          <h3>Team: {myTeamName}</h3>
-          <h3>Purse: {myStats.budget / 100.0} Crores</h3>
-          <h3>Players: {myStats.squad.length}</h3>
-        </div>
+        <section className="team-summary surface-panel" aria-label="Your team summary">
+          <div className="team-summary-brand">
+            <span className="team-avatar">{myTeamName.slice(0, 2)}</span>
+            <div>
+              <span className="eyebrow">YOUR FRANCHISE</span>
+              <strong>{myTeamName}</strong>
+            </div>
+          </div>
+          <div className="summary-stat">
+            <span>Remaining purse</span>
+            <strong>₹ {(myStats.budget / 100.0).toFixed(2)} <small>Cr</small></strong>
+          </div>
+          <div className="summary-stat">
+            <span>Players signed</span>
+            <strong>{myStats.squad.length}</strong>
+          </div>
+          <div className="summary-stat summary-stat-room">
+            <span>Room</span>
+            <strong>{roomId}</strong>
+          </div>
+        </section>
       )}
 
       {auctionData.lastSoldTo && (
-        <div
-          style={{
-            background: "#ffeb3b",
-            padding: "10px",
-            margin: "10px auto",
-            maxWidth: "400px",
-            borderRadius: "5px",
-          }}
-        >
-          last Sold:{" "}
-          <strong>
-            {" "}
-            {/* {auctionData.currentPlayer.name} */}
-            {auctionData.lastSoldTo}
-            {console.log(auctionData)}
-          </strong>
+        <div className="last-sold-banner">
+          <span className="sold-banner-icon" aria-hidden="true">✓</span>
+          <span>Last player secured by <strong>{auctionData.lastSoldTo}</strong></span>
         </div>
       )}
-      <br />
+
       {isTeamSet && !gameStarted && (
-        // WAITING LOBBY
-        <div
-          style={{
-            marginTop: "40px",
-            padding: "30px",
-            background: "#f8f9fa",
-            borderRadius: "10px",
-            border: "2px dashed #ccc",
-          }}
-        >
-          <h2>⏳ Waiting for players to join...</h2>
-          <p>
-            Current players in room: <strong>{takenTeamNames.length}</strong>
-          </p>
-
-          {isAdmin ? (
-            <button
-              onClick={startGame}
-              style={{
-                padding: "15px 30px",
-                fontSize: "1.2rem",
-                background: "#28a745",
-                color: "white",
-                border: "none",
-                borderRadius: "8px",
-                cursor: "pointer",
-                marginTop: "20px",
-                boxShadow: "0 4px 6px rgba(0,0,0,0.1)",
-              }}
-            >
-              🚀 Start Auction Now
-            </button>
-          ) : (
-            <p
-              style={{ color: "#777", fontStyle: "italic", marginTop: "20px" }}
-            >
-              Waiting for Admin to start the game...
-            </p>
-          )}
-
-          {/* Show who has joined so far */}
-          <div style={{ marginTop: "30px" }}>
-            <SquadOverview teamsData={teamsData} />
+        <section className="waiting-room surface-panel">
+          <div className="waiting-heading">
+            <div className="waiting-icon" aria-hidden="true">⌛</div>
+            <div>
+              <p className="eyebrow">ROOM STATUS</p>
+              <h2>Waiting for the room to fill</h2>
+              <p className="muted-copy">Your host will kick off the auction when everyone is ready.</p>
+            </div>
           </div>
-          {/* Add the Pool here too so they can strategize! */}
-          <div style={{ marginTop: "30px" }}>
-            <PlayerPool playersList={playersList} currentPlayer={null} />
+          <div className="waiting-actions">
+            <div className="player-count"><strong>{takenTeamNames.length}</strong><span>franchises joined</span></div>
+            {isAdmin ? (
+              <button className="button button-primary button-start" onClick={startGame}>
+                <span aria-hidden="true">▶</span> Start auction
+              </button>
+            ) : (
+              <p className="host-note"><span className="pulse-dot" /> Waiting for the host to start</p>
+            )}
           </div>
-        </div>
+          <div className="section-divider" />
+          <SquadOverview teamsData={teamsData} />
+          <PlayerPool playersList={playersList} currentPlayer={null} />
+        </section>
       )}
+
       {isTeamSet && gameStarted && (
         <>
-          <PlayerCard
-            currentPlayer={auctionData.currentPlayer}
-            currentBid={auctionData.currentBid}
-            currentLeader={auctionData.currentLeader}
-            placeBid={placeBid}
-            isTeamSet={isTeamSet}
-            isWinning={isWinning}
-            timer={timer}
-          />
-
-          {isAdmin && (
-            <div
-              style={{
-                border: "2px dashed red",
-                padding: "10px",
-                marginTop: "20px",
-              }}
-            >
-              <h4 style={{ margin: "5px", color: "red" }}>Admin Controls:</h4>
-              <AdminPanel
-                nextPlayer={nextPlayer}
-                socket={socket}
-                roomId={roomId}
-                isPaused={isPaused}
-                togglePause={togglePause}
+          <div className="auction-workspace">
+            <section className="auction-main-column">
+              <PlayerCard
+                currentPlayer={auctionData.currentPlayer}
+                currentBid={auctionData.currentBid}
+                currentLeader={auctionData.currentLeader}
+                placeBid={placeBid}
+                isTeamSet={isTeamSet}
+                isWinning={isWinning}
+                timer={timer}
               />
-            </div>
-          )}
-
-          <SquadOverview teamsData={teamsData} />
+              {isAdmin && (
+                <section className="admin-panel surface-panel">
+                  <div className="admin-heading">
+                    <span className="admin-icon" aria-hidden="true">⌘</span>
+                    <div><p className="eyebrow">HOST TOOLS</p><h3>Control the room</h3></div>
+                  </div>
+                  <AdminPanel
+                    nextPlayer={nextPlayer}
+                    socket={socket}
+                    roomId={roomId}
+                    isPaused={isPaused}
+                    togglePause={togglePause}
+                  />
+                </section>
+              )}
+            </section>
+            <aside className="auction-side-column">
+              <SquadOverview teamsData={teamsData} />
+            </aside>
+          </div>
           <PlayerPool
             playersList={playersList}
             currentPlayer={auctionData.currentPlayer}
           />
         </>
       )}
-    </div>
+      <footer className="app-footer"><span>IPL MOCK AUCTION</span><span>Good luck, managers.</span></footer>
+    </main>
   );
 }
 
