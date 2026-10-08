@@ -1,13 +1,24 @@
-import { render, screen, waitFor } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import App from "./App";
+import { socket } from "./socket";
 
 jest.mock("./socket", () => ({
   API_BASE_URL: "http://localhost:3001",
-  socket: { on: jest.fn(), off: jest.fn(), emit: jest.fn(), connect: jest.fn(), disconnect: jest.fn() },
+  socket: {
+    on: jest.fn(),
+    off: jest.fn(),
+    emit: jest.fn(),
+    connect: jest.fn(),
+    disconnect: jest.fn(),
+  },
 }));
 
-test("requires Google sign-in before entering an auction", async () => {
+beforeEach(() => {
   window.sessionStorage.clear();
+  jest.clearAllMocks();
+});
+
+test("requires Google sign-in before entering an auction", async () => {
   window.google = {
     accounts: {
       id: {
@@ -24,4 +35,44 @@ test("requires Google sign-in before entering an auction", async () => {
   expect(screen.getByText(/Google verifies your identity/i)).toBeInTheDocument();
   await waitFor(() => expect(window.google.accounts.id.renderButton).toHaveBeenCalled());
   expect(window.google.accounts.id.initialize).toHaveBeenCalledWith(expect.objectContaining({ client_id: expect.any(String) }));
+});
+
+test("offers Continue or Create New Game instead of automatically restoring a saved room", async () => {
+  window.sessionStorage.setItem("project-c.auth-token", "test-session-token");
+  global.fetch = jest.fn().mockResolvedValue({
+    ok: true,
+    json: async () => ({
+      user: {
+        id: "user-1",
+        name: "Auction Host",
+        activeRoomId: "AB12",
+        activeTeamName: "CSK",
+      },
+    }),
+  });
+
+  render(<App />);
+
+  expect(await screen.findByRole("heading", { name: /how would you like to play/i })).toBeInTheDocument();
+  expect(screen.getByText("AB12")).toBeInTheDocument();
+  expect(screen.getByText(/playing as/i)).toHaveTextContent("CSK");
+  expect(socket.emit).not.toHaveBeenCalledWith("restore_session");
+
+  fireEvent.click(screen.getByRole("button", { name: /continue saved game/i }));
+  expect(socket.emit).toHaveBeenCalledWith("restore_session");
+});
+
+test("creates a new game from the saved-room choice", async () => {
+  window.sessionStorage.setItem("project-c.auth-token", "test-session-token");
+  global.fetch = jest.fn().mockResolvedValue({
+    ok: true,
+    json: async () => ({ user: { id: "user-1", name: "Auction Host", activeRoomId: "AB12", activeTeamName: null } }),
+  });
+
+  render(<App />);
+  expect(await screen.findByRole("heading", { name: /how would you like to play/i })).toBeInTheDocument();
+
+  fireEvent.click(screen.getByRole("button", { name: /create a new game/i }));
+  expect(socket.emit).toHaveBeenCalledWith("create_room");
+  expect(socket.emit).not.toHaveBeenCalledWith("restore_session");
 });
