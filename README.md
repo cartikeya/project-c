@@ -47,8 +47,7 @@ cd project-c
 cd server
 npm install
 \`\`\`
-* Create a `.env` file in the `server` directory and add your MongoDB connection string:
-  `MONGO_URI=your_mongodb_connection_string`
+* Copy `server/.env.example` to `.env`; set `MONGO_URI` and a unique `JWT_SECRET` of at least 32 random bytes. Keep the provided Google Web Client ID or replace it consistently in frontend and backend settings.
 * Start the server:
 \`\`\`bash
 node server.js
@@ -61,9 +60,22 @@ cd client
 npm install
 npm start
 \`\`\`
-*(Make sure to update the socket connection URL in `client/src/socket.js` to `http://localhost:3001` for local testing).*
+*(Set `REACT_APP_API_URL=http://localhost:3001` in `client/.env.local` for local testing.)*
 
 ## 🤝 Contact
 Built by [cartikeya] - 3rd Year B.Tech Student
 * LinkedIn: [https://www.linkedin.com/in/cartikeya-lavu-59577828a/]
 * GitHub: [https://www.github.com/cartikeya]
+
+
+## Google sign-in and saved auction rooms
+
+The app now requires Google sign-in. The backend verifies Google's ID token, creates a short-lived app session, and stores each signed-in user's latest room/team association. Auction rooms, bids, the current player, timer state, pause state, budgets, and squads are stored in MongoDB. After closing a tab, sign in again with the same Google account to restore the saved room; the same works on another device and after a backend restart. The session token is limited to the current tab and expires after 12 hours. Rooms are retained in MongoDB; there is no automatic room-expiration cleanup.
+
+### Google OAuth setup
+
+1. In Google Cloud Console, create an OAuth 2.0 **Web application** client and configure the consent screen. Add the local origin `http://localhost:3000` and the production Vercel origin under **Authorized JavaScript origins**. Add any Vercel preview origins you intend to use.
+2. Set the same public Web Client ID in both environments. In Vercel, add `REACT_APP_GOOGLE_CLIENT_ID` and `REACT_APP_API_URL` and redeploy the frontend. In Render, add `GOOGLE_CLIENT_ID` and `JWT_SECRET`; keep the existing `MONGO_URI` and set `CLIENT_ORIGIN` to the frontend origin(s). Use a long, random `JWT_SECRET` and never commit it.
+3. For local development, copy `client/.env.example` to `client/.env.local` and `server/.env.example` to `server/.env`, then fill in the Web Client ID and MongoDB connection. Generate a unique JWT secret of at least 32 random bytes (for example, `openssl rand -base64 48`) for each environment. The Google OAuth client does not need a client secret for this ID-token flow.
+
+Google's setup guide: https://developers.google.com/identity/gsi/web/guides/get-google-api-clientid. Local client changes require a frontend rebuild; server environment changes require a backend restart/redeploy.

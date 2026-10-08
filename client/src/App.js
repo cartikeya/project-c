@@ -1,6 +1,5 @@
-// App.js
-import React, { useState, useEffect } from "react";
-import { socket } from "./socket";
+import React, { useCallback, useEffect, useState } from "react";
+import { API_BASE_URL, socket } from "./socket";
 import AdminPanel from "./components/AdminPanel";
 import Login from "./components/Login";
 import PlayerCard from "./components/PlayerCard";
@@ -8,9 +7,18 @@ import SoldOverlay from "./components/SoldOverlay";
 import SquadOverview from "./components/SquadOverview";
 import Lobby from "./components/Lobby";
 import PlayerPool from "./components/PlayerPool";
+import GoogleSignIn from "./components/GoogleSignIn";
 import "./App.css";
 
+const AUTH_TOKEN_KEY = "project-c.auth-token";
+const GOOGLE_CLIENT_ID = process.env.REACT_APP_GOOGLE_CLIENT_ID || "671625674339-atieils13ucn4icst5r2dgk05f0musmg.apps.googleusercontent.com";
+
 function App() {
+  const [authToken, setAuthToken] = useState("");
+  const [authUser, setAuthUser] = useState(null);
+  const [authLoading, setAuthLoading] = useState(true);
+  const [authError, setAuthError] = useState("");
+
   const [auctionData, setAuctionData] = useState(null);
   const [teamsData, setTeamsData] = useState({});
   const [myTeamName, setMyTeamName] = useState("");
@@ -19,24 +27,126 @@ function App() {
   const [isAdmin, setIsAdmin] = useState(null);
   const [timer, setTimer] = useState(10);
   const [roomId, setRoomId] = useState(null);
-  const [inRoom, setInRoom] = useState(null);
+  const [inRoom, setInRoom] = useState(false);
   const [gameStarted, setGameStarted] = useState(false);
   const [playersList, setPlayersList] = useState([]);
   const [isPaused, setIsPaused] = useState(false);
 
   useEffect(() => {
-    socket.on("room_created", (id) => {
-      setRoomId(id);
-      setInRoom(true);
-    });
-    socket.on("room_joined", (id) => {
-      setRoomId(id);
-      setInRoom(true);
-    });
-    socket.on("error_message", (msg) => {
-      alert(msg);
-    });
+    let cancelled = false;
+    const savedToken = window.sessionStorage.getItem(AUTH_TOKEN_KEY);
+    if (!savedToken) {
+      setAuthLoading(false);
+      return () => { cancelled = true; };
+    }
 
+    setAuthToken(savedToken);
+    fetch(`${API_BASE_URL}/api/auth/me`, {
+      headers: { Authorization: `Bearer ${savedToken}` },
+    })
+      .then(async (response) => {
+        const payload = await response.json().catch(() => ({}));
+        if (!response.ok) throw new Error(payload.message || "Please sign in again.");
+        if (!cancelled) setAuthUser(payload.user);
+      })
+      .catch((error) => {
+        if (cancelled) return;
+        window.sessionStorage.removeItem(AUTH_TOKEN_KEY);
+        setAuthToken("");
+        setAuthUser(null);
+        setAuthError(error.message || "Your sign-in has expired. Please sign in again.");
+      })
+      .finally(() => {
+        if (!cancelled) setAuthLoading(false);
+      });
+
+    return () => { cancelled = true; };
+  }, []);
+
+  const handleGoogleCredential = useCallback(async (credential) => {
+    const response = await fetch(`${API_BASE_URL}/api/auth/google`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ credential }),
+    });
+    const payload = await response.json().catch(() => ({}));
+    if (!response.ok) throw new Error(payload.message || "Google sign-in failed.");
+    if (!payload.token || !payload.user) throw new Error("The sign-in response was incomplete.");
+
+    window.sessionStorage.setItem(AUTH_TOKEN_KEY, payload.token);
+    setAuthError("");
+    setAuthToken(payload.token);
+    setAuthUser(payload.user);
+    setAuthLoading(false);
+  }, []);
+
+  const handleSignOut = useCallback(() => {
+    socket.disconnect();
+    window.sessionStorage.removeItem(AUTH_TOKEN_KEY);
+    setAuthToken("");
+    setAuthUser(null);
+    setAuthError("");
+    setRoomId(null);
+    setInRoom(false);
+    setIsTeamSet(false);
+    setMyTeamName("");
+    setAuctionData(null);
+    setTeamsData({});
+    setGameStarted(false);
+    setIsPaused(false);
+    setIsAdmin(null);
+    setTimer(10);
+    setPlayersList([]);
+    setSoldInfo(null);
+  }, []);
+
+  useEffect(() => {
+    if (!authToken || !authUser) return undefined;
+    socket.auth = { token: authToken };
+
+    const onConnect = () => {
+      setAuthError("");
+      socket.emit("restore_session");
+    };
+    const onRoomCreated = (id) => {
+      setRoomId(id);
+      setInRoom(true);
+    };
+    const onRoomJoined = (id) => {
+      setRoomId(id);
+      setInRoom(true);
+    };
+    const onSessionRestored = ({ roomId: restoredRoomId, teamName, isAdmin: restoredAdmin }) => {
+      setRoomId(restoredRoomId);
+      setInRoom(true);
+      setMyTeamName(teamName || "");
+      setIsTeamSet(Boolean(teamName));
+      setIsAdmin(Boolean(restoredAdmin));
+    };
+    const onSessionNotFound = () => {
+      setRoomId(null);
+      setInRoom(false);
+      setMyTeamName("");
+      setIsTeamSet(false);
+    };
+    const onErrorMessage = (message) => window.alert(message);
+    const onConnectError = (error) => {
+      const message = error.message || "Unable to connect to the auction server.";
+      setAuthError(message);
+      if (/sign-in|required|expired/i.test(message)) {
+        window.sessionStorage.removeItem(AUTH_TOKEN_KEY);
+        setAuthToken("");
+        setAuthUser(null);
+      }
+    };
+
+    socket.on("connect", onConnect);
+    socket.on("room_created", onRoomCreated);
+    socket.on("room_joined", onRoomJoined);
+    socket.on("session_restored", onSessionRestored);
+    socket.on("session_not_found", onSessionNotFound);
+    socket.on("error_message", onErrorMessage);
+    socket.on("connect_error", onConnectError);
     socket.on("update_auction", (data) => {
       setAuctionData(data);
       setSoldInfo(null);
@@ -49,10 +159,17 @@ function App() {
     socket.on("pause_status", (status) => setIsPaused(status));
     socket.on("players_list", (list) => setPlayersList(list));
 
+    socket.connect();
+    if (socket.connected) onConnect();
+
     return () => {
-      socket.off("room_created");
-      socket.off("room_joined");
-      socket.off("error_message");
+      socket.off("connect", onConnect);
+      socket.off("room_created", onRoomCreated);
+      socket.off("room_joined", onRoomJoined);
+      socket.off("session_restored", onSessionRestored);
+      socket.off("session_not_found", onSessionNotFound);
+      socket.off("error_message", onErrorMessage);
+      socket.off("connect_error", onConnectError);
       socket.off("update_auction");
       socket.off("update_teams");
       socket.off("auction_sold");
@@ -61,8 +178,9 @@ function App() {
       socket.off("auction_status");
       socket.off("pause_status");
       socket.off("players_list");
+      socket.disconnect();
     };
-  }, []);
+  }, [authToken, authUser]);
 
   const togglePause = () => {
     if (!roomId) return;
@@ -70,25 +188,42 @@ function App() {
   };
   const handleSetTeam = () => setIsTeamSet(true);
   const placeBid = () => {
-    if (!isTeamSet || !auctionData || !roomId) return;
+    if (!isTeamSet || !auctionData || !roomId || isPaused) return;
     const myWallet = teamsData[myTeamName]?.budget || 0;
     const nextBid = auctionData.currentBid + 50;
 
     if (nextBid > myWallet) {
-      return alert(`not enough money! you only have ${myWallet}`);
+      return window.alert(`not enough money! you only have ${myWallet}`);
     }
-    socket.emit("place_bid", {
-      amount: nextBid,
-      teamName: myTeamName,
-      roomId: roomId,
-    });
+    socket.emit("place_bid", { amount: nextBid, teamName: myTeamName, roomId });
   };
 
   const nextPlayer = () => socket.emit("next_player", roomId);
   const startGame = () => socket.emit("start_auction", roomId);
 
+  if (authLoading) {
+    return (
+      <main className="loading-screen">
+        <div className="loading-orbit" aria-hidden="true"><span /></div>
+        <p className="eyebrow">IPL MOCK AUCTION</p>
+        <h1>Restoring your account</h1>
+        <p className="muted-copy">Checking your saved auction session…</p>
+      </main>
+    );
+  }
+
+  if (!authToken || !authUser) {
+    return (
+      <GoogleSignIn
+        clientId={GOOGLE_CLIENT_ID}
+        onCredential={handleGoogleCredential}
+        error={authError}
+      />
+    );
+  }
+
   if (!inRoom) {
-    return <Lobby />;
+    return <Lobby user={authUser} onSignOut={handleSignOut} connectionError={authError} />;
   }
 
   if (!auctionData || !auctionData.currentPlayer) {
@@ -97,7 +232,7 @@ function App() {
         <div className="loading-orbit" aria-hidden="true"><span /></div>
         <p className="eyebrow">IPL MOCK AUCTION</p>
         <h1>Setting the stage</h1>
-        <p className="muted-copy">Loading the player database…</p>
+        <p className="muted-copy">Loading your saved room…</p>
       </main>
     );
   }
@@ -110,10 +245,7 @@ function App() {
     <main className="app-shell">
       {soldInfo && (
         <SoldOverlay
-          auctionData={{
-            lastSoldTo: soldInfo.winner,
-            currentPlayer: soldInfo.player,
-          }}
+          auctionData={{ lastSoldTo: soldInfo.winner, currentPlayer: soldInfo.player }}
         />
       )}
 
@@ -125,11 +257,15 @@ function App() {
             <span className="brand-name">IPL <strong>AUCTION</strong></span>
           </span>
         </a>
-        <div className="room-badge" aria-label={`Room code ${roomId}`}>
-          <span className="room-badge-label"><span className="live-dot" /> ROOM CODE</span>
-          <strong>{roomId}</strong>
+        <div className="header-actions">
+          <div className="room-badge" aria-label={`Room code ${roomId}`}>
+            <span className="room-badge-label"><span className="live-dot" /> ROOM CODE</span>
+            <strong>{roomId}</strong>
+          </div>
+          <AccountControl user={authUser} onSignOut={handleSignOut} />
         </div>
       </header>
+      {authError && <div className="connection-notice" role="status">{authError}</div>}
 
       <section className="page-intro">
         <div>
@@ -251,14 +387,25 @@ function App() {
               <SquadOverview teamsData={teamsData} />
             </aside>
           </div>
-          <PlayerPool
-            playersList={playersList}
-            currentPlayer={auctionData.currentPlayer}
-          />
+          <PlayerPool playersList={playersList} currentPlayer={auctionData.currentPlayer} />
         </>
       )}
       <footer className="app-footer"><span>IPL MOCK AUCTION</span><span>Good luck, managers.</span></footer>
     </main>
+  );
+}
+
+function AccountControl({ user, onSignOut }) {
+  return (
+    <div className="account-control">
+      {user.picture ? (
+        <img className="account-avatar" src={user.picture} alt="" referrerPolicy="no-referrer" />
+      ) : (
+        <span className="account-avatar account-avatar-fallback" aria-hidden="true">{user.name?.slice(0, 1)?.toUpperCase()}</span>
+      )}
+      <span className="account-name">{user.name}</span>
+      <button className="account-signout" type="button" onClick={onSignOut}>Sign out</button>
+    </div>
   );
 }
 

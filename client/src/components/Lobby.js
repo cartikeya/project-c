@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { socket } from "../socket";
 
-function Lobby() {
+function Lobby({ user, onSignOut, connectionError }) {
   const [joinCode, setJoinCode] = useState("");
   const handleCreateRoom = () => socket.emit("create_room");
   const handleJoinRoom = () => {
@@ -19,8 +19,22 @@ function Lobby() {
           <span className="brand-mark" aria-hidden="true"><span /></span>
           <span className="brand-copy"><span className="brand-kicker">THE LIVE ROOM</span><span className="brand-name">IPL <strong>AUCTION</strong></span></span>
         </a>
-        <span className="lobby-header-note"><span className="live-dot" /> PRIVATE ROOMS · LIVE BIDDING</span>
+        <div className="lobby-header-actions">
+          <span className="lobby-header-note"><span className="live-dot" /> PRIVATE ROOMS · LIVE BIDDING</span>
+          {user && (
+            <div className="account-control">
+              {user.picture ? (
+                <img className="account-avatar" src={user.picture} alt="" referrerPolicy="no-referrer" />
+              ) : (
+                <span className="account-avatar account-avatar-fallback" aria-hidden="true">{user.name?.slice(0, 1)?.toUpperCase()}</span>
+              )}
+              <span className="account-name">{user.name}</span>
+              <button className="account-signout" type="button" onClick={onSignOut}>Sign out</button>
+            </div>
+          )}
+        </div>
       </header>
+      {connectionError && <div className="connection-notice lobby-connection-notice" role="status">{connectionError}</div>}
 
       <section className="lobby-hero">
         <div className="lobby-copy">
