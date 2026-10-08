@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { API_BASE_URL, socket } from "./socket";
 import AdminPanel from "./components/AdminPanel";
 import Login from "./components/Login";
@@ -18,6 +18,8 @@ function App() {
   const [authUser, setAuthUser] = useState(null);
   const [authLoading, setAuthLoading] = useState(true);
   const [authError, setAuthError] = useState("");
+  const [savedRoom, setSavedRoom] = useState(null);
+  const [roomAction, setRoomAction] = useState("");
 
   const [auctionData, setAuctionData] = useState(null);
   const [teamsData, setTeamsData] = useState({});
@@ -31,6 +33,11 @@ function App() {
   const [gameStarted, setGameStarted] = useState(false);
   const [playersList, setPlayersList] = useState([]);
   const [isPaused, setIsPaused] = useState(false);
+  const activeRoomIdRef = useRef(null);
+
+  useEffect(() => {
+    activeRoomIdRef.current = roomId;
+  }, [roomId]);
 
   useEffect(() => {
     let cancelled = false;
@@ -47,7 +54,13 @@ function App() {
       .then(async (response) => {
         const payload = await response.json().catch(() => ({}));
         if (!response.ok) throw new Error(payload.message || "Please sign in again.");
-        if (!cancelled) setAuthUser(payload.user);
+        if (!cancelled) {
+          setAuthUser(payload.user);
+          setSavedRoom(payload.user.activeRoomId ? {
+            roomId: payload.user.activeRoomId,
+            teamName: payload.user.activeTeamName || null,
+          } : null);
+        }
       })
       .catch((error) => {
         if (cancelled) return;
@@ -82,6 +95,10 @@ function App() {
     setAuthError("");
     setAuthToken(payload.token);
     setAuthUser(payload.user);
+    setSavedRoom(payload.user.activeRoomId ? {
+      roomId: payload.user.activeRoomId,
+      teamName: payload.user.activeTeamName || null,
+    } : null);
     setAuthLoading(false);
   }, []);
 
@@ -91,6 +108,9 @@ function App() {
     setAuthToken("");
     setAuthUser(null);
     setAuthError("");
+    setSavedRoom(null);
+    setRoomAction("");
+    activeRoomIdRef.current = null;
     setRoomId(null);
     setInRoom(false);
     setIsTeamSet(false);
@@ -111,33 +131,66 @@ function App() {
 
     const onConnect = () => {
       setAuthError("");
-      socket.emit("restore_session");
+      if (activeRoomIdRef.current) socket.emit("join_room", activeRoomIdRef.current);
     };
     const onRoomCreated = (id) => {
+      setSavedRoom(null);
+      setRoomAction("");
       setRoomId(id);
+      activeRoomIdRef.current = id;
       setInRoom(true);
+      setMyTeamName("");
+      setIsTeamSet(false);
+      setAuctionData(null);
+      setTeamsData({});
+      setSoldInfo(null);
+      setIsAdmin(true);
+      setGameStarted(false);
+      setIsPaused(false);
+      setTimer(10);
+      setPlayersList([]);
+      setAuthUser((current) => current ? { ...current, activeRoomId: id, activeTeamName: null } : current);
     };
     const onRoomJoined = (id) => {
+      setSavedRoom(null);
+      setRoomAction("");
       setRoomId(id);
+      activeRoomIdRef.current = id;
       setInRoom(true);
     };
     const onSessionRestored = ({ roomId: restoredRoomId, teamName, isAdmin: restoredAdmin }) => {
+      setSavedRoom(null);
+      setRoomAction("");
       setRoomId(restoredRoomId);
+      activeRoomIdRef.current = restoredRoomId;
       setInRoom(true);
       setMyTeamName(teamName || "");
       setIsTeamSet(Boolean(teamName));
       setIsAdmin(Boolean(restoredAdmin));
+      setAuthUser((current) => current ? {
+        ...current,
+        activeRoomId: restoredRoomId,
+        activeTeamName: teamName || null,
+      } : current);
     };
     const onSessionNotFound = () => {
+      setSavedRoom(null);
+      setRoomAction("");
+      activeRoomIdRef.current = null;
       setRoomId(null);
       setInRoom(false);
       setMyTeamName("");
       setIsTeamSet(false);
+      setAuthUser((current) => current ? { ...current, activeRoomId: null, activeTeamName: null } : current);
     };
-    const onErrorMessage = (message) => window.alert(message);
+    const onErrorMessage = (message) => {
+      setRoomAction("");
+      window.alert(message);
+    };
     const onConnectError = (error) => {
       const message = error.message || "Unable to connect to the auction server.";
       setAuthError(message);
+      setRoomAction("");
       if (/sign-in|required|expired/i.test(message)) {
         window.sessionStorage.removeItem(AUTH_TOKEN_KEY);
         setAuthToken("");
@@ -187,6 +240,31 @@ function App() {
     };
   }, [authToken, authUser]);
 
+  const handleContinueSavedRoom = () => {
+    if (!savedRoom || roomAction) return;
+    setRoomAction("restoring");
+    socket.emit("restore_session");
+  };
+
+  const handleCreateNewGame = () => {
+    if (roomAction) return;
+    setRoomAction("creating");
+    setRoomId(null);
+    activeRoomIdRef.current = null;
+    setInRoom(false);
+    setMyTeamName("");
+    setIsTeamSet(false);
+    setAuctionData(null);
+    setTeamsData({});
+    setSoldInfo(null);
+    setIsAdmin(null);
+    setGameStarted(false);
+    setIsPaused(false);
+    setTimer(10);
+    setPlayersList([]);
+    socket.emit("create_room");
+  };
+
   const togglePause = () => {
     if (!roomId) return;
     socket.emit("toggle_pause", { roomId });
@@ -223,6 +301,19 @@ function App() {
         clientId={GOOGLE_CLIENT_ID}
         onCredential={handleGoogleCredential}
         error={authError}
+      />
+    );
+  }
+
+  if (savedRoom && !inRoom) {
+    return (
+      <SavedRoomChoice
+        room={savedRoom}
+        user={authUser}
+        action={roomAction}
+        onContinue={handleContinueSavedRoom}
+        onCreateNew={handleCreateNewGame}
+        onSignOut={handleSignOut}
       />
     );
   }
@@ -411,6 +502,56 @@ function AccountControl({ user, onSignOut }) {
       <span className="account-name">{user.name}</span>
       <button className="account-signout" type="button" onClick={onSignOut}>Sign out</button>
     </div>
+  );
+}
+
+function SavedRoomChoice({ room, user, action, onContinue, onCreateNew, onSignOut }) {
+  const busy = Boolean(action);
+  return (
+    <main className="resume-screen">
+      <div className="resume-wrap">
+        <header className="resume-header">
+          <a className="brand-lockup" href="#top" aria-label="IPL Auction home">
+            <span className="brand-mark" aria-hidden="true"><span /></span>
+            <span className="brand-copy">
+              <span className="brand-kicker">THE LIVE ROOM</span>
+              <span className="brand-name">IPL <strong>AUCTION</strong></span>
+            </span>
+          </a>
+          <AccountControl user={user} onSignOut={onSignOut} />
+        </header>
+
+        <section className="resume-card">
+          <p className="eyebrow resume-eyebrow">WELCOME BACK</p>
+          <h1>How would you like to play?</h1>
+          <p className="resume-copy">Your last auction is saved. Continue where you left off, or create a fresh room.</p>
+
+          <div className="resume-room-summary">
+            <div>
+              <span className="eyebrow">SAVED ROOM</span>
+              <strong>{room.roomId}</strong>
+            </div>
+            {room.teamName && <span className="resume-team">Playing as <strong>{room.teamName}</strong></span>}
+          </div>
+
+          <div className="resume-options">
+            <button className="resume-option resume-option-primary" type="button" onClick={onContinue} disabled={busy}>
+              <span className="resume-option-kicker">01 / PICK UP WHERE YOU LEFT OFF</span>
+              <strong>{action === "restoring" ? "Restoring saved game…" : "Continue saved game"}</strong>
+              <span>Rejoin room {room.roomId} with its saved teams and auction state.</span>
+            </button>
+            <button className="resume-option" type="button" onClick={onCreateNew} disabled={busy}>
+              <span className="resume-option-kicker">02 / START FRESH</span>
+              <strong>{action === "creating" ? "Creating new room…" : "Create a new game"}</strong>
+              <span>Start a new auction with a new room code.</span>
+            </button>
+          </div>
+
+          <p className="resume-note">Creating a new game switches your account to the new room. Players already in {room.roomId} can continue their auction there.</p>
+        </section>
+        <p className="auth-footnote">LIVE IPL AUCTION · PRIVATE ROOMS · ACCOUNT-BACKED SAVES</p>
+      </div>
+    </main>
   );
 }
 

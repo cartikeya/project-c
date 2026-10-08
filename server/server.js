@@ -365,6 +365,9 @@ io.on("connection", (socket) => {
         socket.emit("error_message", "The player list is unavailable. Please try again later.");
         return;
       }
+      for (const joinedRoomId of socket.rooms) {
+        if (joinedRoomId !== socket.id) socket.leave(joinedRoomId);
+      }
       let roomId = generateRoomCode();
       while (activeGames[roomId] || (await AuctionRoom.exists({ roomId }))) roomId = generateRoomCode();
 
