@@ -560,15 +560,29 @@ body:has(.lobby-shell) { color: #fff; background: radial-gradient(ellipse at 70%
 .resume-option:hover:not(:disabled) { transform: translateY(-2px); border-color: rgba(214,251,97,.55); background: rgba(255,255,255,.07); }
 .resume-option:disabled { cursor: wait; opacity: .65; }
 .resume-option-primary { border-color: rgba(214,251,97,.28); background: rgba(214,251,97,.07); }
+.resume-option-join { grid-column: 1 / -1; min-height: 118px; }
 .resume-option-kicker { color: var(--amber); font-family: 'Space Grotesk', sans-serif; font-size: 8px; font-weight: 700; letter-spacing: .13em; }
 .resume-option strong { font-family: 'Space Grotesk', sans-serif; font-size: 1.1rem; letter-spacing: -.02em; }
 .resume-option > span:last-child { color: #aeb3bf; font-size: .78rem; line-height: 1.5; }
 .resume-note { margin: 1rem 0 0; color: #9299a9; font-size: .74rem; line-height: 1.55; }
 .resume-wrap > .auth-footnote { margin-top: 1.3rem; }
+.lobby-return-link {
+  padding: .55rem .8rem;
+  border: 1px solid rgba(233, 226, 208, .18);
+  border-radius: 999px;
+  color: #d5d9d1;
+  background: rgba(255,255,255,.04);
+  cursor: pointer;
+  font: inherit;
+  font-size: .74rem;
+  transition: border-color .16s ease, background .16s ease, color .16s ease;
+}
+.lobby-return-link:hover { border-color: rgba(214,251,97,.48); color: #fff; background: rgba(255,255,255,.08); }
 @media (max-width: 620px) {
   .resume-screen { align-items: start; padding: 1.2rem .85rem; }
   .resume-header { align-items: flex-start; }
   .resume-options { grid-template-columns: 1fr; }
   .resume-option { min-height: 135px; }
+  .resume-option-join { grid-column: auto; }
   .resume-room-summary { align-items: flex-start; flex-direction: column; }
 }

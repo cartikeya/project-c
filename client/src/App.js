@@ -20,6 +20,7 @@ function App() {
   const [authError, setAuthError] = useState("");
   const [savedRoom, setSavedRoom] = useState(null);
   const [roomAction, setRoomAction] = useState("");
+  const [showRoomJoin, setShowRoomJoin] = useState(false);
 
   const [auctionData, setAuctionData] = useState(null);
   const [teamsData, setTeamsData] = useState({});
@@ -110,6 +111,7 @@ function App() {
     setAuthError("");
     setSavedRoom(null);
     setRoomAction("");
+    setShowRoomJoin(false);
     activeRoomIdRef.current = null;
     setRoomId(null);
     setInRoom(false);
@@ -136,6 +138,7 @@ function App() {
     const onRoomCreated = (id) => {
       setSavedRoom(null);
       setRoomAction("");
+      setShowRoomJoin(false);
       setRoomId(id);
       activeRoomIdRef.current = id;
       setInRoom(true);
@@ -154,6 +157,7 @@ function App() {
     const onRoomJoined = (id) => {
       setSavedRoom(null);
       setRoomAction("");
+      setShowRoomJoin(false);
       setRoomId(id);
       activeRoomIdRef.current = id;
       setInRoom(true);
@@ -161,6 +165,7 @@ function App() {
     const onSessionRestored = ({ roomId: restoredRoomId, teamName, isAdmin: restoredAdmin }) => {
       setSavedRoom(null);
       setRoomAction("");
+      setShowRoomJoin(false);
       setRoomId(restoredRoomId);
       activeRoomIdRef.current = restoredRoomId;
       setInRoom(true);
@@ -176,6 +181,7 @@ function App() {
     const onSessionNotFound = () => {
       setSavedRoom(null);
       setRoomAction("");
+      setShowRoomJoin(false);
       activeRoomIdRef.current = null;
       setRoomId(null);
       setInRoom(false);
@@ -305,7 +311,7 @@ function App() {
     );
   }
 
-  if (savedRoom && !inRoom) {
+  if (savedRoom && !inRoom && !showRoomJoin) {
     return (
       <SavedRoomChoice
         room={savedRoom}
@@ -313,13 +319,22 @@ function App() {
         action={roomAction}
         onContinue={handleContinueSavedRoom}
         onCreateNew={handleCreateNewGame}
+        onJoinExisting={() => setShowRoomJoin(true)}
         onSignOut={handleSignOut}
       />
     );
   }
 
   if (!inRoom) {
-    return <Lobby user={authUser} onSignOut={handleSignOut} connectionError={authError} />;
+    return (
+      <Lobby
+        user={authUser}
+        onSignOut={handleSignOut}
+        connectionError={authError}
+        onBackToSavedRoom={savedRoom && showRoomJoin ? () => setShowRoomJoin(false) : null}
+        focusJoinField={showRoomJoin}
+      />
+    );
   }
 
   if (!auctionData || !auctionData.currentPlayer) {
@@ -505,7 +520,7 @@ function AccountControl({ user, onSignOut }) {
   );
 }
 
-function SavedRoomChoice({ room, user, action, onContinue, onCreateNew, onSignOut }) {
+function SavedRoomChoice({ room, user, action, onContinue, onCreateNew, onJoinExisting, onSignOut }) {
   const busy = Boolean(action);
   return (
     <main className="resume-screen">
@@ -544,6 +559,11 @@ function SavedRoomChoice({ room, user, action, onContinue, onCreateNew, onSignOu
               <span className="resume-option-kicker">02 / START FRESH</span>
               <strong>{action === "creating" ? "Creating new room…" : "Create a new game"}</strong>
               <span>Start a new auction with a new room code.</span>
+            </button>
+            <button className="resume-option resume-option-join" type="button" onClick={onJoinExisting} disabled={busy}>
+              <span className="resume-option-kicker">03 / JOIN A LEAGUE</span>
+              <strong>Join an existing room</strong>
+              <span>Enter the four-character room code from your host.</span>
             </button>
           </div>
 

@@ -18,6 +18,21 @@ beforeEach(() => {
   jest.clearAllMocks();
 });
 
+function mockSavedRoomSession() {
+  window.sessionStorage.setItem("project-c.auth-token", "test-session-token");
+  global.fetch = jest.fn().mockResolvedValue({
+    ok: true,
+    json: async () => ({
+      user: {
+        id: "user-1",
+        name: "Auction Host",
+        activeRoomId: "AB12",
+        activeTeamName: "CSK",
+      },
+    }),
+  });
+}
+
 test("requires Google sign-in before entering an auction", async () => {
   window.google = {
     accounts: {
@@ -38,19 +53,7 @@ test("requires Google sign-in before entering an auction", async () => {
 });
 
 test("offers Continue or Create New Game instead of automatically restoring a saved room", async () => {
-  window.sessionStorage.setItem("project-c.auth-token", "test-session-token");
-  global.fetch = jest.fn().mockResolvedValue({
-    ok: true,
-    json: async () => ({
-      user: {
-        id: "user-1",
-        name: "Auction Host",
-        activeRoomId: "AB12",
-        activeTeamName: "CSK",
-      },
-    }),
-  });
-
+  mockSavedRoomSession();
   render(<App />);
 
   expect(await screen.findByRole("heading", { name: /how would you like to play/i })).toBeInTheDocument();
@@ -63,16 +66,29 @@ test("offers Continue or Create New Game instead of automatically restoring a sa
 });
 
 test("creates a new game from the saved-room choice", async () => {
-  window.sessionStorage.setItem("project-c.auth-token", "test-session-token");
-  global.fetch = jest.fn().mockResolvedValue({
-    ok: true,
-    json: async () => ({ user: { id: "user-1", name: "Auction Host", activeRoomId: "AB12", activeTeamName: null } }),
-  });
-
+  mockSavedRoomSession();
   render(<App />);
   expect(await screen.findByRole("heading", { name: /how would you like to play/i })).toBeInTheDocument();
 
   fireEvent.click(screen.getByRole("button", { name: /create a new game/i }));
   expect(socket.emit).toHaveBeenCalledWith("create_room");
   expect(socket.emit).not.toHaveBeenCalledWith("restore_session");
+});
+
+test("offers existing-room join and a way back to saved-game choices", async () => {
+  mockSavedRoomSession();
+  render(<App />);
+  expect(await screen.findByRole("heading", { name: /how would you like to play/i })).toBeInTheDocument();
+
+  fireEvent.click(screen.getByRole("button", { name: /join an existing room/i }));
+  expect(screen.getByRole("heading", { name: /have a room code/i })).toBeInTheDocument();
+  const codeField = screen.getByLabelText(/four-letter room code/i);
+  expect(codeField).toHaveFocus();
+
+  fireEvent.change(codeField, { target: { value: "wxyz" } });
+  fireEvent.click(screen.getByRole("button", { name: /^join/i }));
+  expect(socket.emit).toHaveBeenCalledWith("join_room", "WXYZ");
+
+  fireEvent.click(screen.getByRole("button", { name: /saved game choices/i }));
+  expect(screen.getByRole("heading", { name: /how would you like to play/i })).toBeInTheDocument();
 });
