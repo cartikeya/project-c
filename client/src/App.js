@@ -46,6 +46,7 @@ function App() {
     socket.on("set_admin", (isAdminStatus) => setIsAdmin(isAdminStatus));
     socket.on("timer_update", (time) => setTimer(time));
     socket.on("auction_status", (status) => setGameStarted(status));
+    socket.on("pause_status", (status) => setIsPaused(status));
     socket.on("players_list", (list) => setPlayersList(list));
 
     return () => {
@@ -58,14 +59,14 @@ function App() {
       socket.off("set_admin");
       socket.off("timer_update");
       socket.off("auction_status");
+      socket.off("pause_status");
       socket.off("players_list");
     };
   }, []);
 
   const togglePause = () => {
-    const newPauseState = !isPaused;
-    setIsPaused(newPauseState);
-    socket.emit("toggle_pause", { roomId, isPaused: newPauseState });
+    if (!roomId) return;
+    socket.emit("toggle_pause", { roomId });
   };
   const handleSetTeam = () => setIsTeamSet(true);
   const placeBid = () => {
@@ -228,6 +229,7 @@ function App() {
                 isTeamSet={isTeamSet}
                 isWinning={isWinning}
                 timer={timer}
+                isPaused={isPaused}
               />
               {isAdmin && (
                 <section className="admin-panel surface-panel">

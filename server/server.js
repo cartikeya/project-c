@@ -23,15 +23,20 @@ function generateRoomCode() {
   return Math.random().toString(36).substring(2, 6).toUpperCase();
 }
 
-function startTimer(roomId) {
+function startTimer(roomId, resetTimer = true) {
   const game = activeGames[roomId];
-  if (!game) return;
+  if (!game || game.isPaused) return;
   clearInterval(game.countdownInterval);
-  game.timer = 10;
+  if (resetTimer) game.timer = 10;
   game.isTimerRunning = true;
   io.to(roomId).emit("timer_update", game.timer);
 
   game.countdownInterval = setInterval(() => {
+    if (game.isPaused) {
+      clearInterval(game.countdownInterval);
+      game.isTimerRunning = false;
+      return;
+    }
     if (game.timer > 0) {
       game.timer--;
       io.to(roomId).emit("timer_update", game.timer);
@@ -75,7 +80,7 @@ function processSale(roomId) {
     io.to(roomId).emit("update_auction", game.auctionState);
     game.isTransitioning = false;
 
-    if (game.hasAuctionStarted) {
+    if (game.hasAuctionStarted && !game.isPaused) {
       startTimer(roomId);
     } else {
       game.timer = 10;
@@ -103,6 +108,7 @@ io.on("connection", (socket) => {
       isTimerRunning: false,
       hasAuctionStarted: false,
       isTransitioning: false,
+      isPaused: false,
       auctionState: {
         currentBid: GLOBAL_PLAYERS[0].basePrice || 20,
         currentLeader: "No one yet",
@@ -115,6 +121,7 @@ io.on("connection", (socket) => {
     socket.emit("set_admin", true);
 
     socket.emit("auction_status", false);
+    socket.emit("pause_status", activeGames[roomId].isPaused);
 
     socket.emit("update_auction", activeGames[roomId].auctionState);
     socket.emit("update_teams", activeGames[roomId].teams);
@@ -131,6 +138,7 @@ io.on("connection", (socket) => {
       socket.emit("update_teams", game.teams);
       socket.emit("timer_update", game.timer);
       socket.emit("auction_status", game.gameStarted);
+      socket.emit("pause_status", game.isPaused);
       socket.emit("players_list", GLOBAL_PLAYERS);
     } else {
       socket.emit("error_message", "Room not found!");
@@ -147,12 +155,29 @@ io.on("connection", (socket) => {
     }
   });
 
+  socket.on("toggle_pause", ({ roomId } = {}) => {
+    const game = activeGames[roomId];
+    if (!game || socket.id !== game.adminSocketID || game.isTransitioning) return;
+
+    game.isPaused = !game.isPaused;
+    if (game.isPaused) {
+      clearInterval(game.countdownInterval);
+      game.countdownInterval = null;
+      game.isTimerRunning = false;
+    } else if (game.hasAuctionStarted && game.timer > 0) {
+      startTimer(roomId, false);
+    }
+
+    io.to(roomId).emit("pause_status", game.isPaused);
+    io.to(roomId).emit("timer_update", game.timer);
+  });
+
   // 2. Listen for a "place_bid" event from the frontend
   socket.on("place_bid", (data) => {
     // Logic: Increase bid by 1 crore (or whatever amount passed)
     const { amount, teamName, roomId } = data;
     const game = activeGames[roomId];
-    if (!game) return;
+    if (!game || game.isPaused) return;
     const teamWallet = game.teams[teamName];
     if (teamWallet && teamWallet.budget >= amount) {
       if (amount > game.auctionState.currentBid) {
