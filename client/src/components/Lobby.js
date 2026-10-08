@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { socket } from "../socket";
 
-function Lobby({ user, onSignOut, connectionError }) {
+function Lobby({ user, onSignOut, connectionError, onBackToSavedRoom, focusJoinField = false }) {
   const [joinCode, setJoinCode] = useState("");
   const handleCreateRoom = () => socket.emit("create_room");
   const handleJoinRoom = () => {
@@ -21,6 +21,11 @@ function Lobby({ user, onSignOut, connectionError }) {
         </a>
         <div className="lobby-header-actions">
           <span className="lobby-header-note"><span className="live-dot" /> PRIVATE ROOMS · LIVE BIDDING</span>
+          {onBackToSavedRoom && (
+            <button className="lobby-return-link" type="button" onClick={onBackToSavedRoom}>
+              ← Saved game choices
+            </button>
+          )}
           {user && (
             <div className="account-control">
               {user.picture ? (
@@ -63,6 +68,7 @@ function Lobby({ user, onSignOut, connectionError }) {
                 id="room-code"
                 type="text"
                 inputMode="text"
+                autoFocus={focusJoinField}
                 autoComplete="off"
                 placeholder="ROOM CODE"
                 value={joinCode}
